@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Learning Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+     body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #60a5fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .syntax-box, .example-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .syntax-box {
+            border-color: #10b981;
+        }
+
+        .example-box {
+            border-color: #8b5cf6;
+        }
+
+        .syntax-box:hover,
+        .example-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-box {
+            padding: 20px;
+            background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 12px;
+            display: block;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+  <h1>Introduction to Backend Development</h1>
+
+  <section>
+    <h2>What is Backend Development?</h2>
+    <p>
+      <strong>Backend development</strong> refers to the server-side part of a web application. It handles business logic, database interactions, authentication, server configuration, and data processing.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why is Backend Important?</h2>
+    <ul>
+      <li>Handles user data and interactions securely.</li>
+      <li>Connects and communicates with databases.</li>
+      <li>Manages sessions, authentication, and authorization.</li>
+      <li>Processes user requests and sends appropriate responses.</li>
+      <li>Ensures scalability and reliability of web apps.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Popular Backend Technologies</h2>
+    <ul>
+      <li><strong>Languages:</strong> Node.js (JavaScript), Python, PHP, Ruby, Java, C#.</li>
+      <li><strong>Frameworks:</strong> Express (Node.js), Django (Python), Laravel (PHP), Spring (Java).</li>
+      <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Firebase.</li>
+      <li><strong>APIs:</strong> REST, GraphQL, WebSockets.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How the Backend Works</h2>
+    <p>
+      The backend works by receiving requests from the frontend (browser), processing those requests, accessing databases or services if needed, and returning the appropriate data or response.
+    </p>
+    <p>Typical Flow:</p>
+    <ol>
+      <li>User interacts with the frontend (e.g., clicks a button).</li>
+      <li>Frontend sends an HTTP request to the backend server.</li>
+      <li>Backend processes the request and interacts with the database.</li>
+      <li>Data is fetched, updated, or deleted as needed.</li>
+      <li>Backend sends a response back to the frontend.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Example (Node.js with Express)</h2>
+    <div class="example-box">
+      <code>
+const express = require("express");<br>
+const app = express();<br>
+app.use(express.json());<br><br>
+
+app.get("/", (req, res) => {<br>
+&nbsp;&nbsp;res.send("Welcome to the backend!");<br>
+});<br><br>
+
+app.post("/user", (req, res) => {<br>
+&nbsp;&nbsp;const user = req.body;<br>
+&nbsp;&nbsp;// Here you would save user to the database<br>
+&nbsp;&nbsp;res.send("User data received!");<br>
+});<br><br>
+
+app.listen(3000, () => {<br>
+&nbsp;&nbsp;console.log("Server running on port 3000");<br>
+});
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Concepts in Backend</h2>
+    <ul>
+      <li><strong>Routing:</strong> Directing requests to the correct code/function.</li>
+      <li><strong>Middleware:</strong> Code that runs before the final request handler.</li>
+      <li><strong>Authentication:</strong> Verifying who the user is (e.g., login).</li>
+      <li><strong>Authorization:</strong> Verifying what the user is allowed to do.</li>
+      <li><strong>Environment Variables:</strong> Securely storing secrets/configs.</li>
+    </ul>
+  </section>
+</div>
+
+    <div class="container">
+       
+     
+
+        <main>
+            <!-- Backend Development Topics -->
+            <section>
+
+                <!-- Backend Components -->
+                <article class="tag-box">
+                    <h3>Backend Components</h3>
+                    <p>Backend development involves several key components that work together to handle server-side logic, data storage, and communication.</p>
+
+                    <!-- Server -->
+                    <div class="syntax-box">
+                        <p><strong>Server</strong></p>
+                        <p>Handles client requests and serves responses.</p>
+                        <code>// Example: Node.js Server
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+    console.log('Server running at http://127.0.0.1:3000/');
+});</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Apache</li>
+                            <li>Nginx</li>
+                        </ul>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="syntax-box">
+                        <p><strong>Database</strong></p>
+                        <p>Stores and manages application data.</p>
+                        <code>// Example: MongoDB Query
+db.collection('users').find({ age: { $gt: 18 } }).toArray((err, result) => {
+    if (err) throw err;n
+    console.log(result);
+});</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+
+                    <!-- API -->
+                    <div class="syntax-box">
+                        <p><strong>API</strong></p>
+                        <p>Facilitates communication between frontend and backend.</p>
+                        <code>// Example: REST API Endpoint
+app.get('/api/users', (req, res) => {
+    res.json({ users: ['Alice', 'Bob', 'Charlie'] });
+});</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                            <li>REST</li>
+                            <li>GraphQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- Authentication & Security -->
+                    <div class="syntax-box">
+                        <p><strong>Authentication & Security</strong></p>
+                        <p>Ensures secure access to resources.</p>
+                        <code>// Example: JWT Authentication
+const jwt = require('jsonwebtoken');
+
+const token = jwt.sign({ userId: 123 }, 'secretKey', { expiresIn: '1h' });
+console.log(token);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                            <li>JWT (JSON Web Tokens)</li>
+                            <li>OAuth</li>
+                        </ul>
+                    </div>
+
+                    <!-- Business Logic -->
+                    <div class="syntax-box">
+                        <p><strong>Business Logic</strong></p>
+                        <p>Processes requests and enforces application rules.</p>
+                        <code>// Example: Request Validation
+if (!req.body.username || !req.body.password) {
+    return res.status(400).json({ error: 'Username and password are required' });
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                            <li>Request validation</li>
+                            <li>Data processing</li>
+                        </ul>
+                    </div>
+                </article>
+                <h2>6. Backend Programming Languages</h2>
+                <p>Popular programming languages used for backend development.</p>
+
+                <!-- JavaScript (Node.js) -->
+                <article class="tag-box">
+                    <h3>JavaScript (Node.js)</h3>
+                    <p>JavaScript is a versatile language used for both frontend and backend development. Node.js is a runtime environment that allows JavaScript to run on the server.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>// Example: Node.js Server
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+    console.log('Server running at http://127.0.0.1:3000/');
+});</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Express.js</li>
+                            <li>NestJS</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Python (Django, Flask) -->
+                <article class="tag-box">
+                    <h3>Python (Django, Flask)</h3>
+                    <p>Python is a high-level, easy-to-learn language with powerful frameworks for backend development.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code># Example: Flask App
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Django</li>
+                            <li>Flask</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PHP (Laravel) -->
+                <article class="tag-box">
+                    <h3>PHP (Laravel)</h3>
+                    <p>PHP is a widely-used server-side scripting language, and Laravel is a popular PHP framework for web development.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>// Example: Laravel Route
+Route::get('/', function () {
+    return 'Hello, World!';
+});</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Laravel</li>
+                            <li>Symfony</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Java (Spring Boot) -->
+                <article class="tag-box">
+                    <h3>Java (Spring Boot)</h3>
+                    <p>Java is a robust, object-oriented language, and Spring Boot is a popular framework for building enterprise-level applications.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>// Example: Spring Boot Controller
+@RestController
+public class HelloController {
+
+    @GetMapping("/")
+    public String hello() {
+        return "Hello, World!";
+    }
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Spring Boot</li>
+                            <li>Micronaut</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- C# (.NET Core) -->
+                <article class="tag-box">
+                    <h3>C# (.NET Core)</h3>
+                    <p>C# is a powerful language developed by Microsoft, and .NET Core is a cross-platform framework for building modern applications.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>// Example: .NET Core Controller
+[ApiController]
+[Route("[controller]")]
+public class HelloController : ControllerBase
+{
+    [HttpGet]
+    public string Get()
+    {
+        return "Hello, World!";
+    }
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>.NET Core</li>
+                            <li>ASP.NET</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Ruby (Ruby on Rails) -->
+                <article class="tag-box">
+                    <h3>Ruby (Ruby on Rails)</h3>
+                    <p>Ruby is a dynamic, object-oriented language, and Ruby on Rails is a popular framework for building web applications.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code># Example: Rails Route
+Rails.application.routes.draw do
+  root 'welcome#index'
+end</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Ruby on Rails</li>
+                            <li>Sinatra</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Go (Gin, Echo) -->
+                <article class="tag-box">
+                    <h3>Go (Gin, Echo)</h3>
+                    <p>Go is a statically typed, compiled language known for its simplicity and performance. Gin and Echo are popular frameworks for building web applications.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>// Example: Gin Web Server
+package main
+
+import "github.com/gin-gonic/gin"
+
+func main() {
+    r := gin.Default()
+    r.GET("/", func(c *gin.Context) {
+        c.String(200, "Hello, World!")
+    })
+    r.Run()
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Frameworks:</strong></p>
+                        <ul>
+                            <li>Gin</li>
+                            <li>Echo</li>
+                        </ul>
+                    </div>
+                </article>
+                <header>
+                    <h1>Server-Side Frameworks</h1>
+                </header>
+                <main>
+                    <section>
+                        <article class="tag-box">
+                            <h3>Node.js & Express.js</h3>
+                            <p>Node.js is a JavaScript runtime, and Express.js is a fast, minimalist web framework for building server-side applications.</p>
+                            <div class="syntax-box">
+                                <code>const express = require('express');
+        const app = express();
+        
+        app.get('/', (req, res) => {
+            res.send('Hello, World!');
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server is running on port 3000');
+        });</code>
+                            </div>
+                        </article>
+                        
+                        <article class="tag-box">
+                            <h3>Django & Flask</h3>
+                            <p>Django is a full-featured Python framework, while Flask is a lightweight micro-framework for web applications.</p>
+                            <div class="syntax-box">
+                                <code># Django example
+        def home(request):
+            return HttpResponse("Hello, World!")</code>
+                                <code># Flask example
+        from flask import Flask
+        
+        app = Flask(__name__)
+        
+        @app.route('/')
+        def home():
+            return "Hello, World!"
+        
+        if __name__ == '__main__':
+            app.run(debug=True)</code>
+                            </div>
+                        </article>
+                        
+                        <article class="tag-box">
+                            <h3>Spring Boot (Java)</h3>
+                            <p>Spring Boot simplifies Java-based enterprise application development.</p>
+                            <div class="syntax-box">
+                                <code>@RestController
+        public class HelloController {
+            @GetMapping("/")
+            public String hello() {
+                return "Hello, World!";
+            }
+        }</code>
+                            </div>
+                        </article>
+                        
+                        <article class="tag-box">
+                            <h3>Ruby on Rails</h3>
+                            <p>Ruby on Rails is a full-stack web framework built on Ruby, known for its convention-over-configuration approach.</p>
+                            <div class="syntax-box">
+                                <code>Rails.application.routes.draw do
+          root 'welcome#index'
+        end</code>
+                            </div>
+                        </article>
+                        
+                        <article class="tag-box">
+                            <h3>Laravel (PHP)</h3>
+                            <p>Laravel is a powerful and elegant PHP framework for building web applications.</p>
+                            <div class="syntax-box">
+                                <code>Route::get('/', function () {
+            return 'Hello, World!';
+        });</code>
+                            </div>
+                        </article>
+                        
+                        <article class="tag-box">
+                            <h3>ASP.NET Core (C#)</h3>
+                            <p>ASP.NET Core is a cross-platform web framework developed by Microsoft for building modern web applications.</p>
+                            <div class="syntax-box">
+                                <code>[ApiController]
+        [Route("[controller]")]
+        public class HelloController : ControllerBase {
+            [HttpGet]
+            public string Get() {
+                return "Hello, World!";
+            }
+        }</code>
+                            </div>
+                        </article>
+                        <h2>SQL (Relational Databases)</h2>
+                        <p>Relational databases store data in tables with rows and columns. They use SQL for querying and managing data.</p>
+        
+                        <article class="tag-box">
+                            <h3>MySQL Example</h3>
+                            <p>MySQL is a popular open-source relational database.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js Integration:</strong></p>
+                                <code>const mysql = require('mysql');
+        const connection = mysql.createConnection({
+          host: 'localhost',
+          user: 'root',
+          password: 'password',
+          database: 'testdb'
+        });
+        
+        connection.connect();
+        
+        connection.query('SELECT * FROM users', (error, results) => {
+          if (error) throw error;
+          console.log(results);
+        });
+        
+        connection.end();</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>MySQL</li>
+                                    <li>PostgreSQL</li>
+                                    <li>SQL Server</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- NoSQL Databases -->
+                    <section>
+                        <h2>NoSQL (Non-Relational Databases)</h2>
+                        <p>NoSQL databases store data in flexible formats like key-value pairs, documents, or graphs.</p>
+        
+                        <article class="tag-box">
+                            <h3>MongoDB Example</h3>
+                            <p>MongoDB is a document-oriented NoSQL database.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js Integration:</strong></p>
+                                <code>const mongoose = require('mongoose');
+        mongoose.connect('mongodb://localhost:27017/testdb', { useNewUrlParser: true, useUnifiedTopology: true });
+        
+        const userSchema = new mongoose.Schema({
+          name: String,
+          age: Number
+        });
+        
+        const User = mongoose.model('User', userSchema);
+        
+        const newUser = new User({ name: 'Alice', age: 25 });
+        newUser.save().then(() => console.log('User saved!'));</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>MongoDB</li>
+                                    <li>Redis</li>
+                                    <li>DynamoDB</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- In-Memory Databases -->
+                    <section>
+                        <h2>In-Memory Databases</h2>
+                        <p>In-memory databases store data in RAM for faster access.</p>
+        
+                        <article class="tag-box">
+                            <h3>Redis Example</h3>
+                            <p>Redis is a popular in-memory key-value store.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js Integration:</strong></p>
+                                <code>const redis = require('redis');
+        const client = redis.createClient();
+        
+        client.on('connect', () => {
+          console.log('Connected to Redis');
+        });
+        
+        client.set('key', 'value', redis.print);
+        client.get('key', (err, reply) => {
+          console.log(reply);
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Redis</li>
+                                    <li>Memcached</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Cloud Databases -->
+                    <section>
+                        <h2>Cloud Databases</h2>
+                        <p>Cloud databases are hosted on cloud platforms, offering scalability and managed services.</p>
+        
+                        <article class="tag-box">
+                            <h3>Firebase Example</h3>
+                            <p>Firebase is a Google-backed platform offering real-time NoSQL databases.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js Integration:</strong></p>
+                                <code>const admin = require('firebase-admin');
+        const serviceAccount = require('path/to/serviceAccountKey.json');
+        
+        admin.initializeApp({
+          credential: admin.credential.cert(serviceAccount),
+          databaseURL: 'https://your-database.firebaseio.com'
+        });
+        
+        const db = admin.database();
+        const ref = db.ref('users');
+        ref.set({ name: 'Alice', age: 25 }).then(() => console.log('Data saved!'));</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Firebase</li>
+                                    <li>AWS RDS</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <h2>REST API</h2>
+                        <p>REST (Representational State Transfer) is an architectural style for designing networked applications. It uses standard HTTP methods like GET, POST, PUT, and DELETE to perform CRUD operations.</p>
+        
+                        <article class="tag-box">
+                            <h3>REST API Example</h3>
+                            <p>Below is an example of a REST API built using Node.js and Express.js.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Express.js:</strong></p>
+                                <code>const express = require('express');
+        const app = express();
+        app.use(express.json());
+        
+        // Sample data
+        let users = [
+            { id: 1, name: 'Alice' },
+            { id: 2, name: 'Bob' }
+        ];
+        
+        // GET all users
+        app.get('/api/users', (req, res) => {
+            res.json(users);
+        });
+        
+        // GET a single user by ID
+        app.get('/api/users/:id', (req, res) => {
+            const user = users.find(u => u.id === parseInt(req.params.id));
+            if (!user) return res.status(404).send('User not found');
+            res.json(user);
+        });
+        
+        // POST a new user
+        app.post('/api/users', (req, res) => {
+            const user = {
+                id: users.length + 1,
+                name: req.body.name
+            };
+            users.push(user);
+            res.status(201).json(user);
+        });
+        
+        // PUT (Update) a user
+        app.put('/api/users/:id', (req, res) => {
+            const user = users.find(u => u.id === parseInt(req.params.id));
+            if (!user) return res.status(404).send('User not found');
+        
+            user.name = req.body.name;
+            res.json(user);
+        });
+        
+        // DELETE a user
+        app.delete('/api/users/:id', (req, res) => {
+            const user = users.find(u => u.id === parseInt(req.params.id));
+            if (!user) return res.status(404).send('User not found');
+        
+            const index = users.indexOf(user);
+            users.splice(index, 1);
+            res.status(204).send();
+        });
+        
+        const PORT = 3000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>HTTP Methods:</strong></p>
+                                <ul>
+                                    <li><strong>GET</strong>: Retrieve data (e.g., fetch users).</li>
+                                    <li><strong>POST</strong>: Create new data (e.g., add a user).</li>
+                                    <li><strong>PUT</strong>: Update existing data (e.g., update a user).</li>
+                                    <li><strong>DELETE</strong>: Remove data (e.g., delete a user).</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- GraphQL API -->
+                    <section>
+                        <h2>GraphQL API</h2>
+                        <p>GraphQL is a query language for APIs that allows clients to request only the data they need. It provides a flexible and efficient alternative to REST.</p>
+        
+                        <article class="tag-box">
+                            <h3>GraphQL API Example</h3>
+                            <p>Below is an example of a GraphQL API built using Node.js and Apollo Server.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Apollo Server:</strong></p>
+                                <code>const { ApolloServer, gql } = require('apollo-server');
+        
+        // Sample data
+        let users = [
+            { id: 1, name: 'Alice', age: 25 },
+            { id: 2, name: 'Bob', age: 30 }
+        ];
+        
+        // GraphQL schema
+        const typeDefs = gql`
+            type User {
+                id: ID!
+                name: String!
+                age: Int
+            }
+        
+            type Query {
+                users: [User]
+                user(id: ID!): User
+            }
+        
+            type Mutation {
+                addUser(name: String!, age: Int): User
+            }
+        `;
+        
+        // Resolvers
+        const resolvers = {
+            Query: {
+                users: () => users,
+                user: (parent, args) => users.find(u => u.id === parseInt(args.id))
+            },
+            Mutation: {
+                addUser: (parent, args) => {
+                    const user = {
+                        id: users.length + 1,
+                        name: args.name,
+                        age: args.age
+                    };
+                    users.push(user);
+                    return user;
+                }
+            }
+        };
+        
+        // Apollo Server
+        const server = new ApolloServer({ typeDefs, resolvers });
+        
+        server.listen().then(({ url }) => {
+            console.log(`Server ready at ${url}`);
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>GraphQL Features:</strong></p>
+                                <ul>
+                                    <li><strong>Queries</strong>: Fetch data (e.g., get users or a single user).</li>
+                                    <li><strong>Mutations</strong>: Modify data (e.g., add a user).</li>
+                                    <li><strong>Flexibility</strong>: Clients can request only the fields they need.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <h2>Session-based Authentication</h2>
+                        <p>Session-based authentication uses server-side sessions to store user information after login. A session ID is stored in a cookie on the client side.</p>
+        
+                        <article class="tag-box">
+                            <h3>Session-based Authentication Example</h3>
+                            <p>Below is an example of session-based authentication using Node.js and Express.js.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Express.js:</strong></p>
+                                <code>const express = require('express');
+        const session = require('express-session');
+        
+        const app = express();
+        app.use(session({
+            secret: 'your-secret-key',
+            resave: false,
+            saveUninitialized: true,
+            cookie: { secure: false } // Set to true in production with HTTPS
+        }));
+        
+        app.post('/login', (req, res) => {
+            // Authenticate user (e.g., check username and password)
+            req.session.user = { id: 1, username: 'alice' }; // Store user in session
+            res.send('Logged in successfully');
+        });
+        
+        app.get('/profile', (req, res) => {
+            if (!req.session.user) return res.status(401).send('Unauthorized');
+            res.send(`Welcome, ${req.session.user.username}`);
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Sessions are stored on the server.</li>
+                                    <li>A session ID is sent to the client via a cookie.</li>
+                                    <li>Useful for traditional web applications.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Token-based Authentication (JWT) -->
+                    <section>
+                        <h2>Token-based Authentication (JWT)</h2>
+                        <p>Token-based authentication uses JSON Web Tokens (JWT) to securely transmit user information between the client and server. The token is signed and can be verified by the server.</p>
+        
+                        <article class="tag-box">
+                            <h3>JWT Authentication Example</h3>
+                            <p>Below is an example of JWT authentication using Node.js and Express.js.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Express.js:</strong></p>
+                                <code>const express = require('express');
+        const jwt = require('jsonwebtoken');
+        
+        const app = express();
+        app.use(express.json());
+        
+        const SECRET_KEY = 'your-secret-key';
+        
+        app.post('/login', (req, res) => {
+            // Authenticate user (e.g., check username and password)
+            const user = { id: 1, username: 'alice' };
+            const token = jwt.sign(user, SECRET_KEY, { expiresIn: '1h' });
+            res.json({ token });
+        });
+        
+        app.get('/profile', (req, res) => {
+            const token = req.header('Authorization');
+            if (!token) return res.status(401).send('Access denied');
+        
+            try {
+                const verified = jwt.verify(token, SECRET_KEY);
+                res.send(`Welcome, ${verified.username}`);
+            } catch (err) {
+                res.status(400).send('Invalid token');
+            }
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Tokens are stateless and stored on the client side.</li>
+                                    <li>Useful for APIs and single-page applications (SPAs).</li>
+                                    <li>Tokens can include expiration and custom claims.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- OAuth2 & OpenID Connect -->
+                    <section>
+                        <h2>OAuth2 & OpenID Connect</h2>
+                        <p>OAuth2 is an authorization framework that allows third-party applications to access user data without exposing credentials. OpenID Connect is an authentication layer built on top of OAuth2.</p>
+        
+                        <article class="tag-box">
+                            <h3>OAuth2 Example</h3>
+                            <p>Below is an example of OAuth2 integration using Google as the provider.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Passport.js:</strong></p>
+                                <code>const express = require('express');
+        const passport = require('passport');
+        const GoogleStrategy = require('passport-google-oauth20').Strategy;
+        
+        const app = express();
+        
+        passport.use(new GoogleStrategy({
+            clientID: 'your-google-client-id',
+            clientSecret: 'your-google-client-secret',
+            callbackURL: 'http://localhost:3000/auth/google/callback'
+        }, (accessToken, refreshToken, profile, done) => {
+            // Save user profile or create a new user
+            done(null, profile);
+        }));
+        
+        app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+        
+        app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
+            (req, res) => {
+                res.redirect('/profile');
+            }
+        );
+        
+        app.get('/profile', (req, res) => {
+            res.send(`Welcome, ${req.user.displayName}`);
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>OAuth2 is used for authorization.</li>
+                                    <li>OpenID Connect adds authentication on top of OAuth2.</li>
+                                    <li>Common providers: Google, Facebook, GitHub.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- API Key Authentication -->
+                    <section>
+                        <h2>API Key Authentication</h2>
+                        <p>API keys are used to authenticate and authorize API requests. They are typically passed in the request header or query parameters.</p>
+        
+                        <article class="tag-box">
+                            <h3>API Key Example</h3>
+                            <p>Below is an example of API key authentication using Node.js and Express.js.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Express.js:</strong></p>
+                                <code>const express = require('express');
+        
+        const app = express();
+        const API_KEY = 'your-api-key';
+        
+        app.use((req, res, next) => {
+            const apiKey = req.header('x-api-key');
+            if (apiKey !== API_KEY) return res.status(401).send('Unauthorized');
+            next();
+        });
+        
+        app.get('/data', (req, res) => {
+            res.send('Access granted');
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>API keys are simple and easy to implement.</li>
+                                    <li>They should be kept secure and rotated regularly.</li>
+                                    <li>Useful for server-to-server communication.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Security Best Practices -->
+                    <section>
+                        <h2>Security Best Practices</h2>
+                        <p>Follow these best practices to secure your applications and APIs.</p>
+        
+                        <article class="tag-box">
+                            <h3>Best Practices</h3>
+                            <div class="syntax-box">
+                                <p><strong>1. Hash Passwords (bcrypt):</strong></p>
+                                <code>const bcrypt = require('bcrypt');
+        const saltRounds = 10;
+        
+        const hashPassword = async (password) => {
+            return await bcrypt.hash(password, saltRounds);
+        };
+        
+        const comparePassword = async (password, hash) => {
+            return await bcrypt.compare(password, hash);
+        };</code>
+                            </div>
+                            <div class="syntax-box">
+                                <p><strong>2. Use HTTPS:</strong></p>
+                                <code>// Always use HTTPS in production to encrypt data in transit.</code>
+                            </div>
+                            <div class="syntax-box">
+                                <p><strong>3. Validate User Input:</strong></p>
+                                <code>// Use libraries like Joi or express-validator to validate input data.</code>
+                            </div>
+                            <div class="syntax-box">
+                                <p><strong>4. Enable CORS:</strong></p>
+                                <code>const cors = require('cors');
+        app.use(cors({
+            origin: 'https://your-frontend.com'
+        }));</code>
+                            </div>
+                        </article>
+                        <h2>WebSockets</h2>
+                        <p>WebSockets provide a persistent, full-duplex communication channel between a client and a server. Unlike HTTP, WebSockets allow real-time data exchange without repeated connections.</p>
+        
+                        <article class="tag-box">
+                            <h3>WebSockets Example</h3>
+                            <p>Below is an example of WebSocket communication using Node.js and the `ws` library.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and WebSocket:</strong></p>
+                                <code>const WebSocket = require('ws');
+        
+        // Create a WebSocket server
+        const wss = new WebSocket.Server({ port: 8080 });
+        
+        wss.on('connection', (ws) => {
+            console.log('New client connected');
+        
+            ws.on('message', (message) => {
+                console.log(`Received: ${message}`);
+                ws.send(`Echo: ${message}`); // Echo the message back
+            });
+        
+            ws.on('close', () => {
+                console.log('Client disconnected');
+            });
+        });
+        
+        console.log('WebSocket server is running on ws://localhost:8080');</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Client-Side Example:</strong></p>
+                                <code>const ws = new WebSocket('ws://localhost:8080');
+        
+        ws.onopen = () => {
+            console.log('Connected to WebSocket server');
+            ws.send('Hello, Server!');
+        };
+        
+        ws.onmessage = (event) => {
+            console.log(`Received: ${event.data}`);
+        };
+        
+        ws.onclose = () => {
+            console.log('Disconnected from WebSocket server');
+        };</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Persistent connection between client and server.</li>
+                                    <li>Supports real-time, bidirectional communication.</li>
+                                    <li>Ideal for chat applications, live updates, and gaming.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Socket.io -->
+                    <section>
+                        <h2>Socket.io</h2>
+                        <p>Socket.io is a library that enables real-time, bidirectional communication between clients and servers. It builds on top of WebSockets and provides additional features like fallbacks and rooms.</p>
+        
+                        <article class="tag-box">
+                            <h3>Socket.io Example</h3>
+                            <p>Below is an example of real-time messaging using Socket.io.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Socket.io:</strong></p>
+                                <code>const express = require('express');
+        const http = require('http');
+        const { Server } = require('socket.io');
+        
+        const app = express();
+        const server = http.createServer(app);
+        const io = new Server(server);
+        
+        io.on('connection', (socket) => {
+            console.log('A user connected');
+        
+            socket.on('chat message', (msg) => {
+                io.emit('chat message', msg); // Broadcast the message to all clients
+            });
+        
+            socket.on('disconnect', () => {
+                console.log('User disconnected');
+            });
+        });
+        
+        server.listen(3000, () => {
+            console.log('Socket.io server is running on http://localhost:3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Client-Side Example:</strong></p>
+                                <code>const socket = io('http://localhost:3000');
+        
+        socket.on('connect', () => {
+            console.log('Connected to Socket.io server');
+        });
+        
+        socket.on('chat message', (msg) => {
+            console.log(`Received: ${msg}`);
+        });
+        
+        // Send a message
+        socket.emit('chat message', 'Hello, Server!');</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Built on top of WebSockets with additional features.</li>
+                                    <li>Supports fallbacks for older browsers.</li>
+                                    <li>Ideal for real-time applications like chat, notifications, and live updates.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Server-Sent Events (SSE) -->
+                    <section>
+                        <h2>Server-Sent Events (SSE)</h2>
+                        <p>Server-Sent Events (SSE) allow servers to push updates to clients over a single, long-lived HTTP connection. It is ideal for one-way real-time communication.</p>
+        
+                        <article class="tag-box">
+                            <h3>SSE Example</h3>
+                            <p>Below is an example of SSE using Node.js and Express.js.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Express.js:</strong></p>
+                                <code>const express = require('express');
+        const app = express();
+        
+        app.get('/events', (req, res) => {
+            res.setHeader('Content-Type', 'text/event-stream');
+            res.setHeader('Cache-Control', 'no-cache');
+            res.setHeader('Connection', 'keep-alive');
+        
+            // Send a message every 2 seconds
+            const interval = setInterval(() => {
+                res.write(`data: ${JSON.stringify({ message: 'Hello, Client!' })}\n\n`);
+            }, 2000);
+        
+            // Clean up on client disconnect
+            req.on('close', () => {
+                clearInterval(interval);
+                res.end();
+            });
+        });
+        
+        app.listen(3000, () => {
+            console.log('SSE server is running on http://localhost:3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Client-Side Example:</strong></p>
+                                <code>const eventSource = new EventSource('http://localhost:3000/events');
+        
+        eventSource.onmessage = (event) => {
+            console.log('Received:', JSON.parse(event.data));
+        };
+        
+        eventSource.onerror = () => {
+            console.log('EventSource failed.');
+        };</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>One-way communication from server to client.</li>
+                                    <li>Uses a single HTTP connection.</li>
+                                    <li>Ideal for live updates like stock prices or news feeds.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <h2>Cloud Providers</h2>
+                        <p>Cloud providers offer scalable infrastructure and services for deploying applications. Popular providers include AWS, Google Cloud, and Azure.</p>
+        
+                        <article class="tag-box">
+                            <h3>Cloud Providers Example</h3>
+                            <p>Below is an example of deploying a Node.js app on AWS Elastic Beanstalk.</p>
+                            <div class="syntax-box">
+                                <p><strong>AWS Elastic Beanstalk:</strong></p>
+                                <code># Deploy a Node.js app using AWS CLI
+        eb init -p node.js my-app
+        eb create my-app-env</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>AWS: Offers services like EC2, S3, and RDS.</li>
+                                    <li>Google Cloud: Provides Compute Engine, Cloud Storage, and BigQuery.</li>
+                                    <li>Azure: Features Virtual Machines, Azure SQL, and Azure Functions.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Serverless Computing -->
+                    <section>
+                        <h2>Serverless Computing</h2>
+                        <p>Serverless computing allows you to run code without managing servers. Popular platforms include AWS Lambda and Firebase Functions.</p>
+        
+                        <article class="tag-box">
+                            <h3>Serverless Example</h3>
+                            <p>Below is an example of an AWS Lambda function.</p>
+                            <div class="syntax-box">
+                                <p><strong>AWS Lambda:</strong></p>
+                                <code>exports.handler = async (event) => {
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify('Hello from Lambda!'),
+            };
+            return response;
+        };</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>AWS Lambda: Run code in response to events.</li>
+                                    <li>Firebase Functions: Serverless functions for Firebase apps.</li>
+                                    <li>Ideal for event-driven architectures and microservices.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Containerization -->
+                    <section>
+                        <h2>Containerization</h2>
+                        <p>Containerization packages applications and their dependencies into isolated environments. Popular tools include Docker and Kubernetes.</p>
+        
+                        <article class="tag-box">
+                            <h3>Docker Example</h3>
+                            <p>Below is an example of a Dockerfile for a Node.js app.</p>
+                            <div class="syntax-box">
+                                <p><strong>Dockerfile:</strong></p>
+                                <code># Use an official Node.js runtime as a parent image
+        FROM node:14
+        
+        # Set the working directory
+        WORKDIR /app
+        
+        # Copy package.json and install dependencies
+        COPY package*.json ./
+        RUN npm install
+        
+        # Copy the rest of the application code
+        COPY . .
+        
+        # Expose the application port
+        EXPOSE 3000
+        
+        # Run the application
+        CMD ["node", "app.js"]</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Docker: Create and manage containers.</li>
+                                    <li>Kubernetes: Orchestrate and scale containers.</li>
+                                    <li>Ideal for microservices and consistent deployments.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- CI/CD Pipelines -->
+                    <section>
+                        <h2>CI/CD Pipelines</h2>
+                        <p>CI/CD pipelines automate the process of building, testing, and deploying applications. Popular tools include GitHub Actions and Jenkins.</p>
+        
+                        <article class="tag-box">
+                            <h3>GitHub Actions Example</h3>
+                            <p>Below is an example of a GitHub Actions workflow for a Node.js app.</p>
+                            <div class="syntax-box">
+                                <p><strong>GitHub Actions Workflow:</strong></p>
+                                <code>name: Node.js CI
+        
+        on:
+          push:
+            branches: [ main ]
+          pull_request:
+            branches: [ main ]
+        
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+        
+            steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: '14'
+            - run: npm install
+            - run: npm test</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>GitHub Actions: Automate workflows directly in GitHub.</li>
+                                    <li>Jenkins: Open-source automation server.</li>
+                                    <li>Ideal for continuous integration and delivery.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Reverse Proxy & Load Balancing -->
+                    <section>
+                        <h2>Reverse Proxy & Load Balancing</h2>
+                        <p>Reverse proxies and load balancers distribute traffic across multiple servers to improve performance and reliability. Popular tools include Nginx and HAProxy.</p>
+        
+                        <article class="tag-box">
+                            <h3>Nginx Example</h3>
+                            <p>Below is an example of an Nginx configuration for load balancing.</p>
+                            <div class="syntax-box">
+                                <p><strong>Nginx Configuration:</strong></p>
+                                <code>http {
+            upstream myapp {
+                server 127.0.0.1:3000;
+                server 127.0.0.1:3001;
+            }
+        
+            server {
+                listen 80;
+        
+                location / {
+                    proxy_pass http://myapp;
+                }
+            }
+        }</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Nginx: High-performance web server and reverse proxy.</li>
+                                    <li>HAProxy: Reliable TCP/HTTP load balancer.</li>
+                                    <li>Ideal for scaling applications and improving uptime.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <h2>Caching</h2>
+                        <p>Caching stores frequently accessed data in memory to reduce database load and improve response times. Popular tools include Redis and Memcached.</p>
+        
+                        <article class="tag-box">
+                            <h3>Redis Example</h3>
+                            <p>Below is an example of using Redis for caching in a Node.js app.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Redis:</strong></p>
+                                <code>const express = require('express');
+        const redis = require('redis');
+        
+        const app = express();
+        const client = redis.createClient();
+        
+        client.on('connect', () => {
+            console.log('Connected to Redis');
+        });
+        
+        app.get('/data', (req, res) => {
+            const key = 'my-data';
+        
+            client.get(key, (err, data) => {
+                if (data) {
+                    res.send(JSON.parse(data));
+                } else {
+                    const newData = { message: 'Hello, Redis!' };
+                    client.setex(key, 3600, JSON.stringify(newData)); // Cache for 1 hour
+                    res.send(newData);
+                }
+            });
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Redis: In-memory data store for caching.</li>
+                                    <li>Memcached: Distributed memory caching system.</li>
+                                    <li>Ideal for reducing database load and improving performance.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Database Indexing -->
+                    <section>
+                        <h2>Database Indexing</h2>
+                        <p>Database indexing improves query performance by creating indexes on frequently queried columns.</p>
+        
+                        <article class="tag-box">
+                            <h3>MySQL Indexing Example</h3>
+                            <p>Below is an example of creating an index in MySQL.</p>
+                            <div class="syntax-box">
+                                <p><strong>MySQL Index:</strong></p>
+                                <code>CREATE INDEX idx_username ON users (username);</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Indexes speed up SELECT queries.</li>
+                                    <li>Use indexes on columns used in WHERE, JOIN, and ORDER BY clauses.</li>
+                                    <li>Avoid over-indexing, as it can slow down INSERT and UPDATE operations.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Compression -->
+                    <section>
+                        <h2>Compression</h2>
+                        <p>Compression reduces the size of data sent over the network, improving load times. Popular algorithms include Gzip and Brotli.</p>
+        
+                        <article class="tag-box">
+                            <h3>Gzip Compression Example</h3>
+                            <p>Below is an example of enabling Gzip compression in a Node.js app.</p>
+                            <div class="syntax-box">
+                                <p><strong>Node.js and Gzip:</strong></p>
+                                <code>const express = require('express');
+        const compression = require('compression');
+        
+        const app = express();
+        app.use(compression());
+        
+        app.get('/', (req, res) => {
+            res.send('Hello, World!');
+        });
+        
+        app.listen(3000, () => {
+            console.log('Server running on port 3000');
+        });</code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Gzip: Widely supported compression algorithm.</li>
+                                    <li>Brotli: Modern compression algorithm with better compression ratios.</li>
+                                    <li>Ideal for reducing bandwidth usage and improving page load times.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- CDN (Content Delivery Network) -->
+                    <section>
+                        <h2>CDN (Content Delivery Network)</h2>
+                        <p>A CDN distributes content across multiple servers worldwide to reduce latency and improve load times.</p>
+        
+                        <article class="tag-box">
+                            <h3>CDN Example</h3>
+                            <p>Below is an example of using a CDN to serve static assets.</p>
+                            <div class="syntax-box">
+                                <p><strong>HTML with CDN:</strong></p>
+                                <code><!-- Load Bootstrap CSS from a CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        
+        <!-- Load jQuery from a CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script></code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>CDNs cache static assets like images, CSS, and JavaScript.</li>
+                                    <li>Popular CDNs: Cloudflare, AWS CloudFront, Akamai.</li>
+                                    <li>Ideal for global applications with high traffic.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+        
+                    <!-- Lazy Loading -->
+                    <section>
+                        <h2>Lazy Loading</h2>
+                        <p>Lazy loading delays the loading of non-critical resources until they are needed, improving initial load times.</p>
+        
+                        <article class="tag-box">
+                            <h3>Lazy Loading Example</h3>
+                            <p>Below is an example of lazy loading images in HTML.</p>
+                            <div class="syntax-box">
+                                <p><strong>HTML Lazy Loading:</strong></p>
+                                <code><img src="placeholder.jpg" data-src="image.jpg" alt="Lazy Loaded Image" loading="lazy"></code>
+                            </div>
+                            <div class="example-box">
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Lazy loading improves initial page load performance.</li>
+                                    <li>Use the `loading="lazy"` attribute for images and iframes.</li>
+                                    <li>Ideal for pages with many images or heavy content.</li>
+                                </ul>
+                            </div>
+                        </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

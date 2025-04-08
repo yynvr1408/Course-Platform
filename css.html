@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo.jpg">
+
+    <title>HTML & CSS Learning Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #60a5fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .syntax-box, .example-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .syntax-box {
+            border-color: #10b981;
+        }
+
+        .example-box {
+            border-color: #8b5cf6;
+        }
+
+        .syntax-box:hover,
+        .example-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-box {
+            padding: 20px;
+            background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 12px;
+            display: block;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<div class="container">
+<section>
+    <h2>Introduction to CSS</h2>
+    <p>
+        CSS stands for <strong>Cascading Style Sheets</strong>. It is used to style and layout web pages, including colors, fonts, spacing, and positioning. CSS works alongside HTML to create visually appealing and responsive designs.
+    </p>
+</section>
+
+<section>
+    <h2>Why Use CSS?</h2>
+    <p>
+        CSS is essential for web development because it allows you to:
+    </p>
+    <ul>
+        <li>Separate content (HTML) from presentation (CSS).</li>
+        <li>Apply consistent styles across multiple pages.</li>
+        <li>Create responsive designs for different devices.</li>
+        <li>Enhance user experience with animations and transitions.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Basic CSS Syntax</h2>
+    <p>
+        CSS consists of selectors and declarations. A selector targets HTML elements, and declarations define the styles to apply.
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+/* Selector */
+h1 {
+    /* Declarations */
+    color: blue;
+    font-size: 24px;
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>Common CSS Properties</h2>
+    <p>
+        Here are some commonly used CSS properties:
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+/* Text Properties */
+h1 {
+    color: red;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Box Model Properties */
+div {
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Flexbox Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>How to Use CSS</h2>
+    <p>
+        There are three ways to apply CSS to an HTML document:
+    </p>
+    <ol>
+        <li><strong>Inline CSS</strong>: Apply styles directly to HTML elements using the <code>style</code> attribute.</li>
+        <li><strong>Internal CSS</strong>: Define styles within a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section.</li>
+        <li><strong>External CSS</strong>: Link to an external CSS file using the <code>&lt;link&gt;</code> tag.</li>
+    </ol>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+&lt;!-- Inline CSS --&gt;
+&lt;h1 style="color: blue;"&gt;Hello, World!&lt;/h1&gt;
+
+&lt;!-- Internal CSS --&gt;
+&lt;style&gt;
+    h1 {
+        color: blue;
+    }
+&lt;/style&gt;
+
+&lt;!-- External CSS --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>CSS Selectors</h2>
+    <p>
+        CSS selectors are used to target HTML elements for styling. Here are some common selectors:
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+/* Element Selector */
+p {
+    color: green;
+}
+
+/* Class Selector */
+.highlight {
+    background-color: yellow;
+}
+
+/* ID Selector */
+#header {
+    font-size: 2rem;
+}
+
+/* Attribute Selector */
+a[target="_blank"] {
+    color: purple;
+}
+
+/* Pseudo-class Selector */
+a:hover {
+    text-decoration: underline;
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>CSS Box Model</h2>
+    <p>
+        The CSS box model describes the layout of elements, including content, padding, border, and margin.
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+    background-color: lightblue;
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>CSS Flexbox</h2>
+    <p>
+        Flexbox is a layout model that allows you to design flexible and responsive layouts.
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>CSS Grid</h2>
+    <p>
+        CSS Grid is a powerful layout system for creating complex, responsive designs.
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+        </code>
+    </div>
+</section>
+
+<section>
+    <h2>CSS Media Queries</h2>
+    <p>
+        Media queries allow you to apply styles based on the device's screen size, orientation, or other features.
+    </p>
+    <div class="example">
+        <h3>Example:</h3>
+        <code>
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
+        </code>
+    </div>
+</section>
+    
+        <header>
+            <h1>HTML Tags and CSS Selectors Reference</h1>
+        </header>
+
+        <main>
+            <!-- CSS Selectors -->
+            <section>
+                <h2>1. CSS Types (Ways to Apply CSS)</h2>
+                <p>Different ways to apply CSS to HTML elements.</p>
+
+                <!-- Inline CSS -->
+                <article class="tag-box">
+                    <h3>Inline CSS</h3>
+                    <p>CSS is applied directly to an HTML element using the <code>style</code> attribute.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;element style="property: value;"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;p style="color: red; font-size: 16px;"&gt;This is a paragraph with inline CSS.&lt;/p&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <p style="color: red; font-size: 16px;">This is a paragraph with inline CSS.</p>
+                    </div>
+                </article>
+
+                <!-- Internal CSS -->
+                <article class="tag-box">
+                    <h3>Internal CSS</h3>
+                    <p>CSS is defined within a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section of the HTML document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;style&gt;
+    selector {
+        property: value;
+    }
+&lt;/style&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;style&gt;
+    p {
+        color: blue;
+        font-size: 18px;
+    }
+&lt;/style&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <style>
+                            p.internal-example {
+                                color: blue;
+                                font-size: 18px;
+                            }
+                        </style>
+                        <p class="internal-example">This is a paragraph with internal CSS.</p>
+                    </div>
+                </article>
+
+                <!-- External CSS -->
+                <article class="tag-box">
+                    <h3>External CSS</h3>
+                    <p>CSS is defined in a separate <code>.css</code> file and linked to the HTML document using the <code>&lt;link&gt;</code> tag.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <p><strong>styles.css:</strong></p>
+                        <code>p {
+    color: green;
+    font-size: 20px;
+}</code>
+                        <p><strong>HTML:</strong></p>
+                        <code>&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;p&gt;This is a paragraph with external CSS.&lt;/p&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <style>
+                            p.external-example {
+                                color: green;
+                                font-size: 20px;
+                            }
+                        </style>
+                        <p class="external-example">This is a paragraph with external CSS.</p>
+                    </div>
+                </article>
+                <h2>2. CSS Selectors</h2>
+                <p>Used to target HTML elements for styling.</p>
+
+                <!-- Universal Selector -->
+                <article class="tag-box">
+                    <h3>Universal Selector (*)</h3>
+                    <p>Selects all elements on the page.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>* {
+    /* Styles apply to all elements */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>* {
+    margin: 0;
+    padding: 0;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Type Selector -->
+                <article class="tag-box">
+                    <h3>Type Selector (p, div, h1)</h3>
+                    <p>Selects all elements of a specific type.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>p {
+    /* Styles apply to all &lt;p&gt; elements */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>p {
+    color: blue;
+    font-size: 16px;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Class Selector -->
+                <article class="tag-box">
+                    <h3>Class Selector (.classname)</h3>
+                    <p>Selects all elements with a specific class.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>.classname {
+    /* Styles apply to all elements with class="classname" */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>.highlight {
+    background-color: yellow;
+}</code>
+                    </div>
+                </article>
+
+                <!-- ID Selector -->
+                <article class="tag-box">
+                    <h3>ID Selector (#idname)</h3>
+                    <p>Selects a single element with a specific ID.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>#idname {
+    /* Styles apply to the element with id="idname" */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>#header {
+    font-size: 24px;
+    color: red;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Grouping Selector -->
+                <article class="tag-box">
+                    <h3>Grouping Selector (h1, p, div)</h3>
+                    <p>Selects multiple elements and applies the same styles.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>h1, p, div {
+    /* Styles apply to &lt;h1&gt;, &lt;p&gt;, and &lt;div&gt; elements */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>h1, p, div {
+    margin-bottom: 10px;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Combinator Selectors -->
+                <article class="tag-box">
+                    <h3>Combinator Selectors</h3>
+                    <p>Selects elements based on their relationship to other elements.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Descendant Selector */
+div p {
+    /* Styles apply to &lt;p&gt; elements inside &lt;div&gt; */
+}
+
+/* Child Selector */
+div > p {
+    /* Styles apply to &lt;p&gt; elements that are direct children of &lt;div&gt; */
+}
+
+/* Adjacent Sibling Selector */
+h1 + p {
+    /* Styles apply to &lt;p&gt; elements immediately following &lt;h1&gt; */
+}
+
+/* General Sibling Selector */
+h1 ~ p {
+    /* Styles apply to all &lt;p&gt; elements that are siblings of &lt;h1&gt; */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>/* Descendant Selector */
+div p {
+    color: green;
+}
+
+/* Child Selector */
+div > p {
+    font-weight: bold;
+}
+
+/* Adjacent Sibling Selector */
+h1 + p {
+    margin-top: 0;
+}
+
+/* General Sibling Selector */
+h1 ~ p {
+    font-style: italic;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Attribute Selectors -->
+                <article class="tag-box">
+                    <h3>Attribute Selectors</h3>
+                    <p>Selects elements based on their attributes.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* [attribute] */
+[target] {
+    /* Styles apply to elements with the "target" attribute */
+}
+
+/* [attribute="value"] */
+[type="submit"] {
+    /* Styles apply to elements with type="submit" */
+}
+
+/* [attribute^="value"] */
+[href^="https"] {
+    /* Styles apply to elements with href starting with "https" */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>/* [attribute] */
+[target] {
+    border: 1px solid black;
+}
+
+/* [attribute="value"] */
+[type="submit"] {
+    background-color: green;
+}
+
+/* [attribute^="value"] */
+[href^="https"] {
+    color: blue;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Pseudo-classes -->
+                <article class="tag-box">
+                    <h3>Pseudo-classes</h3>
+                    <p>Selects elements based on their state or position.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* :hover */
+a:hover {
+    /* Styles apply when the link is hovered */
+}
+
+/* :focus */
+input:focus {
+    /* Styles apply when the input is focused */
+}
+
+/* :nth-child(n) */
+li:nth-child(2) {
+    /* Styles apply to the 2nd &lt;li&gt; element */
+}
+
+/* :not() */
+p:not(.special) {
+    /* Styles apply to &lt;p&gt; elements without class="special" */
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>/* :hover */
+a:hover {
+    color: red;
+}
+
+/* :focus */
+input:focus {
+    border-color: blue;
+}
+
+/* :nth-child(n) */
+li:nth-child(2) {
+    font-weight: bold;
+}
+
+/* :not() */
+p:not(.special) {
+    font-size: 14px;
+}</code>
+                    </div>
+                </article>
+
+                <!-- Pseudo-elements -->
+                <article class="tag-box">
+                    <h3>Pseudo-elements</h3>
+                    <p>Selects specific parts of an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* ::before */
+p::before {
+    content: "Before ";
+}
+
+/* ::after */
+p::after {
+    content: " After";
+}
+
+/* ::first-letter */
+p::first-letter {
+    font-size: 24px;
+}
+
+/* ::first-line */
+p::first-line {
+    font-weight: bold;
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>/* ::before */
+p::before {
+    content: "Before ";
+    color: green;
+}
+
+/* ::after */
+p::after {
+    content: " After";
+    color: red;
+}
+
+/* ::first-letter */
+p::first-letter {
+    font-size: 24px;
+    color: blue;
+}
+
+/* ::first-line */
+p::first-line {
+    font-weight: bold;
+}</code>
+                    </div>
+                </article>
+                <h2>3. CSS Properties (Used to Style Elements)</h2>
+                <p>CSS properties are used to style HTML elements.</p>
+
+                <!-- Box Model -->
+                <article class="tag-box">
+                    <h3>Box Model</h3>
+                    <p>Properties related to the box model.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Width and Height */
+width: 200px;
+height: 100px;
+
+/* Margin and Padding */
+margin: 10px;
+padding: 15px;
+
+/* Border and Border Radius */
+border: 2px solid black;
+border-radius: 5px;
+
+/* Box Sizing */
+box-sizing: border-box;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="width: 200px; height: 100px; margin: 10px; padding: 15px; border: 2px solid black; border-radius: 5px; box-sizing: border-box;"&gt;
+    Box Model Example
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="width: 200px; height: 100px; margin: 10px; padding: 15px; border: 2px solid black; border-radius: 5px; box-sizing: border-box;">
+                            Box Model Example
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Text & Fonts -->
+                <article class="tag-box">
+                    <h3>Text & Fonts</h3>
+                    <p>Properties related to text and fonts.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Color and Background */
+color: red;
+background-color: yellow;
+
+/* Font Family and Size */
+font-family: Arial, sans-serif;
+font-size: 16px;
+font-weight: bold;
+
+/* Text Alignment and Transformation */
+text-align: center;
+text-transform: uppercase;
+
+/* Letter and Word Spacing */
+letter-spacing: 2px;
+word-spacing: 5px;
+
+/* Text Decoration and Shadow */
+text-decoration: underline;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;p style="color: red; background-color: yellow; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; text-transform: uppercase; letter-spacing: 2px; word-spacing: 5px; text-decoration: underline; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"&gt;
+    Text and Fonts Example
+&lt;/p&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <p style="color: red; background-color: yellow; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; text-transform: uppercase; letter-spacing: 2px; word-spacing: 5px; text-decoration: underline; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                            Text and Fonts Example
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Positioning & Layout -->
+                <article class="tag-box">
+                    <h3>Positioning & Layout</h3>
+                    <p>Properties related to positioning and layout.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Display */
+display: flex;
+
+/* Position */
+position: relative;
+top: 10px;
+left: 20px;
+
+/* Z-Index */
+z-index: 1;
+
+/* Visibility */
+visibility: visible;
+
+/* Overflow */
+overflow: hidden;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="position: relative; top: 10px; left: 20px; z-index: 1; visibility: visible; overflow: hidden;"&gt;
+    Positioning and Layout Example
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="position: relative; top: 10px; left: 20px; z-index: 1; visibility: visible; overflow: hidden; border: 1px solid black; padding: 10px;">
+                            Positioning and Layout Example
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Flexbox -->
+                <article class="tag-box">
+                    <h3>Flexbox</h3>
+                    <p>Properties related to Flexbox layout.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Flex Container */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+/* Flex Items */
+flex-grow: 1;
+flex-shrink: 1;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="display: flex; flex-direction: row; justify-content: center; align-items: center;"&gt;
+    &lt;div style="flex-grow: 1; background-color: lightblue; padding: 10px;"&gt;Item 1&lt;/div&gt;
+    &lt;div style="flex-grow: 1; background-color: lightcoral; padding: 10px;"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <div style="flex-grow: 1; background-color: lightblue; padding: 10px;">Item 1</div>
+                            <div style="flex-grow: 1; background-color: lightcoral; padding: 10px;">Item 2</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Grid Layout -->
+                <article class="tag-box">
+                    <h3>Grid Layout</h3>
+                    <p>Properties related to CSS Grid layout.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Grid Container */
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+grid-gap: 10px;
+
+/* Grid Items */
+grid-area: 1 / 1 / 2 / 2;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;"&gt;
+    &lt;div style="background-color: lightblue; padding: 10px;"&gt;Item 1&lt;/div&gt;
+    &lt;div style="background-color: lightcoral; padding: 10px;"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;">
+                            <div style="background-color: lightblue; padding: 10px;">Item 1</div>
+                            <div style="background-color: lightcoral; padding: 10px;">Item 2</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Background & Borders -->
+                <article class="tag-box">
+                    <h3>Background & Borders</h3>
+                    <p>Properties related to backgrounds and borders.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Background */
+background: lightblue;
+background-image: url('image.jpg');
+
+/* Border */
+border: 2px solid black;
+border-radius: 5px;
+
+/* Box Shadow */
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+/* Opacity */
+opacity: 0.8;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="background: lightblue; border: 2px solid black; border-radius: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); opacity: 0.8; padding: 10px;"&gt;
+    Background and Borders Example
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="background: lightblue; border: 2px solid black; border-radius: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); opacity: 0.8; padding: 10px;">
+                            Background and Borders Example
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lists & Tables -->
+                <article class="tag-box">
+                    <h3>Lists & Tables</h3>
+                    <p>Properties related to lists and tables.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* List Style */
+list-style-type: square;
+list-style-position: inside;
+
+/* Table Borders */
+border-collapse: collapse;
+border-spacing: 0;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;ul style="list-style-type: square; list-style-position: inside;"&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="border-collapse: collapse; border-spacing: 0;"&gt;
+    &lt;tr&gt;
+        &lt;td style="border: 1px solid black; padding: 5px;"&gt;Cell 1&lt;/td&gt;
+        &lt;td style="border: 1px solid black; padding: 5px;"&gt;Cell 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <ul style="list-style-type: square; list-style-position: inside;">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                        </ul>
+                        <table style="border-collapse: collapse; border-spacing: 0;">
+                            <tr>
+                                <td style="border: 1px solid black; padding: 5px;">Cell 1</td>
+                                <td style="border: 1px solid black; padding: 5px;">Cell 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <!-- Transitions & Animations -->
+                <article class="tag-box">
+                    <h3>Transitions & Animations</h3>
+                    <p>Properties related to transitions and animations.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Transition */
+transition: background-color 0.5s ease;
+
+/* Animation */
+animation: slide 2s infinite;
+
+/* Transform */
+transform: rotate(45deg);
+
+/* Keyframes */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div style="width: 100px; height: 100px; background-color: lightblue; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='lightcoral'" onmouseout="this.style.backgroundColor='lightblue'"&gt;
+    Hover Me
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <div style="width: 100px; height: 100px; background-color: lightblue; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='lightcoral'" onmouseout="this.style.backgroundColor='lightblue'">
+                            Hover Me
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Media Queries & Responsive Design -->
+                <article class="tag-box">
+                    <h3>Media Queries & Responsive Design</h3>
+                    <p>Properties related to responsive design and media queries.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>/* Media Query */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Units */
+width: 50vw;
+height: 50vh;
+font-size: 2rem;
+margin: 1em;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;style&gt;
+    @media (max-width: 768px) {
+        .responsive-example {
+            font-size: 14px;
+        }
+    }
+&lt;/style&gt;
+&lt;div class="responsive-example" style="width: 50vw; height: 50vh; font-size: 2rem; margin: 1em;"&gt;
+    Responsive Design Example
+&lt;/div&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <style>
+                            @media (max-width: 768px) {
+                                .responsive-example {
+                                    font-size: 14px;
+                                }
+                            }
+                        </style>
+                        <div class="responsive-example" style="width: 50vw; height: 50vh; font-size: 2rem; margin: 1em;">
+                            Responsive Design Example
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
