@@ -84,10 +84,28 @@
             overflow-x: auto;
             margin-top: 10px;
         }
+        .home-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button:hover {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      transform: translateY(-3px);
+    }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="home-button">🏠 Home</a>
         <h1>Introduction to HTML</h1>
         
         <section>
