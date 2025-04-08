@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo.jpg">
+
+    <title>HTML & CSS Learning Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #60a5fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .syntax-box, .example-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .syntax-box {
+            border-color: #10b981;
+        }
+
+        .example-box {
+            border-color: #8b5cf6;
+        }
+
+        .syntax-box:hover,
+        .example-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-box {
+            padding: 20px;
+            background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 12px;
+            display: block;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        .home-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button:hover {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      transform: translateY(-3px);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-button">🏠 Home</a>
+        <h1>Introduction to HTML</h1>
+        
+        <section>
+            <h2>What is HTML?</h2>
+            <p>
+                HTML stands for <strong>HyperText Markup Language</strong>. It is the standard language used to create and design web pages. HTML provides the structure of a webpage by using a system of tags and attributes to define elements like headings, paragraphs, links, images, and more.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Why Use HTML?</h2>
+            <p>
+                HTML is the backbone of all websites. It allows you to:
+            </p>
+            <ul>
+                <li>Create structured content for web pages.</li>
+                <li>Add text, images, videos, and other media.</li>
+                <li>Build forms for user input.</li>
+                <li>Link pages together using hyperlinks.</li>
+                <li>Make content accessible and SEO-friendly.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Basic HTML Structure</h2>
+            <p>
+                Every HTML document follows a basic structure. Here's an example:
+            </p>
+            <div class="example">
+                <h3>Example:</h3>
+                <code>
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;    
+        &lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </div>
+        </section>
+        
+        <section>
+            <h2>How to Use HTML</h2>
+            <p>
+                To create an HTML file:
+            </p>
+            <ol>
+                <li>Open a text editor (e.g., Notepad, VS Code).</li>
+                <li>Write your HTML code.</li>
+                <li>Save the file with a <code>.html</code> extension (e.g., <code>index.html</code>).</li>
+                <li>Open the file in a web browser to view your webpage.</li>
+            </ol>
+        </section>
+        
+        <div class="topics-section">
+            <h1>Topics that we are dealing in HTML</h1>
+            <ol>
+                <li>Document Structure</li>
+                <li>Metadata</li>
+                <li>Text Content</li>
+                <li>Lists</li>
+                <li>Tables</li>
+                <li>Forms</li>
+                <li>Media Elements</li>
+                <li>Embedded Content</li>
+                <li>Semantic Tags</li>
+                
+            </ol>
+        </div>
+    <div class="container">
+        <h1>🌟 HTML & CSS Learning Guide</h1>
+
+        <article class="tag-box">
+            <h3>&lt;html&gt;</h3>
+            <p>The root element of an HTML document.</p>
+            <div class="syntax-box">
+                <p><strong>Syntax:</strong></p>
+                <code>&lt;html&gt;...&lt;/html&gt;</code>
+            </div>
+            <div class="example-box">
+                <p><strong>Example:</strong></p>
+                <code>&lt;html&gt;
+    &lt;head&gt;...&lt;/head&gt;
+    &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code>
+            </div>
+        </article>
+
+        <article class="tag-box">
+            <h3>&lt;head&gt;</h3>
+            <p>Container for metadata (e.g., title, styles, scripts).</p>
+            <div class="syntax-box">
+                <p><strong>Syntax:</strong></p>
+                <code>&lt;head&gt;...&lt;/head&gt;</code>
+            </div>
+            <div class="example-box">
+                <p><strong>Example:</strong></p>
+                <code>&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;</code>
+            </div>
+        </article>
+
+        <article class="tag-box">
+            <h3>&lt;body&gt;</h3>
+            <p>Contains the main content of the webpage.</p>
+            <div class="syntax-box">
+                <p><strong>Syntax:</strong></p>
+                <code>&lt;body&gt;...&lt;/body&gt;</code>
+            </div>
+            <div class="example-box">
+                <p><strong>Example:</strong></p>
+                <code>&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;</code>
+            </div>
+        </article>
+    </div>
+  <div class="container">
+                <section>
+                    <h2>2.Metadata in HTML</h2>
+                
+                <!-- Character Encoding -->
+                <article class="tag-box">
+                    <h3>&lt;meta charset="UTF-8"&gt;</h3>
+                    <p>Specifies the character encoding for the HTML document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta charset="UTF-8"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta charset="UTF-8"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Viewport Settings -->
+                <article class="tag-box">
+                    <h3>&lt;meta name="viewport" content="..."&gt;</h3>
+                    <p>Controls the layout and scaling of the webpage on mobile devices.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Page Description -->
+                <article class="tag-box">
+                    <h3>&lt;meta name="description" content="..."&gt;</h3>
+                    <p>Provides a brief description of the webpage for search engines.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta name="description" content="Description of the webpage"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta name="description" content="Learn about metadata in HTML."&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Keywords -->
+                <article class="tag-box">
+                    <h3>&lt;meta name="keywords" content="..."&gt;</h3>
+                    <p>Specifies a list of keywords related to the webpage.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta name="keywords" content="keyword1, keyword2, keyword3"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta name="keywords" content="HTML, metadata, web development"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Author Information -->
+                <article class="tag-box">
+                    <h3>&lt;meta name="author" content="..."&gt;</h3>
+                    <p>Specifies the author of the webpage.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta name="author" content="Author Name"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta name="author" content="John Doe"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Refresh and Redirect -->
+                <article class="tag-box">
+                    <h3>&lt;meta http-equiv="refresh" content="..."&gt;</h3>
+                    <p>Refreshes the page or redirects to another URL after a specified time.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta http-equiv="refresh" content="5; url=https://example.com"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta http-equiv="refresh" content="30"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Robots -->
+                <article class="tag-box">
+                    <h3>&lt;meta name="robots" content="..."&gt;</h3>
+                    <p>Controls how search engines index and follow links on the page.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta name="robots" content="index, follow"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Language -->
+                <article class="tag-box">
+                    <h3>&lt;meta http-equiv="content-language" content="..."&gt;</h3>
+                    <p>Specifies the language of the webpage.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta http-equiv="content-language" content="en"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta http-equiv="content-language" content="en"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Open Graph Metadata -->
+                <article class="tag-box">
+                    <h3>&lt;meta property="og:..." content="..."&gt;</h3>
+                    <p>Provides metadata for social media platforms like Facebook and Twitter.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meta property="og:title" content="Page Title"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meta property="og:title" content="Metadata in HTML"&gt;
+        &lt;meta property="og:description" content="Learn about metadata in HTML."&gt;
+        &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;</code>
+                    </div>
+                </article>
+        
+                <!-- Favicon -->
+                <article class="tag-box">
+                    <h3>&lt;link rel="icon" href="..."&gt;</h3>
+                    <p>Specifies a favicon for the webpage.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;link rel="icon" href="favicon.ico"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;link rel="icon" href="https://example.com/favicon.ico"&gt;</code>
+                    </div>
+                </article>
+            </div>
+  
+            <!-- Text Content -->
+            <div class="container">
+                <section>
+                    <h2>3.Text Content in HTML</h2>
+                
+            
+                    <!-- Headings -->
+                    <article class="tag-box">
+                        <h3>&lt;h1&gt; to &lt;h6&gt;</h3>
+                        <p>Headings define the structure of the content. &lt;h1&gt; is the most important, and &lt;h6&gt; is the least important.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+            &lt;h2&gt;Subheading&lt;/h2&gt;
+            &lt;h3&gt;Sub-subheading&lt;/h3&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Paragraph -->
+                    <article class="tag-box">
+                        <h3>&lt;p&gt;</h3>
+                        <p>Defines a paragraph of text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;This is a sample paragraph.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Line Break -->
+                    <article class="tag-box">
+                        <h3>&lt;br&gt;</h3>
+                        <p>Inserts a line break within text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;br&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>This is the first line.&lt;br&gt;This is the second line.</code>
+                        </div>
+                    </article>
+            
+                    <!-- Horizontal Rule -->
+                    <article class="tag-box">
+                        <h3>&lt;hr&gt;</h3>
+                        <p>Creates a horizontal line to separate content.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;hr&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;First section&lt;/p&gt;
+            &lt;hr&gt;
+            &lt;p&gt;Second section&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Bold Text -->
+                    <article class="tag-box">
+                        <h3>&lt;strong&gt; or &lt;b&gt;</h3>
+                        <p>Makes text bold. &lt;strong&gt; is used for important text, while &lt;b&gt; is used for stylistic bold text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;strong&gt;Important Text&lt;/strong&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Italic Text -->
+                    <article class="tag-box">
+                        <h3>&lt;em&gt; or &lt;i&gt;</h3>
+                        <p>Makes text italic. &lt;em&gt; is used for emphasized text, while &lt;i&gt; is used for stylistic italic text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;em&gt;Emphasized Text&lt;/em&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;This is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Underlined Text -->
+                    <article class="tag-box">
+                        <h3>&lt;u&gt;</h3>
+                        <p>Underlines text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;u&gt;Underlined Text&lt;/u&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;This is &lt;u&gt;underlined&lt;/u&gt; text.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Strikethrough Text -->
+                    <article class="tag-box">
+                        <h3>&lt;s&gt; or &lt;del&gt;</h3>
+                        <p>Strikes through text. &lt;s&gt; is used for text that is no longer relevant, while &lt;del&gt; is used for deleted text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;s&gt;Strikethrough Text&lt;/s&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;This is &lt;s&gt;strikethrough&lt;/s&gt; text.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Superscript and Subscript -->
+                    <article class="tag-box">
+                        <h3>&lt;sup&gt; and &lt;sub&gt;</h3>
+                        <p>&lt;sup&gt; is used for superscript text, and &lt;sub&gt; is used for subscript text.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;sup&gt;Superscript&lt;/sup&gt; and &lt;sub&gt;Subscript&lt;/sub&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;p&gt;E = mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+            &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O is water.&lt;/p&gt;</code>
+                        </div>
+                    </article>
+            
+                    <!-- Preformatted Text -->
+                    <article class="tag-box">
+                        <h3>&lt;pre&gt;</h3>
+                        <p>Displays text exactly as written, preserving spaces and line breaks.</p>
+                        <div class="syntax-box">
+                            <p><strong>Syntax:</strong></p>
+                            <code>&lt;pre&gt;Preformatted Text&lt;/pre&gt;</code>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong></p>
+                            <code>&lt;pre&gt;
+                This is preformatted text.
+                It preserves spaces and line breaks.
+            &lt;/pre&gt;</code>
+                        </div>
+                    </article>
+                </div>
+   </article>
+                <h2>4. Lists</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;ul&gt;</h3>
+                    <p>Defines an unordered (bulleted) list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;ul&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <ul>
+                            <li>Apple</li>
+                            <li>Banana</li>
+                            <li>Orange</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;ol&gt;</h3>
+                    <p>Defines an ordered (numbered) list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ol&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+    &lt;li&gt;Third&lt;/li&gt;
+&lt;/ol&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <ol>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;li&gt;</h3>
+                    <p>Defines a list item within &lt;ul&gt; or &lt;ol&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;li&gt;List Item&lt;/li&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;dl&gt;</h3>
+                    <p>Defines a description list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;dl&gt;
+    &lt;dt&gt;Term&lt;/dt&gt;
+    &lt;dd&gt;Definition&lt;/dd&gt;
+&lt;/dl&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <dl>
+                            <dt>HTML</dt>
+                            <dd>HyperText Markup Language</dd>
+                            <dt>CSS</dt>
+                            <dd>Cascading Style Sheets</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;dt&gt;</h3>
+                    <p>Defines a term in a description list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;dt&gt;Term&lt;/dt&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <dl>
+                            <dt>HTML</dt>
+                            <dd>HyperText Markup Language</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;dd&gt;</h3>
+                    <p>Defines a description for a term in a description list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;dd&gt;Definition&lt;/dd&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <dl>
+                            <dt>HTML</dt>
+                            <dd>HyperText Markup Language</dd>
+                        </dl>
+                    </div>
+                </article>
+          <h2>5. Tables</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;table&gt;</h3>
+                    <p>Defines a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header&lt;/th&gt;
+        &lt;td&gt;Data&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;tr&gt;</h3>
+                    <p>Defines a row in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;tr&gt;
+    &lt;th&gt;Header&lt;/th&gt;
+    &lt;td&gt;Data&lt;/td&gt;
+&lt;/tr&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+&lt;/tr&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;th&gt;</h3>
+                    <p>Defines a header cell in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;th&gt;Header&lt;/th&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;th&gt;Name&lt;/th&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;td&gt;</h3>
+                    <p>Defines a standard data cell in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;td&gt;Data&lt;/td&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;td&gt;John&lt;/td&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <tr>
+                                <td>John</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;caption&gt;</h3>
+                    <p>Defines a caption for a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;caption&gt;Table Caption&lt;/caption&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;caption&gt;Employee Details&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <caption>Employee Details</caption>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;colgroup&gt;</h3>
+                    <p>Groups columns in a table for styling.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;colgroup&gt;
+    &lt;col span="2" style="background-color:yellow"&gt;
+&lt;/colgroup&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;colgroup&gt;
+        &lt;col span="1" style="background-color:yellow"&gt;
+        &lt;col style="background-color:lightblue"&gt;
+    &lt;/colgroup&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <colgroup>
+                                <col span="1" style="background-color:yellow">
+                                <col style="background-color:lightblue">
+                            </colgroup>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;col&gt;</h3>
+                    <p>Defines column properties within a &lt;colgroup&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;col style="background-color:yellow"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;col style="background-color:yellow"&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <colgroup>
+                                <col style="background-color:yellow">
+                            </colgroup>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;thead&gt;</h3>
+                    <p>Groups header content in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;tbody&gt;</h3>
+                    <p>Groups body content in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>John</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;tfoot&gt;</h3>
+                    <p>Groups footer content in a table.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Footer&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tfoot&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </article>
+                
+                <h2>6. Forms</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;form&gt;</h3>
+                    <p>Defines a form for user input.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;form action="/submit" method="post"&gt;
+    &lt;!-- Form elements go here --&gt;
+&lt;/form&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <form action="/submit" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;input&gt;</h3>
+                    <p>Defines an input field.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;input type="text" name="field"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="text" placeholder="Enter your name"&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;textarea&gt;</h3>
+                    <p>Defines a multi-line text input field.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;textarea rows="4" cols="50"&gt;Default text&lt;/textarea&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;textarea rows="4" cols="50" placeholder="Enter your message"&gt;&lt;/textarea&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <textarea rows="4" cols="50" placeholder="Enter your message"></textarea>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;label&gt;</h3>
+                    <p>Defines a label for a form element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;label for="inputId"&gt;Label Text&lt;/label&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name" name="name"&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;select&gt;</h3>
+                    <p>Defines a dropdown list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;select&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;select&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <select>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                        </select>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;option&gt;</h3>
+                    <p>Defines an option in a dropdown list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;option value="1"&gt;Option 1&lt;/option&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;option value="1"&gt;Option 1&lt;/option&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <select>
+                            <option value="1">Option 1</option>
+                        </select>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;optgroup&gt;</h3>
+                    <p>Groups related options in a dropdown list.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;optgroup label="Group 1"&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+&lt;/optgroup&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;select&gt;
+    &lt;optgroup label="Group 1"&gt;
+        &lt;option value="1"&gt;Option 1&lt;/option&gt;
+        &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <select>
+                            <optgroup label="Group 1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;fieldset&gt;</h3>
+                    <p>Groups related form elements.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;fieldset&gt;
+    &lt;legend&gt;Legend&lt;/legend&gt;
+    &lt;!-- Form elements go here --&gt;
+&lt;/fieldset&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+&lt;/fieldset&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                        </fieldset>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;legend&gt;</h3>
+                    <p>Defines a caption for a &lt;fieldset&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;legend&gt;Legend Text&lt;/legend&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;legend&gt;Personal Information&lt;/legend&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                        </fieldset>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;button&gt;</h3>
+                    <p>Defines a clickable button.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;button type="button"&gt;Click Me&lt;/button&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button type="button"&gt;Click Me&lt;/button&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <button type="button">Click Me</button>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;datalist&gt;</h3>
+                    <p>Provides a list of predefined options for an &lt;input&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;input list="options"&gt;
+&lt;datalist id="options"&gt;
+    &lt;option value="Option 1"&gt;
+    &lt;option value="Option 2"&gt;
+&lt;/datalist&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input list="options" placeholder="Choose an option"&gt;
+&lt;datalist id="options"&gt;
+    &lt;option value="Option 1"&gt;
+    &lt;option value="Option 2"&gt;
+&lt;/datalist&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <input list="options" placeholder="Choose an option">
+                        <datalist id="options">
+                            <option value="Option 1">
+                            <option value="Option 2">
+                        </datalist>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;output&gt;</h3>
+                    <p>Displays the result of a calculation.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;output name="result"&gt;0&lt;/output&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;output name="result"&gt;0&lt;/output&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <output name="result">0</output>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;progress&gt;</h3>
+                    <p>Represents the progress of a task.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;progress value="50" max="100"&gt;50%&lt;/progress&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;progress value="50" max="100"&gt;50%&lt;/progress&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <progress value="50" max="100">50%</progress>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;meter&gt;</h3>
+                    <p>Represents a scalar measurement within a known range.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;meter value="3" min="0" max="10"&gt;3/10&lt;/meter&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;meter value="3" min="0" max="10"&gt;3/10&lt;/meter&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <meter value="3" min="0" max="10">3/10</meter>
+                    </div>
+                </article>
+                <h2>7. Media Elements</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;img&gt;</h3>
+                    <p>Embeds an image in the document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;img src="image.jpg" alt="Description"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;img src="https://via.placeholder.com/150" alt="Placeholder Image"&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;audio&gt;</h3>
+                    <p>Embeds an audio file in the document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;audio controls&gt;
+    &lt;source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <audio controls>
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;video&gt;</h3>
+                    <p>Embeds a video file in the document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;video controls width="300"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;video controls width="300"&gt;
+    &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <video controls width="300">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;source&gt;</h3>
+                    <p>Specifies multiple media sources for &lt;audio&gt; or &lt;video&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;source src="media.mp4" type="video/mp4"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;video controls width="300"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.ogg" type="video/ogg"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <video controls width="300">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;track&gt;</h3>
+                    <p>Adds subtitles or captions to &lt;audio&gt; or &lt;video&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;video controls width="300"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <video controls width="300">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <track src="https://www.w3schools.com/html/subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;figure&gt;</h3>
+                    <p>Groups media content with a caption.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;figure&gt;
+    &lt;img src="image.jpg" alt="Description"&gt;
+    &lt;figcaption&gt;Caption for the image&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;figure&gt;
+    &lt;img src="https://via.placeholder.com/150" alt="Placeholder Image"&gt;
+    &lt;figcaption&gt;This is a placeholder image.&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <figure>
+                            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                            <figcaption>This is a placeholder image.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;figcaption&gt;</h3>
+                    <p>Defines a caption for a &lt;figure&gt;.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;figcaption&gt;Caption Text&lt;/figcaption&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;figcaption&gt;This is a caption.&lt;/figcaption&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <figure>
+                            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                            <figcaption>This is a caption.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <h2>8. Embedded Content</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;iframe&gt;</h3>
+                    <p>Embeds another webpage within the current document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;iframe src="URL" width="300" height="200"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;iframe src="https://www.example.com" width="100%" height="300"&gt;&lt;/iframe&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <iframe src="https://www.example.com" width="100%" height="300"></iframe>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;embed&gt;</h3>
+                    <p>Embeds external content, such as a PDF or Flash file.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;embed src="file.pdf" type="application/pdf" width="100%" height="300"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="100%" height="300"&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="100%" height="300">
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;object&gt;</h3>
+                    <p>Embeds multimedia, such as images, videos, or other webpages.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;object data="file.swf" type="application/x-shockwave-flash" width="100%" height="300"&gt;
+    Your browser does not support the object tag.
+&lt;/object&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;object data="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" width="100%" height="300"&gt;
+    Your browser does not support the object tag.
+&lt;/object&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <object data="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" width="100%" height="300">
+                            Your browser does not support the object tag.
+                        </object>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;param&gt;</h3>
+                    <p>Defines parameters for an &lt;object&gt; element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;param name="autoplay" value="true"&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;object data="video.mp4" type="video/mp4" width="100%" height="300"&gt;
+    &lt;param name="autoplay" value="true"&gt;
+    Your browser does not support the object tag.
+&lt;/object&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <object data="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" width="100%" height="300">
+                            <param name="autoplay" value="true">
+                            Your browser does not support the object tag.
+                        </object>
+                    </div>
+                </article>
+                <h2>9. Semantic Tags</h2>
+
+                <article class="tag-box">
+                    <h3>&lt;header&gt;</h3>
+                    <p>Represents the header of a document or a section.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;header&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+    &lt;p&gt;Tagline or description&lt;/p&gt;
+&lt;/header&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;header&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;Your go-to place for HTML references&lt;/p&gt;
+&lt;/header&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <header>
+                            <h1>Welcome to My Website</h1>
+                            <p>Your go-to place for HTML references</p>
+                        </header>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;footer&gt;</h3>
+                    <p>Represents the footer of a document or a section.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;footer&gt;
+    &lt;p&gt;Copyright &copy; 2023&lt;/p&gt;
+&lt;/footer&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;footer&gt;
+    &lt;p&gt;Copyright &copy; 2023 My Website&lt;/p&gt;
+&lt;/footer&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <footer>
+                            <p>Copyright &copy; 2023 My Website</p>
+                        </footer>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;article&gt;</h3>
+                    <p>Represents a self-contained piece of content, such as a blog post or news article.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;article&gt;
+    &lt;h2&gt;Understanding Semantic HTML&lt;/h2&gt;
+    &lt;p&gt;Semantic HTML improves accessibility and SEO...&lt;/p&gt;
+&lt;/article&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <article>
+                            <h2>Understanding Semantic HTML</h2>
+                            <p>Semantic HTML improves accessibility and SEO...</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;section&gt;</h3>
+                    <p>Represents a thematic grouping of content.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;section&gt;
+    &lt;h2&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;This is the introduction section...&lt;/p&gt;
+&lt;/section&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <section>
+                            <h2>Introduction</h2>
+                            <p>This is the introduction section...</p>
+                        </section>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;nav&gt;</h3>
+                    <p>Represents a section of navigation links.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <nav>
+                            <a href="#">Home</a>
+                            <a href="#">About</a>
+                            <a href="#">Contact</a>
+                        </nav>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;aside&gt;</h3>
+                    <p>Represents content that is tangentially related to the main content, such as a sidebar.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;aside&gt;
+    &lt;p&gt;This is a sidebar.&lt;/p&gt;
+&lt;/aside&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;aside&gt;
+    &lt;p&gt;This is a sidebar.&lt;/p&gt;
+&lt;/aside&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <aside>
+                            <p>This is a sidebar.</p>
+                        </aside>
+                    </div>
+                </article>
+
+                <article class="tag-box">
+                    <h3>&lt;main&gt;</h3>
+                    <p>Represents the main content of the document.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>&lt;main&gt;
+    &lt;h1&gt;Main Content&lt;/h1&gt;
+    &lt;p&gt;This is the main content of the page.&lt;/p&gt;
+&lt;/main&gt;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;main&gt;
+    &lt;h1&gt;Main Content&lt;/h1&gt;
+    &lt;p&gt;This is the main content of the page.&lt;/p&gt;
+&lt;/main&gt;</code>
+                        <p><strong>Output:</strong></p>
+                        <main>
+                            <h1>Main Content</h1>
+                            <p>This is the main content of the page.</p>
+                        </main>
+                    </div>
+                </article>
+                
+  
+</body>
+</html>

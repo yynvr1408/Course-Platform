@@ -1,0 +1,3084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Learning Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #60a5fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .syntax-box, .example-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .syntax-box {
+            border-color: #10b981;
+        }
+
+        .example-box {
+            border-color: #8b5cf6;
+        }
+
+        .syntax-box:hover,
+        .example-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-box {
+            padding: 20px;
+            background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 12px;
+            display: block;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        .home-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button:hover {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      transform: translateY(-3px);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="home-button">🏠 Home</a>
+        <div class="container">
+  <h1>Introduction to JavaScript</h1>
+
+  <section>
+    <h2>What is JavaScript?</h2>
+    <p>
+      JavaScript is a powerful, high-level programming language used to make web pages interactive and dynamic. It works alongside HTML and CSS to add behavior like animations, form validation, content updates, and much more.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why Use JavaScript?</h2>
+    <p>JavaScript adds life to static websites. It allows you to:</p>
+    <ul>
+      <li>Interact with the user through buttons, forms, and mouse events.</li>
+      <li>Manipulate and update HTML and CSS in real time.</li>
+      <li>Communicate with servers using APIs (AJAX or Fetch).</li>
+      <li>Create games, animations, and dynamic web apps.</li>
+      <li>Build full-stack applications using modern frameworks (e.g., Node.js, React).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic JavaScript Syntax</h2>
+    <p>JavaScript code can be written inside a <code>&lt;script&gt;</code> tag or in a separate file with a <code>.js</code> extension.</p>
+    <div class="example-box">
+      <h3>Example (Inline Script):</h3>
+      <code>
+&lt;script&gt;<br>
+&nbsp;&nbsp;alert("Hello, JavaScript!");<br>
+&lt;/script&gt;
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Use JavaScript</h2>
+    <p>There are three main ways to use JavaScript:</p>
+    <ol>
+      <li><strong>Inline:</strong> Inside HTML elements using <code>onclick</code>, <code>onchange</code>, etc.</li>
+      <li><strong>Internal:</strong> Inside a <code>&lt;script&gt;</code> tag in the HTML file.</li>
+      <li><strong>External:</strong> In a separate JavaScript file linked to the HTML using <code>&lt;script src="script.js"&gt;</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Basic JavaScript Example</h2>
+    <p>This example displays a greeting message in the browser console:</p>
+    <div class="example-box">
+      <code>
+&lt;script&gt;<br>
+&nbsp;&nbsp;function greet(name) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello, " + name + "!");<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;greet("Alice");<br>
+&lt;/script&gt;
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <h2>Common JavaScript Features</h2>
+    <ul>
+      <li><strong>Variables:</strong> Store data using <code>let</code>, <code>const</code>, or <code>var</code>.</li>
+      <li><strong>Data Types:</strong> String, Number, Boolean, Object, Array, Null, Undefined, Symbol.</li>
+      <li><strong>Functions:</strong> Reusable blocks of code.</li>
+      <li><strong>Events:</strong> Trigger code using clicks, hovers, inputs, etc.</li>
+      <li><strong>DOM Manipulation:</strong> Change HTML/CSS dynamically with <code>document</code> methods.</li>
+      <li><strong>Control Flow:</strong> Use <code>if</code>, <code>for</code>, <code>while</code>, etc.</li>
+      <li><strong>APIs:</strong> Use <code>fetch()</code> to get data from servers.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example (External Script)</h2>
+    <p>Create a file called <code>script.js</code>:</p>
+    <div class="example-box">
+      <code>
+function showMessage() {<br>
+&nbsp;&nbsp;alert("JavaScript is connected!");<br>
+}
+      </code>
+    </div>
+    <p>Then link it in your HTML:</p>
+    <div class="example-box">
+      <code>
+&lt;script src="script.js"&gt;&lt;/script&gt;
+      </code>
+    </div>
+  </section>
+</div>
+
+        <header>
+            <h1>JavaScript Document Methods Reference</h1>
+        </header>
+
+        <main>
+            <!-- getElementById -->
+             <h1>Document methods</h1>
+            <section id="getElementById">
+                <h2>1. getElementById</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Returns the element with the specified ID.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>document.getElementById(id);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    console.log(element.textContent); // Output: Hello, World!
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- querySelector -->
+            <section id="querySelector">
+                <h2>2. querySelector</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Returns the first element that matches a specified CSS selector.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>document.querySelector(selector);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div class="myClass"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.querySelector(".myClass");
+    console.log(element.textContent); // Output: Hello, World!
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- querySelectorAll -->
+            <section id="querySelectorAll">
+                <h2>3. querySelectorAll</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Returns a NodeList of all elements that match a specified CSS selector.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>document.querySelectorAll(selector);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div class="myClass"&gt;Hello&lt;/div&gt;
+&lt;div class="myClass"&gt;World&lt;/div&gt;
+
+&lt;script&gt;
+    const elements = document.querySelectorAll(".myClass");
+    elements.forEach(el =&gt; console.log(el.textContent)); // Output: Hello, World
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- createElement -->
+            <section id="createElement">
+                <h2>4. createElement</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Creates a new HTML element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>document.createElement(tagName);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;script&gt;
+    const newElement = document.createElement("div");
+    newElement.textContent = "New Element";
+    document.body.appendChild(newElement);
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- appendChild -->
+            <section id="appendChild">
+                <h2>5. appendChild</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Appends a child element to a parent element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>parentElement.appendChild(childElement);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="parent"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    const parent = document.getElementById("parent");
+    const child = document.createElement("p");
+    child.textContent = "This is a child element.";
+    parent.appendChild(child);
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- removeChild -->
+            <section id="removeChild">
+                <h2>6. removeChild</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Removes a child element from a parent element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>parentElement.removeChild(childElement);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="parent"&gt;
+    &lt;p id="child"&gt;This is a child element.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+    parent.removeChild(child);
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+            <div class="container">
+                <section>
+    <h2>JavaScript Variables</h2>
+    <p><strong>Variables</strong> in JavaScript are containers used to store data values. They are fundamental building blocks of any program and are used to label and reference data.</p>
+
+    <!-- What are Variables -->
+    <article class="tag-box">
+        <h3>1. What Are Variables?</h3>
+        <ul>
+            <li>Used to store data like numbers, text, arrays, objects, etc.</li>
+            <li>Allow reuse and manipulation of values in a program.</li>
+            <li>Can be declared using <code>var</code>, <code>let</code>, or <code>const</code>.</li>
+        </ul>
+    </article>
+
+    <!-- Variable Declaration -->
+    <article class="tag-box">
+        <h3>2. Declaring Variables</h3>
+        <p>Different keywords define the scope and behavior of variables.</p>
+        <div class="syntax-box">
+            <code>// ES6 (modern JavaScript)
+let name = "Alice";
+const pi = 3.1416;
+var count = 10; // old style, not recommended</code>
+        </div>
+    </article>
+
+    <!-- let Keyword -->
+    <article class="tag-box">
+        <h3>3. let</h3>
+        <p><code>let</code> is used to declare block-scoped variables that can be reassigned.</p>
+        <div class="syntax-box">
+            <code>let score = 50;
+score = 75;
+console.log(score); // 75</code>
+        </div>
+    </article>
+
+    <!-- const Keyword -->
+    <article class="tag-box">
+        <h3>4. const</h3>
+        <p><code>const</code> declares block-scoped variables that cannot be reassigned.</p>
+        <div class="syntax-box">
+            <code>const website = "example.com";
+// website = "test.com"; // Error: Assignment to constant variable</code>
+        </div>
+    </article>
+
+    <!-- var Keyword -->
+    <article class="tag-box">
+        <h3>5. var</h3>
+        <p><code>var</code> is function-scoped and hoisted. It's less predictable and not recommended in modern code.</p>
+        <div class="syntax-box">
+            <code>var language = "JavaScript";
+language = "TypeScript";
+console.log(language);</code>
+        </div>
+    </article>
+
+    <!-- Data Types -->
+    <article class="tag-box">
+        <h3>6. Common Data Types</h3>
+        <ul>
+            <li><code>String</code>: Text like <code>"Hello"</code></li>
+            <li><code>Number</code>: Numeric values like <code>42</code></li>
+            <li><code>Boolean</code>: <code>true</code> or <code>false</code></li>
+            <li><code>Array</code>: Lists like <code>[1, 2, 3]</code></li>
+            <li><code>Object</code>: Key-value pairs like <code>{ name: "John" }</code></li>
+            <li><code>null</code> and <code>undefined</code></li>
+        </ul>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>7. Common Use Cases</h3>
+        <ul>
+            <li>Storing user inputs and configuration values.</li>
+            <li>Calculating and storing results dynamically.</li>
+            <li>Manipulating DOM elements and user interactions.</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>8. Key Notes</h3>
+        <ul>
+            <li>Use <code>let</code> and <code>const</code> instead of <code>var</code> in modern JavaScript.</li>
+            <li><code>const</code> is preferred for variables that don’t change.</li>
+            <li>Variables should have clear, descriptive names.</li>
+            <li>Always initialize variables when declaring them.</li>
+        </ul>
+    </article>
+</section>
+
+                </div>
+
+            <div class="container">
+                <section>
+    <h2>JavaScript Conditional Statements</h2>
+    <p><strong>Conditional statements</strong> in JavaScript are used to perform different actions based on different conditions. They allow you to add decision-making capabilities to your code.</p>
+
+    <!-- What are Conditional Statements -->
+    <article class="tag-box">
+        <h3>1. What Are Conditional Statements?</h3>
+        <ul>
+            <li>Used to execute different code blocks based on specific conditions.</li>
+            <li>Types include: <code>if</code>, <code>if...else</code>, <code>else if</code>, <code>switch</code>, and ternary <code>?:</code>.</li>
+            <li>Helps control program flow logically.</li>
+        </ul>
+    </article>
+
+    <!-- Basic if Statement -->
+    <article class="tag-box">
+        <h3>2. if Statement</h3>
+        <p>Executes a block of code only if a specified condition is true.</p>
+        <div class="syntax-box">
+            <code>let age = 20;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+}</code>
+        </div>
+    </article>
+
+    <!-- if...else Statement -->
+    <article class="tag-box">
+        <h3>3. if...else Statement</h3>
+        <p>Executes one block if the condition is true, and another if it is false.</p>
+        <div class="syntax-box">
+            <code>let isSunny = false;
+
+if (isSunny) {
+    console.log("Go for a walk.");
+} else {
+    console.log("Stay indoors.");
+}</code>
+        </div>
+    </article>
+
+    <!-- if...else if...else Statement -->
+    <article class="tag-box">
+        <h3>4. if...else if...else Statement</h3>
+        <p>Allows multiple conditions to be checked in sequence.</p>
+        <div class="syntax-box">
+            <code>let grade = 75;
+
+if (grade >= 90) {
+    console.log("Grade: A");
+} else if (grade >= 80) {
+    console.log("Grade: B");
+} else if (grade >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: D or below");
+}</code>
+        </div>
+    </article>
+
+    <!-- switch Statement -->
+    <article class="tag-box">
+        <h3>5. switch Statement</h3>
+        <p>Performs different actions based on different values of a variable.</p>
+        <div class="syntax-box">
+            <code>let day = "Sunday";
+
+switch(day) {
+    case "Monday":
+        console.log("Start of the week.");
+        break;
+    case "Friday":
+        console.log("End of the work week.");
+        break;
+    case "Sunday":
+        console.log("Relax, it's the weekend!");
+        break;
+    default:
+        console.log("Just another day.");
+}</code>
+        </div>
+    </article>
+
+    <!-- Ternary Operator -->
+    <article class="tag-box">
+        <h3>6. Ternary Operator</h3>
+        <p>Short-form version of if...else for simple conditions.</p>
+        <div class="syntax-box">
+            <code>let loggedIn = true;
+
+let message = loggedIn ? "Welcome back!" : "Please log in.";
+console.log(message);</code>
+        </div>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>7. Common Use Cases</h3>
+        <ul>
+            <li>Checking user input and taking actions accordingly.</li>
+            <li>Determining program flow based on environment or flags.</li>
+            <li>Handling different logic paths (grading, pricing tiers, etc.).</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>8. Key Notes</h3>
+        <ul>
+            <li>Always use <code>===</code> for strict equality in conditions.</li>
+            <li>Use <code>else if</code> chains when multiple checks are needed.</li>
+            <li><code>switch</code> is cleaner for multiple discrete values.</li>
+            <li>Ternary is best used for small, inline conditions.</li>
+        </ul>
+    </article>
+</section>
+
+            </div>
+            <div class="container">
+                <section>
+    <h2>JavaScript Loops</h2>
+    <p><strong>Loops</strong> in JavaScript are used to run a block of code multiple times. They help reduce code repetition and automate repetitive tasks.</p>
+
+    <!-- What Are Loops -->
+    <article class="tag-box">
+        <h3>1. What Are Loops?</h3>
+        <ul>
+            <li>Allow code to be executed repeatedly based on a condition.</li>
+            <li>Main types: <code>for</code>, <code>while</code>, <code>do...while</code>, <code>for...of</code>, <code>for...in</code>.</li>
+            <li>Useful for iterating arrays, objects, or ranges of numbers.</li>
+        </ul>
+    </article>
+
+    <!-- for Loop -->
+    <article class="tag-box">
+        <h3>2. for Loop</h3>
+        <p>Executes a block of code a specific number of times.</p>
+        <div class="syntax-box">
+            <script>
+                for (let i = 1; i <= 5; i++) {
+                    console.log("Iteration " + i);
+                }
+            </script>
+            <code>
+for (let i = 1; i <= 5; i++) {
+    console.log("Iteration " + i);
+}
+            </code>
+        </div>
+    </article>
+
+    <!-- while Loop -->
+    <article class="tag-box">
+        <h3>3. while Loop</h3>
+        <p>Executes as long as the condition is true.</p>
+        <div class="syntax-box">
+            <script>
+                let count = 1;
+                while (count <= 3) {
+                    console.log("Count is: " + count);
+                    count++;
+                }
+            </script>
+            <code>
+let count = 1;
+while (count <= 3) {
+    console.log("Count is: " + count);
+    count++;
+}
+            </code>
+        </div>
+    </article>
+
+    <!-- do...while Loop -->
+    <article class="tag-box">
+        <h3>4. do...while Loop</h3>
+        <p>Runs the code block at least once, and then repeats while the condition is true.</p>
+        <div class="syntax-box">
+            <script>
+                let num = 1;
+                do {
+                    console.log("Number is " + num);
+                    num++;
+                } while (num <= 2);
+            </script>
+            <code>
+let num = 1;
+do {
+    console.log("Number is " + num);
+    num++;
+} while (num <= 2);
+            </code>
+        </div>
+    </article>
+
+    <!-- for...of Loop -->
+    <article class="tag-box">
+        <h3>5. for...of Loop</h3>
+        <p>Used to iterate over iterable objects like arrays and strings.</p>
+        <div class="syntax-box">
+            <script>
+                const colors = ["red", "green", "blue"];
+                for (let color of colors) {
+                    console.log(color);
+                }
+            </script>
+            <code>
+const colors = ["red", "green", "blue"];
+for (let color of colors) {
+    console.log(color);
+}
+            </code>
+        </div>
+    </article>
+
+    <!-- for...in Loop -->
+    <article class="tag-box">
+        <h3>6. for...in Loop</h3>
+        <p>Used to iterate over the keys (properties) of an object.</p>
+        <div class="syntax-box">
+            <script>
+                const person = { name: "Alice", age: 25 };
+                for (let key in person) {
+                    console.log(key + ": " + person[key]);
+                }
+            </script>
+            <code>
+const person = { name: "Alice", age: 25 };
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+            </code>
+        </div>
+    </article>
+*<!-- forEach Loop -->
+<article class="tag-box">
+    <h3>7. forEach Loop</h3>
+    <p>Used to execute a provided function once for each array element. It’s a method available on array objects.</p>
+    <div class="syntax-box">
+        <script>
+            const fruits = ["apple", "banana", "cherry"];
+            fruits.forEach(function(fruit, index) {
+                console.log(index + ": " + fruit);
+            });
+        </script>
+        <code>
+const fruits = ["apple", "banana", "cherry"];
+fruits.forEach(function(fruit, index) {
+    console.log(index + ": " + fruit);
+});
+        </code>
+    </div>
+</article>
+<article class="tag-box">
+        <h3>8. Key Notes</h3>
+        <ul>
+            <li>Always ensure loops have an exit condition to avoid infinite loops.</li>
+            <li><code>for...of</code> is best for arrays, <code>for...in</code> for objects.</li>
+            <li>Use <code>break</code> to exit a loop early, and <code>continue</code> to skip to the next iteration.</li>
+        </ul>
+    </article>
+</section>
+<article class="tag-box">
+        <h3>8. Key Notes</h3>
+        <ul>
+            <li>Always ensure loops have an exit condition to avoid infinite loops.</li>
+            <li><code>for...of</code> is best for arrays, <code>for...in</code> for objects,<code>for...each</code> for objects.</li>
+            <li>Use <code>break</code> to exit a loop early, and <code>continue</code> to skip to the next iteration.</li>
+        </ul>
+    </article>
+</section>
+
+            </div>
+            <div class="container">
+                <section>
+    <h2>JavaScript Array Methods</h2>
+    <p>JavaScript provides many built-in methods to work with arrays. These methods help you add, remove, find, and transform elements efficiently.</p>
+
+    <!-- Common Methods Overview -->
+    <article class="tag-box">
+        <h3>1. What Are Array Methods?</h3>
+        <ul>
+            <li>Predefined functions to manipulate array content.</li>
+            <li>Help with searching, sorting, updating, and filtering arrays.</li>
+            <li>Work directly on array instances (e.g., <code>arr.push()</code>).</li>
+        </ul>
+    </article>
+
+    <!-- push() -->
+    <article class="tag-box">
+        <h3>2. push()</h3>
+        <p>Adds one or more elements to the end of an array.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["apple", "banana"];
+fruits.push("cherry");
+console.log(fruits); // ["apple", "banana", "cherry"]
+            </code>
+        </div>
+    </article>
+
+    <!-- pop() -->
+    <article class="tag-box">
+        <h3>3. pop()</h3>
+        <p>Removes the last element from an array and returns it.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["apple", "banana", "cherry"];
+fruits.pop();
+console.log(fruits); // ["apple", "banana"]
+            </code>
+        </div>
+    </article>
+
+    <!-- shift() -->
+    <article class="tag-box">
+        <h3>4. shift()</h3>
+        <p>Removes the first element from an array and returns it.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["apple", "banana"];
+fruits.shift();
+console.log(fruits); // ["banana"]
+            </code>
+        </div>
+    </article>
+
+    <!-- unshift() -->
+    <article class="tag-box">
+        <h3>5. unshift()</h3>
+        <p>Adds one or more elements to the beginning of an array.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["banana"];
+fruits.unshift("apple");
+console.log(fruits); // ["apple", "banana"]
+            </code>
+        </div>
+    </article>
+
+    <!-- map() -->
+    <article class="tag-box">
+        <h3>6. map()</h3>
+        <p>Creates a new array by applying a function to each element.</p>
+        <div class="syntax-box">
+            <code>
+const nums = [1, 2, 3];
+const doubled = nums.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+            </code>
+        </div>
+    </article>
+
+    <!-- filter() -->
+    <article class="tag-box">
+        <h3>7. filter()</h3>
+        <p>Creates a new array with only elements that pass a condition.</p>
+        <div class="syntax-box">
+            <code>
+const nums = [1, 2, 3, 4];
+const even = nums.filter(n => n % 2 === 0);
+console.log(even); // [2, 4]
+            </code>
+        </div>
+    </article>
+
+    <!-- find() -->
+    <article class="tag-box">
+        <h3>8. find()</h3>
+        <p>Returns the first element that satisfies a condition.</p>
+        <div class="syntax-box">
+            <code>
+const nums = [3, 6, 9];
+const found = nums.find(n => n > 5);
+console.log(found); // 6
+            </code>
+        </div>
+    </article>
+
+    <!-- forEach() -->
+    <article class="tag-box">
+        <h3>9. forEach()</h3>
+        <p>Executes a function for each array element.</p>
+        <div class="syntax-box">
+            <code>
+const names = ["Alice", "Bob", "Eve"];
+names.forEach(name => console.log(name));
+            </code>
+        </div>
+    </article>
+
+    <!-- includes() -->
+    <article class="tag-box">
+        <h3>10. includes()</h3>
+        <p>Checks if an array contains a specific value.</p>
+        <div class="syntax-box">
+            <code>
+const nums = [10, 20, 30];
+console.log(nums.includes(20)); // true
+            </code>
+        </div>
+    </article>
+
+    <!-- slice() -->
+    <article class="tag-box">
+        <h3>11. slice()</h3>
+        <p>Returns a shallow copy of a portion of an array.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["apple", "banana", "cherry"];
+const sliced = fruits.slice(1, 3);
+console.log(sliced); // ["banana", "cherry"]
+            </code>
+        </div>
+    </article>
+
+    <!-- splice() -->
+    <article class="tag-box">
+        <h3>12. splice()</h3>
+        <p>Adds or removes elements from an array.</p>
+        <div class="syntax-box">
+            <code>
+const fruits = ["apple", "banana", "cherry"];
+fruits.splice(1, 1, "blueberry");
+console.log(fruits); // ["apple", "blueberry", "cherry"]
+            </code>
+        </div>
+    </article>
+
+    <!-- sort() -->
+    <article class="tag-box">
+        <h3>13. sort()</h3>
+        <p>Sorts array elements alphabetically or by custom logic.</p>
+        <div class="syntax-box">
+            <code>
+const nums = [4, 2, 9];
+nums.sort((a, b) => a - b);
+console.log(nums); // [2, 4, 9]
+            </code>
+        </div>
+    </article>
+
+    <!-- Summary -->
+    <article class="example-box">
+        <h3>14. Summary</h3>
+        <ul>
+            <li><code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code> — Add/Remove elements.</li>
+            <li><code>map()</code>, <code>filter()</code>, <code>forEach()</code>, <code>find()</code> — Iterate and transform.</li>
+            <li><code>slice()</code>, <code>splice()</code> — Extract or modify arrays.</li>
+            <li><code>includes()</code>, <code>sort()</code> — Check or organize array content.</li>
+        </ul>
+    </article>
+</section>
+            </div>
+<div class="container">
+       <section>
+    <h2>JavaScript String Methods</h2>
+    <p>String methods allow you to work with and manipulate text data in JavaScript. You can find, extract, change, or check strings using these built-in methods.</p>
+
+    <!-- Overview -->
+    <article class="tag-box">
+        <h3>1. What Are String Methods?</h3>
+        <ul>
+            <li>Functions that operate on string values.</li>
+            <li>Help with searching, replacing, trimming, and formatting text.</li>
+            <li>Strings are immutable, so methods return new strings.</li>
+        </ul>
+    </article>
+
+    <!-- length -->
+    <article class="tag-box">
+        <h3>2. length</h3>
+        <p>Returns the number of characters in a string.</p>
+        <div class="syntax-box">
+            <code>
+const name = "Alice";
+console.log(name.length); // 5
+            </code>
+        </div>
+    </article>
+
+    <!-- toUpperCase() -->
+    <article class="tag-box">
+        <h3>3. toUpperCase()</h3>
+        <p>Converts all characters in a string to uppercase.</p>
+        <div class="syntax-box">
+            <code>
+const text = "hello";
+console.log(text.toUpperCase()); // "HELLO"
+            </code>
+        </div>
+    </article>
+
+    <!-- toLowerCase() -->
+    <article class="tag-box">
+        <h3>4. toLowerCase()</h3>
+        <p>Converts all characters in a string to lowercase.</p>
+        <div class="syntax-box">
+            <code>
+const text = "HeLLo";
+console.log(text.toLowerCase()); // "hello"
+            </code>
+        </div>
+    </article>
+
+    <!-- includes() -->
+    <article class="tag-box">
+        <h3>5. includes()</h3>
+        <p>Checks if the string contains a specified value.</p>
+        <div class="syntax-box">
+            <code>
+const message = "JavaScript is awesome";
+console.log(message.includes("awesome")); // true
+            </code>
+        </div>
+    </article>
+
+    <!-- indexOf() -->
+    <article class="tag-box">
+        <h3>6. indexOf()</h3>
+        <p>Returns the index of the first occurrence of a value.</p>
+        <div class="syntax-box">
+            <code>
+const text = "hello world";
+console.log(text.indexOf("world")); // 6
+            </code>
+        </div>
+    </article>
+
+    <!-- slice() -->
+    <article class="tag-box">
+        <h3>7. slice()</h3>
+        <p>Extracts a section of the string and returns it as a new string.</p>
+        <div class="syntax-box">
+            <code>
+const str = "JavaScript";
+console.log(str.slice(4, 10)); // "Script"
+            </code>
+        </div>
+    </article>
+
+    <!-- substring() -->
+    <article class="tag-box">
+        <h3>8. substring()</h3>
+        <p>Similar to <code>slice()</code> but doesn't accept negative indices.</p>
+        <div class="syntax-box">
+            <code>
+const str = "Programming";
+console.log(str.substring(0, 6)); // "Progra"
+            </code>
+        </div>
+    </article>
+
+    <!-- replace() -->
+    <article class="tag-box">
+        <h3>9. replace()</h3>
+        <p>Replaces a substring with another value.</p>
+        <div class="syntax-box">
+            <code>
+const sentence = "I love cats";
+console.log(sentence.replace("cats", "dogs")); // "I love dogs"
+            </code>
+        </div>
+    </article>
+
+    <!-- trim() -->
+    <article class="tag-box">
+        <h3>10. trim()</h3>
+        <p>Removes whitespace from both ends of a string.</p>
+        <div class="syntax-box">
+            <code>
+const text = "  spaced out  ";
+console.log(text.trim()); // "spaced out"
+            </code>
+        </div>
+    </article>
+
+    <!-- split() -->
+    <article class="tag-box">
+        <h3>11. split()</h3>
+        <p>Splits a string into an array based on a delimiter.</p>
+        <div class="syntax-box">
+            <code>
+const data = "red,green,blue";
+console.log(data.split(",")); // ["red", "green", "blue"]
+            </code>
+        </div>
+    </article>
+
+    <!-- charAt() -->
+    <article class="tag-box">
+        <h3>12. charAt()</h3>
+        <p>Returns the character at a specified index.</p>
+        <div class="syntax-box">
+            <code>
+const word = "hello";
+console.log(word.charAt(1)); // "e"
+            </code>
+        </div>
+    </article>
+
+    <!-- repeat() -->
+    <article class="tag-box">
+        <h3>13. repeat()</h3>
+        <p>Repeats a string a specified number of times.</p>
+        <div class="syntax-box">
+            <code>
+const star = "*";
+console.log(star.repeat(5)); // "*"
+            </code>
+        </div>
+    </article>
+
+    <!-- startsWith() / endsWith() -->
+    <article class="tag-box">
+        <h3>14. startsWith() & endsWith()</h3>
+        <p>Check if a string starts or ends with a specified substring.</p>
+        <div class="syntax-box">
+            <code>
+const phrase = "JavaScript";
+console.log(phrase.startsWith("Java")); // true
+console.log(phrase.endsWith("Script")); // true
+            </code>
+        </div>
+    </article>
+
+    <!-- Summary -->
+    <article class="example-box">
+        <h3>15. Summary</h3>
+        <ul>
+            <li><code>length</code>, <code>charAt()</code>, <code>slice()</code> — for accessing characters.</li>
+            <li><code>toUpperCase()</code>, <code>replace()</code>, <code>trim()</code> — for text cleanup.</li>
+            <li><code>includes()</code>, <code>indexOf()</code>, <code>startsWith()</code> — for searching.</li>
+            <li><code>split()</code>, <code>repeat()</code> — for transforming and formatting.</li>
+        </ul>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Number & Math Methods</h2>
+    <p>JavaScript provides built-in methods and the <code>Math</code> object for performing numeric operations like rounding, generating random numbers, and more.</p>
+
+    <!-- Overview -->
+    <article class="tag-box">
+        <h3>1. What Are Number & Math Methods?</h3>
+        <ul>
+            <li>Number methods work directly on numeric values.</li>
+            <li><code>Math</code> is a built-in object for advanced mathematical tasks.</li>
+            <li>Helps with rounding, power, random numbers, and constants.</li>
+        </ul>
+    </article>
+
+    <!-- toFixed() -->
+    <article class="tag-box">
+        <h3>2. toFixed()</h3>
+        <p>Formats a number with a fixed number of decimal places (returns a string).</p>
+        <div class="syntax-box">
+            <code>
+const num = 3.14159;
+console.log(num.toFixed(2)); // "3.14"
+            </code>
+        </div>
+    </article>
+
+    <!-- parseInt() -->
+    <article class="tag-box">
+        <h3>3. parseInt()</h3>
+        <p>Converts a string to an integer.</p>
+        <div class="syntax-box">
+            <code>
+const val = "42.7";
+console.log(parseInt(val)); // 42
+            </code>
+        </div>
+    </article>
+
+    <!-- parseFloat() -->
+    <article class="tag-box">
+        <h3>4. parseFloat()</h3>
+        <p>Converts a string to a floating-point number.</p>
+        <div class="syntax-box">
+            <code>
+const val = "42.7";
+console.log(parseFloat(val)); // 42.7
+            </code>
+        </div>
+    </article>
+
+    <!-- isNaN() -->
+    <article class="tag-box">
+        <h3>5. isNaN()</h3>
+        <p>Checks whether a value is <code>NaN</code> (Not a Number).</p>
+        <div class="syntax-box">
+            <code>
+console.log(isNaN("hello")); // true
+console.log(isNaN(123));     // false
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.round() -->
+    <article class="tag-box">
+        <h3>6. Math.round()</h3>
+        <p>Rounds a number to the nearest integer.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.round(4.6)); // 5
+console.log(Math.round(4.3)); // 4
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.floor() -->
+    <article class="tag-box">
+        <h3>7. Math.floor()</h3>
+        <p>Rounds a number <em>down</em> to the nearest integer.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.floor(4.9)); // 4
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.ceil() -->
+    <article class="tag-box">
+        <h3>8. Math.ceil()</h3>
+        <p>Rounds a number <em>up</em> to the nearest integer.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.ceil(4.1)); // 5
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.random() -->
+    <article class="tag-box">
+        <h3>9. Math.random()</h3>
+        <p>Returns a random number between 0 (inclusive) and 1 (exclusive).</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.random()); // e.g., 0.73523
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.pow() -->
+    <article class="tag-box">
+        <h3>10. Math.pow()</h3>
+        <p>Raises a number to a power.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.pow(2, 3)); // 8
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.sqrt() -->
+    <article class="tag-box">
+        <h3>11. Math.sqrt()</h3>
+        <p>Returns the square root of a number.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.sqrt(16)); // 4
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.min() & Math.max() -->
+    <article class="tag-box">
+        <h3>12. Math.min() & Math.max()</h3>
+        <p>Find the smallest or largest number from a set.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.min(3, 1, 4)); // 1
+console.log(Math.max(3, 1, 4)); // 4
+            </code>
+        </div>
+    </article>
+
+    <!-- Math.abs() -->
+    <article class="tag-box">
+        <h3>13. Math.abs()</h3>
+        <p>Returns the absolute (positive) value of a number.</p>
+        <div class="syntax-box">
+            <code>
+console.log(Math.abs(-9)); // 9
+            </code>
+        </div>
+    </article>
+
+    <!-- Summary -->
+    <article class="example-box">
+        <h3>14. Summary</h3>
+        <ul>
+            <li><code>toFixed()</code>, <code>parseInt()</code>, <code>parseFloat()</code> — format and convert numbers.</li>
+            <li><code>Math.round()</code>, <code>floor()</code>, <code>ceil()</code> — for rounding.</li>
+            <li><code>Math.random()</code>, <code>pow()</code>, <code>sqrt()</code> — for calculations.</li>
+            <li><code>Math.min()</code>, <code>max()</code>, <code>abs()</code> — comparison and absolute values.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Object Methods</h2>
+    <p>Objects in JavaScript are collections of key-value pairs. Object methods are used to manipulate, inspect, or extract information from objects.</p>
+
+    <!-- What Are Object Methods -->
+    <article class="tag-box">
+        <h3>1. What Are Object Methods?</h3>
+        <ul>
+            <li>Built-in methods to interact with JavaScript objects.</li>
+            <li>Helps in accessing, modifying, copying, or transforming object data.</li>
+            <li>Works with both simple and nested objects.</li>
+        </ul>
+    </article>
+
+    <!-- Object.keys() -->
+    <article class="tag-box">
+        <h3>2. Object.keys()</h3>
+        <p>Returns an array of an object's own property names (keys).</p>
+        <div class="syntax-box">
+            <code>
+const user = { name: "Alice", age: 25 };
+console.log(Object.keys(user)); // ["name", "age"]
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.values() -->
+    <article class="tag-box">
+        <h3>3. Object.values()</h3>
+        <p>Returns an array of an object's values.</p>
+        <div class="syntax-box">
+            <code>
+const user = { name: "Alice", age: 25 };
+console.log(Object.values(user)); // ["Alice", 25]
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.entries() -->
+    <article class="tag-box">
+        <h3>4. Object.entries()</h3>
+        <p>Returns an array of key-value pairs from the object.</p>
+        <div class="syntax-box">
+            <code>
+const user = { name: "Alice", age: 25 };
+console.log(Object.entries(user)); // [["name", "Alice"], ["age", 25]]
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.assign() -->
+    <article class="tag-box">
+        <h3>5. Object.assign()</h3>
+        <p>Copies values from one or more source objects to a target object.</p>
+        <div class="syntax-box">
+            <code>
+const target = { a: 1 };
+const source = { b: 2 };
+const result = Object.assign(target, source);
+console.log(result); // { a: 1, b: 2 }
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.freeze() -->
+    <article class="tag-box">
+        <h3>6. Object.freeze()</h3>
+        <p>Makes an object immutable (no changes allowed).</p>
+        <div class="syntax-box">
+            <code>
+const obj = { a: 1 };
+Object.freeze(obj);
+obj.a = 2;
+console.log(obj.a); // 1 (change is ignored)
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.seal() -->
+    <article class="tag-box">
+        <h3>7. Object.seal()</h3>
+        <p>Prevents new properties from being added, but allows changes to existing properties.</p>
+        <div class="syntax-box">
+            <code>
+const obj = { a: 1 };
+Object.seal(obj);
+obj.a = 2;
+obj.b = 3; // Won't be added
+console.log(obj); // { a: 2 }
+            </code>
+        </div>
+    </article>
+
+    <!-- Object.hasOwnProperty() -->
+    <article class="tag-box">
+        <h3>8. hasOwnProperty()</h3>
+        <p>Checks if a property exists in the object (not inherited).</p>
+        <div class="syntax-box">
+            <code>
+const user = { name: "Alice" };
+console.log(user.hasOwnProperty("name")); // true
+console.log(user.hasOwnProperty("age"));  // false
+            </code>
+        </div>
+    </article>
+
+    <!-- Optional: Object.create() -->
+    <article class="tag-box">
+        <h3>9. Object.create()</h3>
+        <p>Creates a new object using an existing object as a prototype.</p>
+        <div class="syntax-box">
+            <code>
+const person = { greet() { console.log("Hi!"); } };
+const student = Object.create(person);
+student.greet(); // Hi!
+            </code>
+        </div>
+    </article>
+
+    <!-- Summary -->
+    <article class="example-box">
+        <h3>10. Summary</h3>
+        <ul>
+            <li><code>Object.keys()</code>, <code>values()</code>, <code>entries()</code> — convert object to array formats.</li>
+            <li><code>Object.assign()</code> — copy and merge objects.</li>
+            <li><code>Object.freeze()</code>, <code>seal()</code> — control mutability.</li>
+            <li><code>hasOwnProperty()</code> — verify ownership of a key.</li>
+        </ul>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Date Methods</h2>
+    <p>The <code>Date</code> object in JavaScript is used to work with dates and times. It allows you to get, set, and format date/time values in various ways.</p>
+
+    <!-- Creating Dates -->
+    <article class="tag-box">
+        <h3>1. Creating Dates</h3>
+        <ul>
+            <li><code>new Date()</code> — current date and time.</li>
+            <li><code>new Date("YYYY-MM-DD")</code> — specific date.</li>
+            <li><code>new Date(year, month, day, hours, minutes)</code> — individual parts.</li>
+        </ul>
+        <div class="syntax-box">
+            <code>
+const now = new Date();
+const birthday = new Date("2000-01-01");
+const custom = new Date(2023, 3, 5, 14, 30); // April 5, 2023
+            </code>
+        </div>
+    </article>
+
+    <!-- Getting Date Values -->
+    <article class="tag-box">
+        <h3>2. Getting Date Parts</h3>
+        <ul>
+            <li><code>getFullYear()</code> — Gets the 4-digit year.</li>
+            <li><code>getMonth()</code> — Gets month (0–11).</li>
+            <li><code>getDate()</code> — Gets day of the month.</li>
+            <li><code>getDay()</code> — Gets day of the week (0–6).</li>
+            <li><code>getHours()</code>, <code>getMinutes()</code>, <code>getSeconds()</code></li>
+        </ul>
+        <div class="syntax-box">
+            <code>
+const date = new Date();
+console.log(date.getFullYear());  // e.g. 2025
+console.log(date.getMonth());     // 0 = January
+console.log(date.getDate());      // 1–31
+console.log(date.getDay());       // 0 = Sunday
+            </code>
+        </div>
+    </article>
+
+    <!-- Setting Date Values -->
+    <article class="tag-box">
+        <h3>3. Setting Date Parts</h3>
+        <ul>
+            <li><code>setFullYear()</code>, <code>setMonth()</code>, <code>setDate()</code></li>
+            <li>These methods modify the date object in place.</li>
+        </ul>
+        <div class="syntax-box">
+            <code>
+const d = new Date();
+d.setFullYear(2030);
+d.setMonth(11);  // December (months start at 0)
+console.log(d);
+            </code>
+        </div>
+    </article>
+
+    <!-- Date Formatting -->
+    <article class="tag-box">
+        <h3>4. Formatting Dates</h3>
+        <ul>
+            <li><code>toDateString()</code> — returns date part only.</li>
+            <li><code>toISOString()</code> — returns ISO format string.</li>
+            <li><code>toLocaleDateString()</code> — localized string.</li>
+        </ul>
+        <div class="syntax-box">
+            <code>
+const today = new Date();
+console.log(today.toDateString());       // "Sat Apr 05 2025"
+console.log(today.toISOString());        // "2025-04-05T10:20:30.000Z"
+console.log(today.toLocaleDateString()); // "4/5/2025" or similar
+            </code>
+        </div>
+    </article>
+
+    <!-- Date Comparison -->
+    <article class="tag-box">
+        <h3>5. Comparing Dates</h3>
+        <p>Dates can be compared by converting them to numbers using <code>getTime()</code>.</p>
+        <div class="syntax-box">
+            <code>
+const d1 = new Date("2025-01-01");
+const d2 = new Date("2025-12-31");
+console.log(d1.getTime() < d2.getTime()); // true
+            </code>
+        </div>
+    </article>
+
+    <!-- Calculating Difference -->
+    <article class="tag-box">
+        <h3>6. Calculating Time Difference</h3>
+        <p>Subtract two date objects to get the difference in milliseconds.</p>
+        <div class="syntax-box">
+            <code>
+const start = new Date("2025-01-01");
+const end = new Date("2025-01-10");
+const diffInMs = end - start;
+const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+console.log(diffInDays); // 9
+            </code>
+        </div>
+    </article>
+
+    <!-- Summary -->
+    <article class="example-box">
+        <h3>7. Summary</h3>
+        <ul>
+            <li><strong>Create:</strong> <code>new Date()</code>, <code>new Date("YYYY-MM-DD")</code></li>
+            <li><strong>Get:</strong> <code>getFullYear()</code>, <code>getMonth()</code>, etc.</li>
+            <li><strong>Set:</strong> <code>setDate()</code>, <code>setMonth()</code>, etc.</li>
+            <li><strong>Format:</strong> <code>toDateString()</code>, <code>toLocaleDateString()</code></li>
+            <li><strong>Compare:</strong> using <code>getTime()</code></li>
+        </ul>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Random Objects</h2>
+    <p>In JavaScript, you can create random objects manually by combining random values with custom structures. This is often used in games, testing, and simulations.</p>
+
+    <!-- What Are Random Objects -->
+    <article class="tag-box">
+        <h3>1. What Are Random Objects?</h3>
+        <ul>
+            <li>Objects created dynamically with randomized properties and values.</li>
+            <li>Used in mock data, simulations, random events, and testing scenarios.</li>
+            <li>Often generated using <code>Math.random()</code> combined with arrays or functions.</li>
+        </ul>
+    </article>
+
+    <!-- Basic Random Object Example -->
+    <article class="tag-box">
+        <h3>2. Basic Random Object Example</h3>
+        <p>Here’s how you can create a simple object with randomized values:</p>
+        <div class="syntax-box">
+            <code>
+function getRandomUser() {
+    const names = ["Alice", "Bob", "Charlie", "Diana"];
+    const ages = [20, 25, 30, 35];
+    const isActive = Math.random() > 0.5;
+
+    return {
+        name: names[Math.floor(Math.random() * names.length)],
+        age: ages[Math.floor(Math.random() * ages.length)],
+        active: isActive
+    };
+}
+
+console.log(getRandomUser());
+            </code>
+        </div>
+    </article>
+
+    <!-- Generating Multiple Random Objects -->
+    <article class="tag-box">
+        <h3>3. Generating Multiple Random Objects</h3>
+        <p>You can loop to generate an array of random objects for mock data:</p>
+        <div class="syntax-box">
+            <code>
+const users = [];
+
+for (let i = 0; i < 5; i++) {
+    users.push(getRandomUser());
+}
+
+console.log(users);
+            </code>
+        </div>
+    </article>
+
+    <!-- Using Random Strings and Numbers -->
+    <article class="tag-box">
+        <h3>4. Random Strings & Numbers in Objects</h3>
+        <div class="syntax-box">
+            <code>
+function randomId() {
+    return Math.random().toString(36).substr(2, 8);
+}
+
+const product = {
+    id: randomId(),
+    price: (Math.random() * 100).toFixed(2),
+    available: Math.random() > 0.3
+};
+
+console.log(product);
+            </code>
+        </div>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>5. Common Use Cases</h3>
+        <ul>
+            <li>Generating fake data for UI or API testing.</li>
+            <li>Creating randomized game characters or items.</li>
+            <li>Building simulations and random events.</li>
+            <li>Assigning random values for animations or effects.</li>
+        </ul>
+    </article>
+
+    <!-- Tips -->
+    <article class="tag-box">
+        <h3>6. Tips for Using Random Objects</h3>
+        <ul>
+            <li>Wrap generation logic in reusable functions.</li>
+            <li>Use arrays for options and pick with <code>Math.random()</code>.</li>
+            <li>Use <code>Math.floor()</code> to avoid fractional indexes.</li>
+            <li>Use libraries like Faker.js for advanced random data.</li>
+        </ul>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Functions</h2>
+    <p><strong>Functions</strong> are blocks of code that are defined once and can be executed (called) whenever needed. They help in structuring code, improving readability, and reusability.</p>
+
+    <!-- What is a Function -->
+    <article class="tag-box">
+        <h3>1. What is a Function?</h3>
+        <ul>
+            <li>A function is a reusable block of code designed to perform a specific task.</li>
+            <li>It can accept inputs (called <strong>parameters</strong>) and return an output using <code>return</code>.</li>
+            <li>Functions help avoid repetition and make programs modular and maintainable.</li>
+        </ul>
+    </article>
+
+    <!-- Function Syntax -->
+    <article class="syntax-box">
+        <h3>2. Function Syntax</h3>
+        <code>
+function functionName(parameter1, parameter2) {
+    // code to execute
+    return result;
+}
+        </code>
+    </article>
+
+    <!-- Example -->
+    <article class="example-box">
+        <h3>3. Function Example</h3>
+        <code>
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("Alice")); // Output: Hello, Alice!
+        </code>
+    </article>
+
+    <!-- Function Types -->
+    <article class="tag-box">
+        <h3>4. Types of Functions</h3>
+        <ul>
+            <li><strong>Function Declaration</strong> – Standard way to declare a function using <code>function</code>.</li>
+            <li><strong>Function Expression</strong> – Function assigned to a variable.</li>
+            <li><strong>Arrow Function</strong> – Shorter syntax with <code>=&gt;</code>, often used for simple logic.</li>
+            <li><strong>IIFE</strong> (Immediately Invoked Function Expression) – Runs immediately after creation.</li>
+        </ul>
+        <code>
+// Function Declaration
+function sayHello() {
+    return "Hello!";
+}
+
+// Function Expression
+const sayHi = function() {
+    return "Hi!";
+};
+
+// Arrow Function
+const sayHey = () => "Hey!";
+
+// IIFE
+(function() {
+    console.log("IIFE executed");
+})();
+        </code>
+    </article>
+
+    <!-- Parameters -->
+    <article class="tag-box">
+        <h3>5. Types of Parameters</h3>
+        <ul>
+            <li><strong>Regular Parameters</strong>: Direct values passed during function call.</li>
+            <li><strong>Default Parameters</strong>: Assigns a default value if no argument is given.</li>
+            <li><strong>Rest Parameters</strong>: Gathers multiple arguments into a single array.</li>
+            <li><strong>Destructured Parameters</strong>: Extracts data from objects/arrays passed into the function.</li>
+        </ul>
+        <code>
+// Regular Parameter
+function add(a, b) { return a + b; }
+
+// Default Parameter
+function greet(name = "Guest") { return "Hello, " + name; }
+
+// Rest Parameter
+function sum(...numbers) { return numbers.reduce((a, b) => a + b); }
+
+// Destructured Parameter
+function printUser({ name, age }) {
+    console.log(${name} is ${age} years old);
+}
+        </code>
+    </article>
+
+    <!-- Function Methods -->
+    <article class="tag-box">
+        <h3>6. Function Methods</h3>
+        <ul>
+            <li><code>call()</code> – Invokes function with a specified <code>this</code> value and arguments.
+                <br><code>function sayName() { console.log(this.name); }<br>sayName.call({ name: "Sam" });</code>
+            </li>
+            <li><code>apply()</code> – Same as <code>call()</code>, but arguments are in an array.
+                <br><code>function introduce(age, city) { console.log(${this.name}, ${age}, from ${city}); }<br>introduce.apply({ name: "John" }, [30, "Paris"]);</code>
+            </li>
+            <li><code>bind()</code> – Returns a new function with a fixed <code>this</code> value.
+                <br><code>const user = { name: "Eva" };<br>function hello() { console.log("Hi " + this.name); }<br>const boundHello = hello.bind(user);<br>boundHello();</code>
+            </li>
+            <li><code>toString()</code> – Returns the function as a string.
+                <br><code>function show() { return "Done"; }<br>console.log(show.toString());</code>
+            </li>
+        </ul>
+    </article>
+
+    <!-- Method Example -->
+    <article class="example-box">
+        <h3>7. Example (call, apply, bind)</h3>
+        <code>
+function introduce(greeting) {
+    console.log(greeting + ", I am " + this.name);
+}
+const user = { name: "Liam" };
+
+introduce.call(user, "Hello");  // Hello, I am Liam
+introduce.apply(user, ["Hi"]);  // Hi, I am Liam
+const boundIntro = introduce.bind(user);
+boundIntro("Hey");              // Hey, I am Liam
+        </code>
+    </article>
+
+    <!-- Key Notes -->
+    <article class="tag-box">
+        <h3>8. Key Notes</h3>
+        <ul>
+            <li>Use <code>return</code> to send data back from a function.</li>
+            <li>Arrow functions do not bind their own <code>this</code>.</li>
+            <li>Functions can be passed as arguments to other functions (callbacks).</li>
+            <li>Functions inside functions create closures, allowing persistent data.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Async & Await</h2>
+    <p><strong>Async/Await</strong> simplifies working with asynchronous operations, making asynchronous code look and behave more like synchronous code.</p>
+
+    <!-- What is Async/Await -->
+    <article class="tag-box">
+        <h3>1. What is Async/Await?</h3>
+        <ul>
+            <li><code>async</code> keyword is used to declare a function that returns a promise.</li>
+            <li><code>await</code> is used inside async functions to pause execution until a Promise is resolved or rejected.</li>
+            <li>Makes asynchronous code easier to read and manage than using plain Promises or callbacks.</li>
+        </ul>
+    </article>
+
+    <!-- Basic Example -->
+    <article class="example-box">
+        <h3>2. Basic Example</h3>
+        <div class="syntax-box">
+            <code>
+async function getMessage() {
+    return "Hello from async!";
+}
+
+getMessage().then(msg =&gt; console.log(msg));
+// Output: Hello from async!
+            </code>
+        </div>
+    </article>
+
+    <!-- Await Example -->
+    <article class="example-box">
+        <h3>3. Await Example</h3>
+        <div class="syntax-box">
+            <code>
+function fetchData() {
+    return new Promise(resolve =&gt; {
+        setTimeout(() =&gt; resolve("Data loaded"), 1000);
+    });
+}
+
+async function load() {
+    const data = await fetchData();
+    console.log(data);
+}
+
+load();
+// Output after 1 second: Data loaded
+            </code>
+        </div>
+    </article>
+
+    <!-- Error Handling -->
+    <article class="tag-box">
+        <h3>4. Error Handling</h3>
+        <p>You can handle errors using <code>try...catch</code> blocks with async functions.</p>
+        <div class="syntax-box">
+            <code>
+async function fetchData() {
+    try {
+        const res = await fetch('https://api.invalidurl.com/data');
+        const data = await res.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+fetchData();
+            </code>
+        </div>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>5. Key Notes</h3>
+        <ul>
+            <li><code>await</code> can only be used inside an <code>async</code> function.</li>
+            <li>Helps avoid deeply nested <code>.then()</code> chains.</li>
+            <li>Combines best of both worlds: readable syntax and asynchronous power.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+
+</div><div class="container">
+  <h1>Advanced JavaScript Concepts</h1>
+
+  <!-- JavaScript Callbacks -->
+  <section>
+    <h2>JavaScript Callbacks</h2>
+    <p>
+      A <strong>callback</strong> is a function passed as an argument to another function, to be executed later. Callbacks are used to handle asynchronous tasks like reading files or making API requests.
+    </p>
+    <div class="example-box">
+      <h3>Example:</h3>
+      <code>
+function greet(name, callback) {<br>
+&nbsp;&nbsp;console.log("Hi " + name);<br>
+&nbsp;&nbsp;callback();<br>
+}<br><br>
+
+function sayBye() {<br>
+&nbsp;&nbsp;console.log("Goodbye!");<br>
+}<br><br>
+
+greet("Alice", sayBye);
+      </code>
+    </div>
+  </section>
+
+  <!-- JavaScript Recursion -->
+  <section>
+    <h2>JavaScript Recursion</h2>
+    <p>
+      <strong>Recursion</strong> is a technique where a function calls itself to solve a smaller version of a problem, until it reaches a base case.
+    </p>
+    <div class="example-box">
+      <h3>Example: Factorial</h3>
+      <code>
+function factorial(n) {<br>
+&nbsp;&nbsp;if (n === 0) return 1;<br>
+&nbsp;&nbsp;return n * factorial(n - 1);<br>
+}<br><br>
+
+console.log(factorial(5)); // Output: 120
+      </code>
+    </div>
+  </section>
+
+  <!-- JavaScript Promises -->
+  <section>
+    <h2>JavaScript Promises</h2>
+    <p>
+      A <strong>Promise</strong> is an object that represents the eventual completion or failure of an asynchronous operation. Promises have three states: <code>pending</code>, <code>fulfilled</code>, and <code>rejected</code>.
+    </p>
+    <div class="example-box">
+      <h3>Example:</h3>
+      <code>
+const promise = new Promise((resolve, reject) => {<br>
+&nbsp;&nbsp;setTimeout(() => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;resolve("Data received");<br>
+&nbsp;&nbsp;}, 1000);<br>
+});<br><br>
+
+promise.then((data) => {<br>
+&nbsp;&nbsp;console.log(data);<br>
+}).catch((error) => {<br>
+&nbsp;&nbsp;console.error(error);<br>
+});
+      </code>
+    </div>
+  </section>
+
+  <!-- JavaScript Callback Hell -->
+  <section>
+    <h2>Callback Hell</h2>
+    <p>
+      <strong>Callback Hell</strong> occurs when callbacks are nested within callbacks, leading to code that is hard to read and maintain. This often happens in asynchronous code without proper structure.
+    </p>
+    <div class="example-box">
+      <h3>Example:</h3>
+      <code>
+setTimeout(() => {<br>
+&nbsp;&nbsp;console.log("Step 1");<br>
+&nbsp;&nbsp;setTimeout(() => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("Step 2");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Step 3");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}, 1000);<br>
+&nbsp;&nbsp;}, 1000);<br>
+}, 1000);
+      </code>
+    </div>
+    <p>
+      To avoid callback hell, use <code>Promises</code> or <code>async/await</code> for better readability and maintainability.
+    </p>
+  </section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript map(), filter(), and reduce()</h2>
+    <p>These powerful array methods help you transform, filter, and summarize data efficiently. They are widely used in functional programming patterns.</p>
+
+    <!-- map() Method -->
+    <article class="tag-box">
+        <h3>1. map()</h3>
+        <p><strong>map()</strong> creates a new array by applying a function to each element in the original array.</p>
+        <div class="syntax-box">
+            <code>
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+            </code>
+        </div>
+    </article>
+
+    <!-- filter() Method -->
+    <article class="tag-box">
+        <h3>2. filter()</h3>
+        <p><strong>filter()</strong> returns a new array with elements that pass a test (return true).</p>
+        <div class="syntax-box">
+            <code>
+const numbers = [1, 2, 3, 4, 5];
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4]
+            </code>
+        </div>
+    </article>
+
+    <!-- reduce() Method -->
+    <article class="tag-box">
+        <h3>3. reduce()</h3>
+        <p><strong>reduce()</strong> reduces an array to a single value by applying a function to each element (accumulator pattern).</p>
+        <div class="syntax-box">
+            <code>
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // 10
+            </code>
+        </div>
+    </article>
+
+    <!-- Comparison -->
+    <article class="example-box">
+        <h3>4. When to Use Each</h3>
+        <ul>
+            <li><strong>map():</strong> When you want to transform items in an array.</li>
+            <li><strong>filter():</strong> When you want only certain items from an array.</li>
+            <li><strong>reduce():</strong> When you want a single value (sum, average, object, etc.).</li>
+        </ul>
+    </article>
+
+    <!-- Real-World Example -->
+    <article class="tag-box">
+        <h3>5. Real-World Combo Example</h3>
+        <p>Combining all three methods:</p>
+        <div class="syntax-box">
+            <code>
+const products = [
+    { name: "Pen", price: 10 },
+    { name: "Book", price: 50 },
+    { name: "Pencil", price: 5 }
+];
+
+const total = products
+    .filter(p => p.price > 5)
+    .map(p => p.price)
+    .reduce((sum, price) => sum + price, 0);
+
+console.log(total); // 60
+            </code>
+        </div>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>6. Key Notes</h3>
+        <ul>
+            <li>These methods do not change the original array.</li>
+            <li><code>map()</code> and <code>filter()</code> return arrays, <code>reduce()</code> returns a single value.</li>
+            <li>Can be chained together for powerful data manipulation.</li>
+        </ul>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>JavaScript Utility Functions</h2>
+    <p>JavaScript includes several built-in utility methods for interacting with users, debugging, and making network requests.</p>
+
+    <!-- console.log() -->
+    <article class="tag-box">
+        <h3>1. console.log()</h3>
+        <p>Used to display output in the browser's console for debugging purposes.</p>
+        <div class="syntax-box">
+            <code>
+console.log("Hello, world!");
+let x = 5;
+console.log("The value of x is:", x);
+            </code>
+        </div>
+    </article>
+
+    <!-- alert() -->
+    <article class="tag-box">
+        <h3>2. alert()</h3>
+        <p>Displays a popup alert box with a message. Useful for simple notifications.</p>
+        <div class="syntax-box">
+            <code>
+alert("This is an alert box!");
+            </code>
+        </div>
+    </article>
+
+    <!-- confirm() -->
+    <article class="tag-box">
+        <h3>3. confirm()</h3>
+        <p>Asks the user to confirm an action. Returns <code>true</code> if OK is clicked, otherwise <code>false</code>.</p>
+        <div class="syntax-box">
+            <code>
+const answer = confirm("Do you want to proceed?");
+console.log(answer); // true or false
+            </code>
+        </div>
+    </article>
+
+    <!-- prompt() -->
+    <article class="tag-box">
+        <h3>4. prompt()</h3>
+        <p>Prompts the user to input a value. Returns the entered value as a string or <code>null</code> if canceled.</p>
+        <div class="syntax-box">
+            <code>
+const name = prompt("What is your name?");
+console.log("Hello, " + name);
+            </code>
+        </div>
+    </article>
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>6. Common Use Cases</h3>
+        <ul>
+            <li><code>console.log()</code> for debugging code.</li>
+            <li><code>alert()</code>, <code>confirm()</code>, <code>prompt()</code> for quick user interaction.</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>7. Notes</h3>
+        <ul>
+            <li>Use <code>console.log()</code> often during development to check variable values.</li>
+            <li>Avoid overusing <code>alert()</code> and <code>prompt()</code> in production—they block UI.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+
+            <!-- addEventListener -->
+            <section id="addEventListener">
+                <h2>7. addEventListener</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Attaches an event listener to an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.addEventListener(event, callback);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", () =&gt; {
+        alert("Button clicked!");
+    });
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h1>Element methods</h1>
+                <h2>1. innerHTML</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Gets or sets the HTML content inside an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.innerHTML = newHTML;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.innerHTML = "&lt;strong&gt;Updated Content&lt;/strong&gt;";
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- textContent -->
+            <section id="textContent">
+                <h2>2. textContent</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Gets or sets only the text inside an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.textContent = newText;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.textContent = "Updated Text Content";
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- setAttribute -->
+            <section id="setAttribute">
+                <h2>3. setAttribute</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Adds or changes an attribute of an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.setAttribute(name, value);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.setAttribute("title", "Tooltip Text");
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- getAttribute -->
+            <section id="getAttribute">
+                <h2>4. getAttribute</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Gets the value of an attribute.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.getAttribute(name);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv" title="Tooltip Text"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    const title = element.getAttribute("title");
+    console.log(title); // Output: Tooltip Text
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- removeAttribute -->
+            <section id="removeAttribute">
+                <h2>5. removeAttribute</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Removes an attribute from an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.removeAttribute(name);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv" title="Tooltip Text"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.removeAttribute("title");
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- classList.add -->
+            <section id="classListAdd">
+                <h2>6. classList.add</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Adds a class to an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.classList.add(className);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.classList.add("highlight");
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- classList.remove -->
+            <section id="classListRemove">
+                <h2>7. classList.remove</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Removes a class from an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.classList.remove(className);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv" class="highlight"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.classList.remove("highlight");
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- classList.toggle -->
+            <section id="classListToggle">
+                <h2>8. classList.toggle</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Toggles a class on/off for an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.classList.toggle(className);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.classList.toggle("highlight");
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+
+            <!-- style.property -->
+            <section id="styleProperty">
+                <h2>9. style.property</h2>
+                <article class="tag-box">
+                    <h3>Description</h3>
+                    <p>Changes inline CSS styles dynamically.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.style.property = value;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;div id="myDiv"&gt;Hello, World!&lt;/div&gt;
+
+&lt;script&gt;
+    const element = document.getElementById("myDiv");
+    element.style.color = "red";
+    element.style.fontSize = "20px";
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h2>3. Event Handling Methods</h2>
+                <p>Methods used to handle user interactions.</p>
+
+                <!-- addEventListener -->
+                <article class="tag-box">
+                    <h3>addEventListener</h3>
+                    <p>Attaches an event listener to an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.addEventListener(event, function);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", () =&gt; {
+        alert("Button clicked!");
+    });
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- removeEventListener -->
+                <article class="tag-box">
+                    <h3>removeEventListener</h3>
+                    <p>Removes an event listener from an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.removeEventListener(event, function);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    const button = document.getElementById("myButton");
+    const handleClick = () =&gt; {
+        alert("Button clicked!");
+    };
+    button.addEventListener("click", handleClick);
+    button.removeEventListener("click", handleClick); // Removes the event listener
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- click -->
+                <article class="tag-box">
+                    <h3>click</h3>
+                    <p>Simulates a mouse click on an element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.click();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", () =&gt; {
+        alert("Button clicked!");
+    });
+    button.click(); // Simulates a click
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- focus -->
+                <article class="tag-box">
+                    <h3>focus</h3>
+                    <p>Gives focus to an input element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.focus();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="text" id="myInput" placeholder="Enter text"&gt;
+
+&lt;script&gt;
+    const input = document.getElementById("myInput");
+    input.focus(); // Focuses the input field
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- blur -->
+                <article class="tag-box">
+                    <h3>blur</h3>
+                    <p>Removes focus from an input element.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>element.blur();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="text" id="myInput" placeholder="Enter text"&gt;
+
+&lt;script&gt;
+    const input = document.getElementById("myInput");
+    input.focus(); // Focuses the input field
+    input.blur(); // Removes focus
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h2>4. Form and Input Methods</h2>
+                <p>These methods help manage form inputs.</p>
+
+                <!-- form.submit -->
+                <article class="tag-box">
+                    <h3>form.submit</h3>
+                    <p>Submits a form programmatically.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>formElement.submit();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;form id="myForm" action="/submit" method="post"&gt;
+    &lt;input type="text" name="username" placeholder="Enter username"&gt;
+    &lt;button type="button" onclick="submitForm()"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    function submitForm() {
+        const form = document.getElementById("myForm");
+        form.submit(); // Submits the form
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- form.reset -->
+                <article class="tag-box">
+                    <h3>form.reset</h3>
+                    <p>Resets a form’s fields to their default values.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>formElement.reset();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;form id="myForm"&gt;
+    &lt;input type="text" name="username" placeholder="Enter username"&gt;
+    &lt;button type="button" onclick="resetForm()"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    function resetForm() {
+        const form = document.getElementById("myForm");
+        form.reset(); // Resets the form fields
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- input.value -->
+                <article class="tag-box">
+                    <h3>input.value</h3>
+                    <p>Gets or sets the value of an input field.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>inputElement.value = newValue;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="text" id="myInput" placeholder="Enter text"&gt;
+&lt;button onclick="updateValue()"&gt;Update Value&lt;/button&gt;
+
+&lt;script&gt;
+    function updateValue() {
+        const input = document.getElementById("myInput");
+        input.value = "New Value"; // Sets the input value
+        console.log(input.value); // Gets the input value
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- input.checked -->
+                <article class="tag-box">
+                    <h3>input.checked</h3>
+                    <p>Checks if a checkbox or radio button is selected.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>inputElement.checked;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="checkbox" id="myCheckbox"&gt; Check me
+&lt;button onclick="checkStatus()"&gt;Check Status&lt;/button&gt;
+
+&lt;script&gt;
+    function checkStatus() {
+        const checkbox = document.getElementById("myCheckbox");
+        console.log(checkbox.checked); // Output: true or false
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- input.disabled -->
+                <article class="tag-box">
+                    <h3>input.disabled</h3>
+                    <p>Disables or enables an input field.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>inputElement.disabled = true; // Disables the input
+inputElement.disabled = false; // Enables the input</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;input type="text" id="myInput" placeholder="Enter text"&gt;
+&lt;button onclick="disableInput()"&gt;Disable Input&lt;/button&gt;
+&lt;button onclick="enableInput()"&gt;Enable Input&lt;/button&gt;
+
+&lt;script&gt;
+    function disableInput() {
+        const input = document.getElementById("myInput");
+        input.disabled = true; // Disables the input
+    }
+    function enableInput() {
+        const input = document.getElementById("myInput");
+        input.disabled = false; // Enables the input
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h2>5. Window and Navigation Methods</h2>
+                <p>These methods control the browser window and navigation.</p>
+
+                <!-- window.alert -->
+                <article class="tag-box">
+                    <h3>window.alert</h3>
+                    <p>Displays an alert box with a message.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.alert(message);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="showAlert()"&gt;Show Alert&lt;/button&gt;
+
+&lt;script&gt;
+    function showAlert() {
+        window.alert("This is an alert message!");
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.confirm -->
+                <article class="tag-box">
+                    <h3>window.confirm</h3>
+                    <p>Displays a confirmation box with OK and Cancel buttons.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.confirm(message);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="showConfirm()"&gt;Show Confirm&lt;/button&gt;
+
+&lt;script&gt;
+    function showConfirm() {
+        const isConfirmed = window.confirm("Are you sure?");
+        console.log(isConfirmed); // Output: true if OK, false if Cancel
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.prompt -->
+                <article class="tag-box">
+                    <h3>window.prompt</h3>
+                    <p>Displays an input dialog with a message and default value.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.prompt(message, default);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="showPrompt()"&gt;Show Prompt&lt;/button&gt;
+
+&lt;script&gt;
+    function showPrompt() {
+        const userInput = window.prompt("Enter your name:", "John Doe");
+        console.log(userInput); // Output: User's input or null if canceled
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.open -->
+                <article class="tag-box">
+                    <h3>window.open</h3>
+                    <p>Opens a new browser window or tab.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.open(url, name, specs);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="openNewWindow()"&gt;Open New Window&lt;/button&gt;
+
+&lt;script&gt;
+    function openNewWindow() {
+        window.open("https://www.example.com", "_blank", "width=600,height=400");
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.close -->
+                <article class="tag-box">
+                    <h3>window.close</h3>
+                    <p>Closes the current browser window (if allowed).</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.close();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="closeWindow()"&gt;Close Window&lt;/button&gt;
+
+&lt;script&gt;
+    function closeWindow() {
+        window.close(); // Closes the current window
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.scrollTo -->
+                <article class="tag-box">
+                    <h3>window.scrollTo</h3>
+                    <p>Scrolls to a specific position on the page.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.scrollTo(x, y);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="scrollToPosition()"&gt;Scroll to Top&lt;/button&gt;
+
+&lt;script&gt;
+    function scrollToPosition() {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.location.href -->
+                <article class="tag-box">
+                    <h3>window.location.href</h3>
+                    <p>Gets or sets the current page URL.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.location.href = newURL;</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="redirectToNewPage()"&gt;Go to Example&lt;/button&gt;
+
+&lt;script&gt;
+    function redirectToNewPage() {
+        window.location.href = "https://www.example.com"; // Redirects to a new page
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.history.back -->
+                <article class="tag-box">
+                    <h3>window.history.back</h3>
+                    <p>Goes back one page in the browser history.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.history.back();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="goBack()"&gt;Go Back&lt;/button&gt;
+
+&lt;script&gt;
+    function goBack() {
+        window.history.back(); // Navigates to the previous page
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- window.history.forward -->
+                <article class="tag-box">
+                    <h3>window.history.forward</h3>
+                    <p>Goes forward one page in the browser history.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>window.history.forward();</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="goForward()"&gt;Go Forward&lt;/button&gt;
+
+&lt;script&gt;
+    function goForward() {
+        window.history.forward(); // Navigates to the next page
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h2>6. Timer Methods</h2>
+                <p>Used for executing functions after a delay or at intervals.</p>
+
+                <!-- setTimeout -->
+                <article class="tag-box">
+                    <h3>setTimeout</h3>
+                    <p>Executes a function once after a specified delay.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>setTimeout(function, milliseconds);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="startTimeout()"&gt;Start Timeout&lt;/button&gt;
+
+&lt;script&gt;
+    function startTimeout() {
+        setTimeout(() => {
+            alert("This message appears after 3 seconds!");
+        }, 3000); // Executes after 3 seconds (3000 milliseconds)
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- setInterval -->
+                <article class="tag-box">
+                    <h3>setInterval</h3>
+                    <p>Repeats a function at specified intervals.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>setInterval(function, milliseconds);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="startInterval()"&gt;Start Interval&lt;/button&gt;
+&lt;button onclick="stopInterval()"&gt;Stop Interval&lt;/button&gt;
+&lt;p id="intervalOutput"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    let intervalId;
+    function startInterval() {
+        let count = 0;
+        intervalId = setInterval(() => {
+            document.getElementById("intervalOutput").textContent = `Interval count: ${++count}`;
+        }, 1000); // Executes every 1 second (1000 milliseconds)
+    }
+    function stopInterval() {
+        clearInterval(intervalId); // Stops the interval
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- clearTimeout -->
+                <article class="tag-box">
+                    <h3>clearTimeout</h3>
+                    <p>Cancels a `setTimeout()` before it executes.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>clearTimeout(timeoutId);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="startTimeout()"&gt;Start Timeout&lt;/button&gt;
+&lt;button onclick="cancelTimeout()"&gt;Cancel Timeout&lt;/button&gt;
+
+&lt;script&gt;
+    let timeoutId;
+    function startTimeout() {
+        timeoutId = setTimeout(() => {
+            alert("This message appears after 5 seconds!");
+        }, 5000); // Executes after 5 seconds
+    }
+    function cancelTimeout() {
+        clearTimeout(timeoutId); // Cancels the timeout
+        alert("Timeout canceled!");
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- clearInterval -->
+                <article class="tag-box">
+                    <h3>clearInterval</h3>
+                    <p>Cancels a `setInterval()` to stop repeated execution.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>clearInterval(intervalId);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="startInterval()"&gt;Start Interval&lt;/button&gt;
+&lt;button onclick="stopInterval()"&gt;Stop Interval&lt;/button&gt;
+&lt;p id="intervalOutput"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    let intervalId;
+    function startInterval() {
+        let count = 0;
+        intervalId = setInterval(() => {
+            document.getElementById("intervalOutput").textContent = `Interval count: ${++count}`;
+        }, 1000); // Executes every 1 second
+    }
+    function stopInterval() {
+        clearInterval(intervalId); // Stops the interval
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+                <h2>7. Console Methods (Debugging)</h2>
+                <p>These methods are used for debugging and logging messages to the console.</p>
+
+                <!-- console.log -->
+                <article class="tag-box">
+                    <h3>console.log</h3>
+                    <p>Outputs a message to the console.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>console.log(message);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="logMessage()"&gt;Log Message&lt;/button&gt;
+
+&lt;script&gt;
+    function logMessage() {
+        console.log("This is a log message!"); // Outputs to the console
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- console.error -->
+                <article class="tag-box">
+                    <h3>console.error</h3>
+                    <p>Logs an error message to the console.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>console.error(message);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="logError()"&gt;Log Error&lt;/button&gt;
+
+&lt;script&gt;
+    function logError() {
+        console.error("This is an error message!"); // Outputs an error message
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- console.warn -->
+                <article class="tag-box">
+                    <h3>console.warn</h3>
+                    <p>Logs a warning message to the console.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>console.warn(message);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="logWarning()"&gt;Log Warning&lt;/button&gt;
+
+&lt;script&gt;
+    function logWarning() {
+        console.warn("This is a warning message!"); // Outputs a warning message
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+
+                <!-- console.table -->
+                <article class="tag-box">
+                    <h3>console.table</h3>
+                    <p>Displays data as a table in the console.</p>
+                    <div class="syntax-box">
+                        <p><strong>Syntax:</strong></p>
+                        <code>console.table(array);</code>
+                    </div>
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <code>&lt;button onclick="logTable()"&gt;Log Table&lt;/button&gt;
+
+&lt;script&gt;
+    function logTable() {
+        const data = [
+            { name: "John", age: 25, city: "New York" },
+            { name: "Jane", age: 30, city: "London" },
+            { name: "Mike", age: 35, city: "Paris" }
+        ];
+        console.table(data); // Displays data as a table
+    }
+&lt;/script&gt;</code>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <div class="container">
+        <section>
+    <h2>JavaScript fetch()</h2>
+    <p>The <strong>fetch()</strong> method is used to make network requests (like APIs) and handle responses asynchronously. It returns a Promise and is often used with <code>.then()</code> or <code>async/await</code>.</p>
+
+    <!-- Syntax -->
+    <article class="tag-box">
+        <h3>1. Syntax</h3>
+        <code>
+fetch(url, options)
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data))
+    .catch(error =&gt; console.error('Error:', error));
+        </code>
+    </article>
+
+    <!-- GET Request -->
+    <article class="tag-box">
+        <h3>2. Basic GET Request</h3>
+        <p>Fetch data from an API (read-only).</p>
+        <div class="syntax-box">
+            <code>
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data))
+    .catch(error =&gt; console.error('Error:', error));
+            </code>
+        </div>
+    </article>
+
+    <!-- POST Request -->
+    <article class="tag-box">
+        <h3>3. POST Request</h3>
+        <p>Send data to a server using JSON format.</p>
+        <div class="syntax-box">
+            <code>
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        title: 'New Post',
+        body: 'This is the content.',
+        userId: 1
+    })
+})
+.then(response =&gt; response.json())
+.then(data =&gt; console.log(data))
+.catch(error =&gt; console.error('Error:', error));
+            </code>
+        </div>
+    </article>
+
+    <!-- Using async/await -->
+    <article class="tag-box">
+        <h3>4. Using async/await</h3>
+        <p>Cleaner and modern way to handle asynchronous fetch logic.</p>
+        <div class="syntax-box">
+            <code>
+async function getPost() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getPost();
+            </code>
+        </div>
+    </article>
+
+    <!-- Common Use Cases -->
+    <article class="example-box">
+        <h3>5. Common Use Cases</h3>
+        <ul>
+            <li>Fetching data from RESTful APIs.</li>
+            <li>Submitting form data to a server.</li>
+            <li>Loading dynamic content without page reload.</li>
+            <li>Interacting with external services (e.g., weather, search).</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>6. Key Notes</h3>
+        <ul>
+            <li><code>fetch()</code> is Promise-based and works asynchronously.</li>
+            <li>Always handle errors using <code>.catch()</code> or <code>try...catch</code>.</li>
+            <li>Use <code>response.json()</code> to parse the response body into a JavaScript object.</li>
+            <li>To send data, include <code>method</code>, <code>headers</code>, and <code>body</code> in the options object.</li>
+        </ul>
+    </article>
+</section>
+    </div>
+    <div class="container">
+        <section>
+    <h2>JSON (JavaScript Object Notation)</h2>
+    <p><strong>JSON</strong> is a lightweight data format used for storing and exchanging data. It is easy to read, write, and parse – making it ideal for APIs and communication between systems.</p>
+
+    <!-- What is JSON -->
+    <article class="tag-box">
+        <h3>1. What is JSON?</h3>
+        <ul>
+            <li>Data format based on JavaScript object syntax.</li>
+            <li>Used to exchange data between server and client.</li>
+            <li>Supported by almost every modern programming language.</li>
+        </ul>
+    </article>
+
+    <!-- Example JSON -->
+    <article class="example-box">
+        <h3>2. Example JSON</h3>
+        <code>
+{
+    "name": "Alice",
+    "age": 25,
+    "isStudent": false,
+    "skills": ["HTML", "CSS", "JavaScript"]
+}
+        </code>
+    </article>
+
+    <!-- JSON.stringify() -->
+    <article class="tag-box">
+        <h3>3. JSON.stringify()</h3>
+        <p>Converts a JavaScript object into a JSON string.</p>
+        <div class="syntax-box">
+            <code>
+const obj = { name: "Bob", age: 30 };
+const jsonString = JSON.stringify(obj);
+console.log(jsonString); // Output: {"name":"Bob","age":30}
+            </code>
+        </div>
+    </article>
+
+    <!-- JSON.parse() -->
+    <article class="tag-box">
+        <h3>4. JSON.parse()</h3>
+        <p>Converts a JSON string into a JavaScript object.</p>
+        <div class="syntax-box">
+            <code>
+const jsonText = '{"name":"Eve","age":28}';
+const user = JSON.parse(jsonText);
+console.log(user.name); // Output: Eve
+            </code>
+        </div>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>5. Common Use Cases</h3>
+        <ul>
+            <li>Sending and receiving data from APIs.</li>
+            <li>Storing settings or configurations.</li>
+            <li>Reading/writing structured data to files or localStorage.</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>6. Key Notes</h3>
+        <ul>
+            <li>JSON keys must be in double quotes.</li>
+            <li>Functions and undefined are not valid in JSON.</li>
+            <li><code>JSON.stringify()</code> ignores non-serializable values.</li>
+            <li><code>JSON.parse()</code> will throw an error for invalid JSON.</li>
+        </ul>
+    </article>
+</section>
+
+    </div>
+</body>
+</html>

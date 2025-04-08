@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo.jpg">
+
+    <title>HTML & CSS Learning Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #60a5fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .syntax-box, .example-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .syntax-box {
+            border-color: #10b981;
+        }
+
+        .example-box {
+            border-color: #8b5cf6;
+        }
+
+        .syntax-box:hover,
+        .example-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-box {
+            padding: 20px;
+            background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 12px;
+            display: block;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .home-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button:hover {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      transform: translateY(-3px);
+    }
+
+    </style>
+</head><body>
+    <div class="container">
+        <a href="index.html" class="home-button">🏠 Home</a>
+        <div class="container">
+  <h1>Introduction to Databases</h1>
+
+  <section>
+    <h2>What is a Database?</h2>
+    <p>
+      A <strong>database</strong> is an organized collection of data that can be easily accessed, managed, and updated. Databases are used to store information like user data, products, orders, posts, and more in web applications and software systems.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why Use a Database?</h2>
+    <ul>
+      <li>Store large amounts of structured data efficiently.</li>
+      <li>Retrieve, filter, and sort data quickly using queries.</li>
+      <li>Maintain relationships between different sets of data (e.g., users and orders).</li>
+      <li>Ensure data integrity, security, and backups.</li>
+      <li>Allow multiple users and applications to access data simultaneously.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Types of Databases</h2>
+    <ul>
+      <li><strong>Relational Databases (RDBMS):</strong> Use tables, rows, and columns. Examples: MySQL, PostgreSQL, SQLite.</li>
+      <li><strong>NoSQL Databases:</strong> Use flexible formats like JSON. Examples: MongoDB, Firebase, CouchDB.</li>
+      <li><strong>In-Memory Databases:</strong> Store data in RAM for speed. Example: Redis.</li>
+      <li><strong>Cloud Databases:</strong> Hosted databases like Amazon RDS, Google Firebase.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic Database Terms</h2>
+    <ul>
+      <li><strong>Table:</strong> A collection of related data in rows and columns.</li>
+      <li><strong>Row (Record):</strong> A single data item or entry in a table.</li>
+      <li><strong>Column (Field):</strong> A single type of data (like name, email).</li>
+      <li><strong>Primary Key:</strong> A unique identifier for each record in a table.</li>
+      <li><strong>Foreign Key:</strong> A field that links to another table’s primary key.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example (SQL - Relational Database)</h2>
+    <div class="example-box">
+      <code>
+-- Create a table<br>
+CREATE TABLE users (<br>
+&nbsp;&nbsp;id INT PRIMARY KEY,<br>
+&nbsp;&nbsp;name VARCHAR(100),<br>
+&nbsp;&nbsp;email VARCHAR(100)<br>
+);<br><br>
+
+-- Insert data<br>
+INSERT INTO users (id, name, email)<br>
+VALUES (1, 'Alice', 'alice@example.com');<br><br>
+
+-- Query data<br>
+SELECT * FROM users;<br>
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <h2>Example (NoSQL - MongoDB)</h2>
+    <div class="example-box">
+      <code>
+// Insert a document into a collection<br>
+db.users.insertOne({<br>
+&nbsp;&nbsp;name: "Bob",<br>
+&nbsp;&nbsp;email: "bob@example.com"<br>
+});<br><br>
+
+// Find documents<br>
+db.users.find();
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <h2>How Databases Work in Web Apps</h2>
+    <p>Databases connect to your application using a <strong>backend language</strong> (e.g., Node.js, PHP, Python). Queries are sent from your app to the database to store, update, or retrieve data.</p>
+    <p>Example flow:</p>
+    <ol>
+      <li>User submits a form on the website.</li>
+      <li>JavaScript sends the data to the backend (e.g., Node.js).</li>
+      <li>The backend executes a query and saves it to the database.</li>
+      <li>The database responds with success or failure.</li>
+    </ol>
+  </section>
+</div>
+
+    </div>
+<div class="container">
+    <h1>Database Development Topics</h1>
+
+
+    <!-- Relational Databases -->
+    <div class="tag-box">
+        <h2>Relational Databases (SQL-based)</h2>
+        <p>Relational databases store data in tables with rows and columns. They use SQL (Structured Query Language) for querying and managing data.</p>
+        <div class="syntax-box">
+            <h3>Syntax Example (SQL Query):</h3>
+            <code>SELECT * FROM users WHERE age > 25;</code>
+        </div>
+        <div class="example-box">
+            <h3>Example:</h3>
+            <p>Retrieve all users older than 25 from the "users" table.</p>
+            <code>SELECT * FROM users WHERE age > 25;</code>
+        </div>
+    </div>
+
+    <!-- NoSQL Databases -->
+    <div class="tag-box">
+        <h2>NoSQL Databases (Non-Relational)</h2>
+        <p>NoSQL databases store data in flexible formats like JSON, key-value pairs, or graphs. They are designed for scalability and performance.</p>
+        <div class="syntax-box">
+            <h3>Syntax Example (MongoDB Query):</h3>
+            <code>db.collection.find({ age: { $gt: 25 } });</code>
+        </div>
+        <div class="example-box">
+            <h3>Example:</h3>
+            <p>Retrieve all documents from the "users" collection where the age is greater than 25.</p>
+            <code>db.users.find({ age: { $gt: 25 } });</code>
+        </div>
+    </div>
+
+    <!-- NewSQL Databases -->
+    <div class="tag-box">
+        <h2>NewSQL Databases</h2>
+        <p>NewSQL databases combine the scalability of NoSQL with the ACID (Atomicity, Consistency, Isolation, Durability) properties of relational databases.</p>
+        <div class="syntax-box">
+            <h3>Syntax Example (CockroachDB Query):</h3>
+            <code>SELECT * FROM users WHERE age > 25;</code>
+        </div>
+        <div class="example-box">
+            <h3>Example:</h3>
+            <p>Retrieve all users older than 25 from the "users" table in CockroachDB.</p>
+            <code>SELECT * FROM users WHERE age > 25;</code>
+        </div>
+    </div>
+
+    <!-- Cloud Databases -->
+    <div class="tag-box">
+        <h2>Cloud Databases</h2>
+        <p>Cloud databases are hosted on cloud platforms and provide scalability, reliability, and ease of access.</p>
+        <div class="syntax-box">
+            <h3>Syntax Example (Firestore Query):</h3>
+            <code>db.collection('users').where('age', '>', 25).get();</code>
+        </div>
+        <div class="example-box">
+            <h3>Example:</h3>
+            <p>Retrieve all users older than 25 from the "users" collection in Firestore.</p>
+            <code>db.collection('users').where('age', '>', 25).get();</code>
+        </div>
+    </div>
+
+    <!-- In-Memory Databases -->
+    <div class="tag-box">
+        <h2>In-Memory Databases</h2>
+        <p>In-memory databases store data in RAM for faster access, making them ideal for caching and real-time applications.</p>
+        <div class="syntax-box">
+            <h3>Syntax Example (Redis Command):</h3>
+            <code>GET user:123</code>
+        </div>
+        <div class="example-box">
+            <h3>Example:</h3>
+            <p>Retrieve the value associated with the key "user:123" in Redis.</p>
+            <code>GET user:123</code>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+<!-- Database Management Systems (DBMS) -->
+<div class="tag-box">
+    <h2>2. Database Management Systems (DBMS)</h2>
+
+
+    <!-- Relational DBMS -->
+    <div class="syntax-box">
+        <h3>Relational DBMS (RDBMS) Example (MySQL):</h3>
+        <code>CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), age INT);</code>
+    </div>
+    <div class="example-box">
+        <h3>Example:</h3>
+        <p>Create a table named "users" with columns for ID, name, and age in MySQL.</p>
+        <code>CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), age INT);</code>
+    </div>
+</div>
+    <!-- NoSQL DBMS -->
+    <div class="syntax-box">
+        <h3>NoSQL DBMS Example (MongoDB):</h3>
+        <code>db.users.insertOne({ name: "John", age: 30 });</code>
+    </div>
+    <div class="example-box">
+        <h3>Example:</h3>
+        <p>Insert a document into the "users" collection in MongoDB.</p>
+        <code>db.users.insertOne({ name: "John", age: 30 });</code>
+    </div>
+
+    <!-- In-Memory DBMS -->
+    <div class="syntax-box">
+        <h3>In-Memory DBMS Example (Redis):</h3>
+        <code>SET user:123 "John Doe"</code>
+    </div>
+    <div class="example-box">
+        <h3>Example:</h3>
+        <p>Set a key-value pair in Redis.</p>
+        <code>SET user:123 "John Doe"</code>
+    </div>
+
+    <!-- Cloud DBMS -->
+    <div class="syntax-box">
+        <h3>Cloud DBMS Example (Firebase):</h3>
+        <code>firestore.collection('users').add({ name: 'John', age: 30 });</code>
+    </div>
+    <div class="example-box">
+        <h3>Example:</h3>
+        <p>Add a document to the "users" collection in Firebase Firestore.</p>
+        <code>firestore.collection('users').add({ name: 'John', age: 30 });</code>
+    </div>
+
+    <!-- Graph DBMS -->
+    <div class="syntax-box">
+        <h3>Graph DBMS Example (Neo4j):</h3>
+        <code>CREATE (user:User { name: 'John', age: 30 });</code>
+    </div>
+    <div class="example-box">
+        <h3>Example:</h3>
+        <p>Create a node representing a user in Neo4j.</p>
+        <code>CREATE (user:User { name: 'John', age: 30 });</code>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <section>
+    <h2>Keys in DBMS</h2>
+    <p>Keys are crucial in relational databases as they uniquely identify records and help maintain data integrity. Here are the main types of keys:</p>
+
+    <!-- Primary Key -->
+    <article class="tag-box">
+        <h3>1. Primary Key</h3>
+        <p>A Primary Key uniquely identifies each record in a table. It cannot contain NULL values and must be unique.</p>
+        <div class="syntax-box">
+            <p><strong>Syntax:</strong></p>
+            <code>CREATE TABLE Students (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Example:</strong> ID = 101 is a unique student identifier.</p>
+        </div>
+    </article>
+
+    <!-- Foreign Key -->
+    <article class="tag-box">
+        <h3>2. Foreign Key</h3>
+        <p>A Foreign Key is a field that links one table to another. It refers to the primary key in another table.</p>
+        <div class="syntax-box">
+            <p><strong>Syntax:</strong></p>
+            <code>CREATE TABLE Orders (
+    OrderID INT,
+    CustomerID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Example:</strong> Orders table references CustomerID from Customers table.</p>
+        </div>
+    </article>
+
+    <!-- Candidate Key -->
+    <article class="tag-box">
+        <h3>3. Candidate Key</h3>
+        <p>Candidate Keys are all possible keys that can uniquely identify rows. One is chosen as the primary key.</p>
+        <div class="syntax-box">
+            <code>-- Candidate Keys: Email, RollNumber
+CREATE TABLE Students (
+    RollNumber INT,
+    Email VARCHAR(100),
+    Name VARCHAR(100),
+    PRIMARY KEY (RollNumber)
+);</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Example:</strong> Both Email and RollNumber can be candidate keys.</p>
+        </div>
+    </article>
+
+    <!-- Composite Key -->
+    <article class="tag-box">
+        <h3>4. Composite Key</h3>
+        <p>A Composite Key is a combination of two or more columns used to uniquely identify a record.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE CourseEnrollments (
+    StudentID INT,
+    CourseID INT,
+    PRIMARY KEY (StudentID, CourseID)
+);</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Example:</strong> One student can take many courses. Together, StudentID + CourseID make a unique key.</p>
+        </div>
+    </article>
+
+    <!-- Alternate Key -->
+    <article class="tag-box">
+        <h3>5. Alternate Key</h3>
+        <p>Alternate Keys are candidate keys not selected as the primary key.</p>
+        <div class="example-box">
+            <p><strong>Example:</strong> If RollNumber is primary key, then Email is an alternate key.</p>
+        </div>
+    </article>
+
+    <!-- Super Key -->
+    <article class="tag-box">
+        <h3>6. Super Key</h3>
+        <p>A Super Key is any combination of attributes that uniquely identify a row. It may include extra unnecessary fields.</p>
+        <div class="example-box">
+            <p><strong>Example:</strong> (ID, Name) is a super key, but ID alone is sufficient and preferred.</p>
+        </div>
+    </article>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>Normalization in DBMS</h2>
+    <p>Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves dividing large tables into smaller ones and defining relationships between them.</p>
+    
+    <div class="tag-box">
+        <h3>🔍 Why Normalize?</h3>
+        <ul>
+            <li>Eliminate redundant data</li>
+            <li>Ensure data dependencies make sense</li>
+            <li>Make the database easier to maintain</li>
+            <li>Prevent anomalies (update, insert, delete)</li>
+        </ul>
+    </div>
+
+    <!-- 1NF -->
+    <article class="tag-box">
+        <h3>1NF (First Normal Form)</h3>
+        <p>Each column must contain atomic (indivisible) values, and each record must be unique.</p>
+        <div class="example-box">
+            <p><strong>Unnormalized Table:</strong></p>
+            <code>StudentID | Name   | Courses
+1         | Alice  | Math, Science
+2         | Bob    | Math</code>
+            <p><strong>1NF Table:</strong> Break multivalued fields into separate rows</p>
+            <code>StudentID | Name   | Course
+1         | Alice  | Math
+1         | Alice  | Science
+2         | Bob    | Math</code>
+        </div>
+    </article>
+
+    <!-- 2NF -->
+    <article class="tag-box">
+        <h3>2NF (Second Normal Form)</h3>
+        <p>Must be in 1NF and all non-key attributes must depend on the whole primary key.</p>
+        <div class="example-box">
+            <p><strong>Problem:</strong> In a composite key table, some columns depend only on part of the key.</p>
+            <code>Table: CourseEnrollment
+StudentID | CourseID | StudentName | CourseName</code>
+            <p><strong>2NF Solution:</strong> Separate into two tables</p>
+            <code>-- Students Table
+StudentID | StudentName
+
+-- Courses Table
+CourseID | CourseName
+
+-- Enrollments Table
+StudentID | CourseID</code>
+        </div>
+    </article>
+
+    <!-- 3NF -->
+    <article class="tag-box">
+        <h3>3NF (Third Normal Form)</h3>
+        <p>Must be in 2NF, and all attributes must depend *only* on the primary key, not on other non-key attributes.</p>
+        <div class="example-box">
+            <p><strong>Example:</strong> If DepartmentName depends on DepartmentID, and DepartmentID depends on EmployeeID, there's a transitive dependency.</p>
+            <code>-- Before:
+EmployeeID | EmployeeName | DepartmentID | DepartmentName
+
+-- After 3NF:
+Employees: EmployeeID | EmployeeName | DepartmentID
+Departments: DepartmentID | DepartmentName</code>
+        </div>
+    </article>
+
+    <!-- BCNF -->
+    <article class="tag-box">
+        <h3>BCNF (Boyce-Codd Normal Form)</h3>
+        <p>A stronger version of 3NF. A table is in BCNF if every determinant is a candidate key.</p>
+        <div class="example-box">
+            <p><strong>Problem:</strong> Multiple candidate keys but not all are primary.</p>
+            <code>Professor | Subject | Department
+(Professor + Subject) → Department
+Subject → Department</code>
+            <p><strong>Solution:</strong> Split into two tables where Subject → Department is also a key.</p>
+        </div>
+    </article>
+
+    <!-- 4NF -->
+    <article class="tag-box">
+        <h3>4NF (Fourth Normal Form)</h3>
+        <p>Must be in BCNF and have no multi-valued dependencies (i.e., multiple independent facts about the same key).</p>
+        <div class="example-box">
+            <code>StudentID | Language | Hobby
+
+-- Here, Language and Hobby are independent.
+-- Break into two tables:
+
+StudentLanguages: StudentID | Language
+StudentHobbies: StudentID | Hobby</code>
+        </div>
+    </article>
+
+    <!-- 5NF -->
+    <article class="tag-box">
+        <h3>5NF (Fifth Normal Form)</h3>
+        <p>Deals with reconstructing information from smaller pieces without redundancy. Used in very complex databases with multi-join dependencies.</p>
+        <div class="example-box">
+            <p>Rarely used in practice but ensures full normalization without join dependency issues.</p>
+        </div>
+    </article>
+
+    <div class="tag-box">
+        <h3>📝 Summary Table</h3>
+        <table border="1" cellpadding="8" cellspacing="0" style="width:100%; background:#fff;">
+            <tr style="background:#2196F3; color:white;">
+                <th>Normal Form</th>
+                <th>Condition</th>
+            </tr>
+            <tr>
+                <td>1NF</td>
+                <td>Atomic values (no repeating groups)</td>
+            </tr>
+            <tr>
+                <td>2NF</td>
+                <td>1NF + No partial dependency on composite key</td>
+            </tr>
+            <tr>
+                <td>3NF</td>
+                <td>2NF + No transitive dependency</td>
+            </tr>
+            <tr>
+                <td>BCNF</td>
+                <td>Every determinant is a candidate key</td>
+            </tr>
+            <tr>
+                <td>4NF</td>
+                <td>BCNF + No multi-valued dependencies</td>
+            </tr>
+            <tr>
+                <td>5NF</td>
+                <td>No join dependencies</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>Joins in SQL</h2>
+    <p>Joins are used to combine rows from two or more tables based on a related column between them.</p>
+
+    <!-- INNER JOIN -->
+    <article class="tag-box">
+        <h3>1. INNER JOIN</h3>
+        <p>Returns records that have matching values in both tables.</p>
+        <div class="syntax-box">
+            <code>SELECT students.name, courses.title
+FROM students
+INNER JOIN enrollments ON students.id = enrollments.student_id
+INNER JOIN courses ON enrollments.course_id = courses.id;</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Only students who are enrolled in a course will be shown.</strong></p>
+        </div>
+    </article>
+
+    <!-- LEFT JOIN -->
+    <article class="tag-box">
+        <h3>2. LEFT JOIN (LEFT OUTER JOIN)</h3>
+        <p>Returns all records from the left table, and the matched records from the right table. Returns NULL if there is no match.</p>
+        <div class="syntax-box">
+            <code>SELECT students.name, courses.title
+FROM students
+LEFT JOIN enrollments ON students.id = enrollments.student_id
+LEFT JOIN courses ON enrollments.course_id = courses.id;</code>
+        </div>
+        <div class="example-box">
+            <p><strong>All students will be listed, even those not enrolled in any course.</strong></p>
+        </div>
+    </article>
+
+    <!-- RIGHT JOIN -->
+    <article class="tag-box">
+        <h3>3. RIGHT JOIN (RIGHT OUTER JOIN)</h3>
+        <p>Returns all records from the right table and matched records from the left table.</p>
+        <div class="syntax-box">
+            <code>SELECT students.name, courses.title
+FROM students
+RIGHT JOIN enrollments ON students.id = enrollments.student_id
+RIGHT JOIN courses ON enrollments.course_id = courses.id;</code>
+        </div>
+    </article>
+
+    <!-- FULL JOIN -->
+    <article class="tag-box">
+        <h3>4. FULL JOIN (FULL OUTER JOIN)</h3>
+        <p>Returns all records when there is a match in either left or right table. Shows NULL where there's no match.</p>
+        <div class="syntax-box">
+            <code>SELECT students.name, courses.title
+FROM students
+FULL OUTER JOIN enrollments ON students.id = enrollments.student_id
+FULL OUTER JOIN courses ON enrollments.course_id = courses.id;</code>
+        </div>
+    </article>
+
+    <!-- CROSS JOIN -->
+    <article class="tag-box">
+        <h3>5. CROSS JOIN</h3>
+        <p>Returns the Cartesian product of both tables (every combination of rows).</p>
+        <div class="syntax-box">
+            <code>SELECT *
+FROM students
+CROSS JOIN courses;</code>
+        </div>
+    </article>
+</section>
+
+<!-- RELATIONAL ALGEBRA -->
+<section>
+    <h2>Relational Algebra</h2>
+    <p>Relational Algebra is a procedural query language that operates on relations (tables) and returns new relations. It's used to describe the logic behind SQL operations.</p>
+
+    <article class="tag-box">
+        <h3>Core Relational Algebra Operations</h3>
+        <ul>
+            <li><strong>σ (Selection):</strong> Selects rows that satisfy a condition.<br><code>σ age > 25 (Employees)</code></li>
+            <li><strong>π (Projection):</strong> Selects specific columns.<br><code>π name, age (Employees)</code></li>
+            <li><strong>⋈ (Join):</strong> Combines two relations based on a condition.<br><code>Employees ⋈ Employees.department_id = Departments.id Departments</code></li>
+            <li><strong>× (Cartesian Product):</strong> Combines all rows from two relations.<br><code>Employees × Departments</code></li>
+            <li><strong>∪ (Union):</strong> Combines tuples from two relations (must be compatible).<br><code>Managers ∪ Developers</code></li>
+            <li><strong>− (Difference):</strong> Finds tuples in one relation but not in another.<br><code>Employees − Managers</code></li>
+            <li><strong>ρ (Rename):</strong> Renames the relation or attributes.<br><code>ρ Emp(Name, Age) (Employees)</code></li>
+        </ul>
+    </article>
+
+    <div class="example-box">
+        <h4>📘 Example Query in Relational Algebra</h4>
+        <p><strong>Get names of employees who work in the IT department:</strong></p>
+        <code>π name (σ department = 'IT' (Employees))</code>
+    </div>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>SQL Constraints</h2>
+    <p>Constraints are rules enforced on data columns to ensure data integrity and accuracy in the database.</p>
+
+    <article class="tag-box">
+        <h3>1. NOT NULL</h3>
+        <p>Ensures that a column cannot have a NULL value.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE users (
+    id INT,
+    username VARCHAR(100) NOT NULL
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>2. UNIQUE</h3>
+        <p>Ensures all values in a column are different (no duplicates).</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE users (
+    email VARCHAR(255) UNIQUE
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>3. PRIMARY KEY</h3>
+        <p>Uniquely identifies each record in a table. It is a combination of NOT NULL and UNIQUE.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE users (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>4. FOREIGN KEY</h3>
+        <p>Establishes a relationship between two tables. It ensures the value in one table exists in another.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE orders (
+    id INT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>5. CHECK</h3>
+        <p>Ensures that all values in a column satisfy a specific condition.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE products (
+    price DECIMAL(10, 2),
+    CHECK (price > 0)
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>6. DEFAULT</h3>
+        <p>Sets a default value for a column when no value is specified.</p>
+        <div class="syntax-box">
+            <code>CREATE TABLE users (
+    is_active BOOLEAN DEFAULT true
+);</code>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>7. INDEX</h3>
+        <p>Improves the speed of data retrieval operations on a table.</p>
+        <div class="syntax-box">
+            <code>CREATE INDEX idx_username ON users(username);</code>
+        </div>
+    </article>
+
+    <div class="example-box">
+        <h4>📌 Summary of Common Constraints</h4>
+        <ul>
+            <li><strong>NOT NULL</strong> – Value must be provided.</li>
+            <li><strong>UNIQUE</strong> – No duplicates allowed.</li>
+            <li><strong>PRIMARY KEY</strong> – Unique + Not Null (identity of the row).</li>
+            <li><strong>FOREIGN KEY</strong> – Relates two tables.</li>
+            <li><strong>CHECK</strong> – Validates data with a condition.</li>
+            <li><strong>DEFAULT</strong> – Auto-inserts value when none is given.</li>
+            <li><strong>INDEX</strong> – Optimizes lookups, not a constraint per se, but supports performance.</li>
+        </ul>
+    </div>
+</section>
+</div>
+<div class="container">
+    <section>
+    <h2>Set Operations in SQL & Relational Algebra</h2>
+    <p>Set operations are used to combine the results of two or more SQL queries. These operations follow set theory and require the queries to have the same number of columns and compatible data types.</p>
+
+    <article class="tag-box">
+        <h3>1. UNION</h3>
+        <p><strong>Definition:</strong> Combines results from two queries and removes duplicates.</p>
+
+        <div class="syntax-box">
+            <p><strong>SQL Syntax:</strong></p>
+            <code>SELECT column1 FROM table1
+UNION
+SELECT column1 FROM table2;</code>
+        </div>
+
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <code>SELECT name FROM developers
+UNION
+SELECT name FROM testers;</code>
+            <p>Returns all unique names from both tables.</p>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>2. UNION ALL</h3>
+        <p><strong>Definition:</strong> Combines results from two queries including duplicates.</p>
+
+        <div class="syntax-box">
+            <p><strong>SQL Syntax:</strong></p>
+            <code>SELECT column1 FROM table1
+UNION ALL
+SELECT column1 FROM table2;</code>
+        </div>
+
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <code>SELECT name FROM developers
+UNION ALL
+SELECT name FROM testers;</code>
+            <p>Returns all names including duplicates from both tables.</p>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>3. INTERSECT</h3>
+        <p><strong>Definition:</strong> Returns only the common records from both queries.</p>
+
+        <div class="syntax-box">
+            <p><strong>SQL Syntax (PostgreSQL, Oracle):</strong></p>
+            <code>SELECT column1 FROM table1
+INTERSECT
+SELECT column1 FROM table2;</code>
+        </div>
+
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <code>SELECT name FROM developers
+INTERSECT
+SELECT name FROM testers;</code>
+            <p>Returns names that exist in both tables.</p>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>4. EXCEPT / MINUS</h3>
+        <p><strong>Definition:</strong> Returns records from the first query that are not in the second.</p>
+
+        <div class="syntax-box">
+            <p><strong>SQL Syntax (PostgreSQL / Oracle):</strong></p>
+            <code>SELECT column1 FROM table1
+EXCEPT -- use MINUS in Oracle
+SELECT column1 FROM table2;</code>
+        </div>
+
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <code>SELECT name FROM developers
+EXCEPT
+SELECT name FROM testers;</code>
+            <p>Returns names in <code>developers</code> that are not in <code>testers</code>.</p>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>Relational Algebra Equivalent</h3>
+        <p>Set operations are also part of relational algebra, which operates on sets (relations) and returns a new relation.</p>
+
+        <div class="example-box">
+            <ul>
+                <li><code>R ∪ S</code> → UNION</li>
+                <li><code>R ∩ S</code> → INTERSECT</li>
+                <li><code>R - S</code> → EXCEPT / MINUS</li>
+                <li><code>R × S</code> → Cartesian Product</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-box">
+        <h3>Union Compatibility</h3>
+        <p>For set operations to work, the following must be true:</p>
+        <ul>
+            <li>Same number of columns</li>
+            <li>Same data types or compatible data types</li>
+        </ul>
+    </article>
+
+    <article class="tag-box">
+        <h3>Use Cases</h3>
+        <ul>
+            <li>UNION: Get unique users from two departments</li>
+            <li>UNION ALL: Combine logs from multiple systems</li>
+            <li>INTERSECT: Find users common to two systems</li>
+            <li>EXCEPT: Users who left a service</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>SQL Queries & Nested Queries</h2>
+    <p>SQL queries are commands used to retrieve or manipulate data stored in relational databases. Nested queries, also known as subqueries, are queries written inside another query.</p>
+
+    <!-- Basic Queries -->
+    <article class="tag-box">
+        <h3>1. Basic SQL Queries</h3>
+        <ul>
+            <li><strong>SELECT:</strong> Retrieve data from one or more tables.</li>
+            <li><strong>INSERT:</strong> Add new data into a table.</li>
+            <li><strong>UPDATE:</strong> Modify existing data.</li>
+            <li><strong>DELETE:</strong> Remove records from a table.</li>
+        </ul>
+
+        <div class="syntax-box">
+            <code>-- SELECT example
+SELECT name, age FROM users WHERE age > 21;
+
+-- INSERT example
+INSERT INTO users (name, age) VALUES ('Alice', 25);
+
+-- UPDATE example
+UPDATE users SET age = 26 WHERE name = 'Alice';
+
+-- DELETE example
+DELETE FROM users WHERE name = 'Alice';</code>
+        </div>
+    </article>
+
+    <!-- Subqueries -->
+    <article class="tag-box">
+        <h3>2. Subqueries (Nested Queries)</h3>
+        <p>A subquery is a query within another SQL query. It is used to perform intermediate results that the main query depends on.</p>
+
+        <ul>
+            <li>Can be used in <code>SELECT</code>, <code>FROM</code>, or <code>WHERE</code> clauses.</li>
+            <li>Can return single or multiple values.</li>
+        </ul>
+    </article>
+
+    <!-- Subquery in WHERE clause -->
+    <article class="tag-box">
+        <h3>3. Subquery in WHERE Clause</h3>
+        <p>Find all users who are older than the average age.</p>
+        <div class="syntax-box">
+            <code>SELECT name, age
+FROM users
+WHERE age > (SELECT AVG(age) FROM users);</code>
+        </div>
+    </article>
+
+    <!-- Subquery in FROM clause -->
+    <article class="tag-box">
+        <h3>4. Subquery in FROM Clause</h3>
+        <p>Use a subquery to create a temporary result set.</p>
+        <div class="syntax-box">
+            <code>SELECT department, AVG(salary) AS avg_salary
+FROM (
+    SELECT department, salary
+    FROM employees
+) AS temp
+GROUP BY department;</code>
+        </div>
+    </article>
+
+    <!-- Correlated Subquery -->
+    <article class="tag-box">
+        <h3>5. Correlated Subquery</h3>
+        <p>A correlated subquery refers to a column in the outer query. It's executed once for each row in the outer query.</p>
+        <div class="syntax-box">
+            <code>SELECT name
+FROM employees e1
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees e2
+    WHERE e1.department = e2.department
+);</code>
+        </div>
+        <div class="example-box">
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li>This finds employees whose salary is above the average salary of their own department.</li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Subquery in SELECT clause -->
+    <article class="tag-box">
+        <h3>6. Subquery in SELECT Clause</h3>
+        <p>Shows how many orders each user has placed.</p>
+        <div class="syntax-box">
+            <code>SELECT name,
+    (SELECT COUNT(*) FROM orders WHERE orders.user_id = users.id) AS order_count
+FROM users;</code>
+        </div>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>Common Use Cases for Subqueries</h3>
+        <ul>
+            <li>Filtering data with conditional logic</li>
+            <li>Comparing with aggregated values (MAX, AVG, COUNT)</li>
+            <li>Building temporary result sets</li>
+            <li>Validating constraints or duplicates</li>
+        </ul>
+    </article>
+
+    <!-- Key Notes -->
+    <article class="tag-box">
+        <h3>Key Notes</h3>
+        <ul>
+            <li>Subqueries must be enclosed in parentheses <code>()</code>.</li>
+            <li>They can return scalar values (one value), rows, or even tables.</li>
+            <li>Correlated subqueries are slower due to multiple executions.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+    <section>
+    <h2>SQL Triggers</h2>
+    <p>A <strong>trigger</strong> is a database object that automatically executes a predefined action in response to certain events on a table or view. Triggers help enforce business rules, log changes, or automate system tasks.</p>
+
+    <!-- What is a Trigger -->
+    <article class="tag-box">
+        <h3>1. What is a Trigger?</h3>
+        <ul>
+            <li>Automatically fires when an <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code> operation occurs.</li>
+            <li>Can be defined to fire <strong>BEFORE</strong> or <strong>AFTER</strong> the event.</li>
+            <li>Used for auditing, validation, or enforcing rules.</li>
+        </ul>
+    </article>
+
+    <!-- Basic Trigger Syntax -->
+    <article class="tag-box">
+        <h3>2. Trigger Syntax (MySQL Example)</h3>
+        <div class="syntax-box">
+            <code>CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+FOR EACH ROW
+BEGIN
+    -- SQL statements to execute
+END;</code>
+        </div>
+    </article>
+
+    <!-- BEFORE Trigger Example -->
+    <article class="tag-box">
+        <h3>3. BEFORE INSERT Trigger</h3>
+        <p>Automatically sets the created date before inserting a new user.</p>
+        <div class="syntax-box">
+            <code>CREATE TRIGGER before_user_insert
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    SET NEW.created_at = NOW();
+END;</code>
+        </div>
+    </article>
+
+    <!-- AFTER UPDATE Trigger Example -->
+    <article class="tag-box">
+        <h3>4. AFTER UPDATE Trigger</h3>
+        <p>Logs old and new salary after an employee's salary is updated.</p>
+        <div class="syntax-box">
+            <code>CREATE TRIGGER log_salary_update
+AFTER UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO salary_log (emp_id, old_salary, new_salary, changed_at)
+    VALUES (OLD.id, OLD.salary, NEW.salary, NOW());
+END;</code>
+        </div>
+    </article>
+
+    <!-- DELETE Trigger Example -->
+    <article class="tag-box">
+        <h3>5. AFTER DELETE Trigger</h3>
+        <p>Keeps a record of deleted users in an archive table.</p>
+        <div class="syntax-box">
+            <code>CREATE TRIGGER archive_user
+AFTER DELETE ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO deleted_users (id, name, deleted_at)
+    VALUES (OLD.id, OLD.name, NOW());
+END;</code>
+        </div>
+    </article>
+
+    <!-- Use Cases -->
+    <article class="example-box">
+        <h3>6. Common Use Cases for Triggers</h3>
+        <ul>
+            <li>Audit changes (track old and new values).</li>
+            <li>Auto-update timestamps (e.g., updated_at).</li>
+            <li>Maintain history/log tables.</li>
+            <li>Prevent invalid data entries.</li>
+            <li>Synchronize tables automatically.</li>
+        </ul>
+    </article>
+
+    <!-- Notes -->
+    <article class="tag-box">
+        <h3>7. Key Notes</h3>
+        <ul>
+            <li><code>NEW</code> refers to new data being inserted/updated.</li>
+            <li><code>OLD</code> refers to the existing data before update/delete.</li>
+            <li>Triggers run automatically — no need to call them explicitly.</li>
+            <li>Be cautious: triggers can cause performance issues or circular logic if not handled properly.</li>
+        </ul>
+    </article>
+</section>
+
+</div>
+<div class="container">
+<!-- Data Definition Language (DDL) -->
+<div class="tag-box">
+    <h2>1. Data Definition Language (DDL)</h2>
+    <p>DDL commands are used to define and modify the structure of database objects like tables, indexes, and schemas.</p>
+
+    <!-- CREATE TABLE -->
+    <div class="syntax-box">
+        <h3>CREATE TABLE</h3>
+        <p><strong>Purpose:</strong> Creates a new table in the database.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>CREATE TABLE table_name (
+column1 datatype constraints,
+column2 datatype constraints,
+...
+);</code>
+        <p><strong>Example:</strong></p>
+        <code>CREATE TABLE users (
+id INT PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+age INT
+);</code>
+        <p>This creates a table named "users" with columns for ID, name, and age.</p>
+    </div>
+
+    <!-- ALTER TABLE -->
+    <div class="syntax-box">
+        <h3>ALTER TABLE</h3>
+        <p><strong>Purpose:</strong> Modifies an existing table (e.g., adds, deletes, or modifies columns).</p>
+        <p><strong>Syntax:</strong></p>
+        <code>ALTER TABLE table_name
+ADD column_name datatype;</code>
+        <p><strong>Example:</strong></p>
+        <code>ALTER TABLE users
+ADD email VARCHAR(100);</code>
+        <p>This adds a new column "email" to the "users" table.</p>
+    </div>
+
+    <!-- DROP TABLE -->
+    <div class="syntax-box">
+        <h3>DROP TABLE</h3>
+        <p><strong>Purpose:</strong> Deletes an existing table and all its data.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>DROP TABLE table_name;</code>
+        <p><strong>Example:</strong></p>
+        <code>DROP TABLE users;</code>
+        <p>This deletes the "users" table.</p>
+    </div>
+</div>
+
+<!-- Data Manipulation Language (DML) -->
+<div class="tag-box">
+    <h2>2. Data Manipulation Language (DML)</h2>
+    <p>DML commands are used to manipulate data within database tables.</p>
+
+    <!-- INSERT -->
+    <div class="syntax-box">
+        <h3>INSERT</h3>
+        <p><strong>Purpose:</strong> Adds new rows of data to a table.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);</code>
+        <p><strong>Example:</strong></p>
+        <code>INSERT INTO users (id, name, age)
+VALUES (1, 'John', 30);</code>
+        <p>This inserts a new row into the "users" table.</p>
+    </div>
+
+    <!-- UPDATE -->
+    <div class="syntax-box">
+        <h3>UPDATE</h3>
+        <p><strong>Purpose:</strong> Modifies existing data in a table.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;</code>
+        <p><strong>Example:</strong></p>
+        <code>UPDATE users
+SET age = 31
+WHERE id = 1;</code>
+        <p>This updates the age of the user with ID 1.</p>
+    </div>
+
+    <!-- DELETE -->
+    <div class="syntax-box">
+        <h3>DELETE</h3>
+        <p><strong>Purpose:</strong> Removes rows from a table.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>DELETE FROM table_name
+WHERE condition;</code>
+        <p><strong>Example:</strong></p>
+        <code>DELETE FROM users
+WHERE id = 1;</code>
+        <p>This deletes the user with ID 1 from the "users" table.</p>
+    </div>
+
+    <!-- SELECT -->
+    <div class="syntax-box">
+        <h3>SELECT</h3>
+        <p><strong>Purpose:</strong> Retrieves data from a table.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SELECT column1, column2, ...
+FROM table_name
+WHERE condition;</code>
+        <p><strong>Example:</strong></p>
+        <code>SELECT name, age
+FROM users
+WHERE age > 25;</code>
+        <p>This retrieves the names and ages of users older than 25.</p>
+    </div>
+</div>
+
+<!-- Data Query Language (DQL) -->
+<div class="tag-box">
+    <h2>3. Data Query Language (DQL)</h2>
+    <p>DQL commands are used to query and retrieve data from the database.</p>
+
+    <!-- SELECT with WHERE -->
+    <div class="syntax-box">
+        <h3>SELECT with WHERE</h3>
+        <p><strong>Purpose:</strong> Filters rows based on a condition.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SELECT column1, column2, ...
+FROM table_name
+WHERE condition;</code>
+        <p><strong>Example:</strong></p>
+        <code>SELECT * FROM users
+WHERE age > 25;</code>
+        <p>This retrieves all users older than 25.</p>
+    </div>
+
+    <!-- ORDER BY -->
+    <div class="syntax-box">
+        <h3>ORDER BY</h3>
+        <p><strong>Purpose:</strong> Sorts the result set in ascending or descending order.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 ASC|DESC;</code>
+        <p><strong>Example:</strong></p>
+        <code>SELECT * FROM users
+ORDER BY age DESC;</code>
+        <p>This retrieves all users sorted by age in descending order.</p>
+    </div>
+
+    <!-- GROUP BY -->
+    <div class="syntax-box">
+        <h3>GROUP BY</h3>
+        <p><strong>Purpose:</strong> Groups rows that have the same values into summary rows.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1;</code>
+        <p><strong>Example:</strong></p>
+        <code>SELECT age, COUNT(*)
+FROM users
+GROUP BY age;</code>
+        <p>This groups users by age and counts the number of users in each age group.</p>
+    </div>
+
+    <!-- HAVING -->
+    <div class="syntax-box">
+        <h3>HAVING</h3>
+        <p><strong>Purpose:</strong> Filters groups based on a condition.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1
+HAVING condition;</code>
+        <p><strong>Example:</strong></p>
+        <code>SELECT age, COUNT(*)
+FROM users
+GROUP BY age
+HAVING COUNT(*) > 1;</code>
+        <p>This retrieves age groups with more than one user.</p>
+    </div>
+</div>
+
+<!-- Data Control Language (DCL) -->
+<div class="tag-box">
+    <h2>4. Data Control Language (DCL)</h2>
+    <p>DCL commands are used to control access to the database.</p>
+
+    <!-- GRANT -->
+    <div class="syntax-box">
+        <h3>GRANT</h3>
+        <p><strong>Purpose:</strong> Gives specific privileges to users or roles.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>GRANT privilege_name
+ON object_name
+TO user_name;</code>
+        <p><strong>Example:</strong></p>
+        <code>GRANT SELECT, INSERT
+ON users
+TO 'user1';</code>
+        <p>This grants SELECT and INSERT permissions on the "users" table to 'user1'.</p>
+    </div>
+
+    <!-- REVOKE -->
+    <div class="syntax-box">
+        <h3>REVOKE</h3>
+        <p><strong>Purpose:</strong> Removes specific privileges from users or roles.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>REVOKE privilege_name
+ON object_name
+FROM user_name;</code>
+        <p><strong>Example:</strong></p>
+        <code>REVOKE INSERT
+ON users
+FROM 'user1';</code>
+        <p>This revokes INSERT permission on the "users" table from 'user1'.</p>
+    </div>
+</div>
+
+<!-- Transaction Control Language (TCL) -->
+<div class="tag-box">
+    <h2>5. Transaction Control Language (TCL)</h2>
+    <p>TCL commands are used to manage transactions in the database.</p>
+
+    <!-- COMMIT -->
+    <div class="syntax-box">
+        <h3>COMMIT</h3>
+        <p><strong>Purpose:</strong> Saves all changes made during the current transaction.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>COMMIT;</code>
+        <p><strong>Example:</strong></p>
+        <code>COMMIT;</code>
+        <p>This saves all changes made in the current transaction.</p>
+    </div>
+
+    <!-- ROLLBACK -->
+    <div class="syntax-box">
+        <h3>ROLLBACK</h3>
+        <p><strong>Purpose:</strong> Undoes all changes made during the current transaction.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>ROLLBACK;</code>
+        <p><strong>Example:</strong></p>
+        <code>ROLLBACK;</code>
+        <p>This undoes all changes made in the current transaction.</p>
+    </div>
+
+    <!-- SAVEPOINT -->
+    <div class="syntax-box">
+        <h3>SAVEPOINT</h3>
+        <p><strong>Purpose:</strong> Sets a savepoint within a transaction to which you can later roll back.</p>
+        <p><strong>Syntax:</strong></p>
+        <code>SAVEPOINT savepoint_name;</code>
+        <p><strong>Example:</strong></p>
+        <code>SAVEPOINT savepoint1;</code>
+        <p>This creates a savepoint named "savepoint1".</p>
+    </div>
+</div>
+</div>
+</div>
+<div class="container">
+
+
+<!-- NoSQL Databases & Query Examples -->
+<div class="tag-box">
+    <h2>6. NoSQL Databases & Query Examples</h2>
+    <p>NoSQL databases provide flexible data storage and retrieval methods, categorized into different types. Unlike traditional relational databases, NoSQL databases offer high scalability, flexibility, and speed for handling unstructured and semi-structured data.</p>
+    
+    <!-- Key-Value Stores -->
+    <div class="syntax-box">
+        <h3>Key-Value Stores (Redis, DynamoDB)</h3>
+        <p><strong>Purpose:</strong> Store data as key-value pairs. These databases are highly efficient for caching, session management, and real-time analytics.</p>
+        <p><strong>Example (Redis):</strong></p>
+        <code>SET user:1001 "{\"name\": \"John\", \"age\": 30}"</code>
+        <p>Retrieving the value:</p>
+        <code>GET user:1001</code>
+        <p><strong>Example (DynamoDB Query):</strong></p>
+        <code>{ "TableName": "Users", "Key": { "id": { "S": "1001" } } }</code>
+        <p>DynamoDB is fully managed and supports automatic scaling.</p>
+    </div>
+
+    <!-- Document Stores -->
+    <div class="syntax-box">
+        <h3>Document Stores (MongoDB, CouchDB)</h3>
+        <p><strong>Purpose:</strong> Store data in JSON-like documents, making it highly flexible for handling hierarchical data.</p>
+        <p><strong>Example (MongoDB Insert):</strong></p>
+        <code>db.users.insertOne({ name: "Alice", age: 25, email: "alice@example.com" })</code>
+        <p><strong>Example (MongoDB Query):</strong></p>
+        <code>db.users.find({ age: { $gt: 25 } })</code>
+        <p>MongoDB allows schema-less storage, making it easy to evolve applications without complex migrations.</p>
+    </div>
+
+    <!-- Column-Family Stores -->
+    <div class="syntax-box">
+        <h3>Column-Family Stores (Cassandra, HBase)</h3>
+        <p><strong>Purpose:</strong> Store data in column-oriented structures, allowing fast read and write operations for large-scale distributed systems.</p>
+        <p><strong>Example (Cassandra Create Table):</strong></p>
+        <code>CREATE TABLE users (id UUID PRIMARY KEY, name TEXT, age INT);</code>
+        <p><strong>Example (Cassandra Query):</strong></p>
+        <code>SELECT * FROM users WHERE age > 30;</code>
+        <p>Column-family stores provide high availability and partition tolerance.</p>
+    </div>
+
+    <!-- Graph Databases -->
+    <div class="syntax-box">
+        <h3>Graph Databases (Neo4j, ArangoDB)</h3>
+        <p><strong>Purpose:</strong> Store and query relationships between entities, making them ideal for social networks, fraud detection, and recommendation engines.</p>
+        <p><strong>Example (Neo4j Create Node):</strong></p>
+        <code>CREATE (a:Person {name: "David", age: 40})</code>
+        <p><strong>Example (Neo4j Query):</strong></p>
+        <code>MATCH (p:Person) WHERE p.age > 30 RETURN p.name, p.age;</code>
+        <p>Graph databases excel at handling complex connected data with efficient traversal queries.</p>
+    </div>
+</div>
+</div>
+<div class="container">
+
+
+<!-- Database Normalization (SQL Databases) -->
+<div class="tag-box">
+    <h2>5. Database Normalization (SQL Databases)</h2>
+    <p>Database normalization is a process used to reduce redundancy and dependency by organizing fields and table relationships. It is divided into several normal forms:</p>
+
+    <div class="syntax-box">
+        <h3>1st Normal Form (1NF)</h3>
+        <p><strong>Definition:</strong> A table is in 1NF if it contains only atomic (indivisible) values and each column contains values of a single type.</p>
+        <p><strong>Example:</strong></p>
+        <code>Non-1NF Table:
+OrderID  | Customer  | Products
+---------|-----------|----------------
+1        | Alice     | Apple, Banana
+2        | Bob       | Orange, Grape
+
+1NF Table:
+OrderID  | Customer  | Product
+---------|-----------|--------
+1        | Alice     | Apple
+1        | Alice     | Banana
+2        | Bob       | Orange
+2        | Bob       | Grape</code>
+        <p>In 1NF, multi-valued attributes are removed by creating separate rows.</p>
+    </div>
+
+    <div class="syntax-box">
+        <h3>2nd Normal Form (2NF)</h3>
+        <p><strong>Definition:</strong> A table is in 2NF if it is in 1NF and all non-key attributes are fully dependent on the primary key (i.e., no partial dependencies).</p>
+        <p><strong>Example:</strong></p>
+        <code>Non-2NF Table:
+OrderID  | Product  | SupplierID  | SupplierName
+---------|---------|------------|-------------
+1        | Apple   | S1         | FreshFarms
+1        | Banana  | S2         | OrganicFoods
+
+2NF Tables:
+Orders Table:
+OrderID  | Product  | SupplierID
+---------|---------|------------
+1        | Apple   | S1
+1        | Banana  | S2
+
+Suppliers Table:
+SupplierID | SupplierName
+----------|--------------
+S1        | FreshFarms
+S2        | OrganicFoods</code>
+        <p>In 2NF, supplier information is moved to a separate table to remove partial dependencies.</p>
+    </div>
+
+    <div class="syntax-box">
+        <h3>3rd Normal Form (3NF)</h3>
+        <p><strong>Definition:</strong> A table is in 3NF if it is in 2NF and all non-key attributes are only dependent on the primary key (i.e., no transitive dependencies).</p>
+        <p><strong>Example:</strong></p>
+        <code>Non-3NF Table:
+OrderID  | CustomerID | CustomerName  | CustomerCity
+---------|-----------|--------------|-------------
+1        | C1        | Alice         | New York
+2        | C2        | Bob           | Los Angeles
+
+3NF Tables:
+Orders Table:
+OrderID  | CustomerID 
+---------|-----------
+1        | C1
+2        | C2
+
+Customers Table:
+CustomerID | CustomerName  | CustomerCity
+----------|--------------|-------------
+C1        | Alice         | New York
+C2        | Bob           | Los Angeles</code>
+        <p>In 3NF, customer details are stored in a separate table to remove transitive dependencies.</p>
+    </div>
+</div>
+</div>
+<div class="container">
+
+
+<!-- Database Normalization -->
+<div class="tag-box">
+    <h2>5. Database Normalization (SQL Databases)</h2>
+    <p>Database normalization is the process of organizing a database to reduce redundancy and improve data integrity.</p>
+    
+    <div class="syntax-box">
+        <h3>1st Normal Form (1NF)</h3>
+        <p><strong>Purpose:</strong> Ensures that there are no duplicate columns in a table and that each column contains only atomic (indivisible) values.</p>
+        <p><strong>Example:</strong></p>
+        <code>-- Before 1NF
+CREATE TABLE Students (
+StudentID INT,
+Name VARCHAR(100),
+Subjects VARCHAR(100) -- Multiple values in one field (Not atomic)
+);
+
+-- After 1NF
+CREATE TABLE Students (
+StudentID INT,
+Name VARCHAR(100)
+);
+
+CREATE TABLE StudentSubjects (
+StudentID INT,
+Subject VARCHAR(50)
+);</code>
+    </div>
+
+    <div class="syntax-box">
+        <h3>2nd Normal Form (2NF)</h3>
+        <p><strong>Purpose:</strong> Eliminates partial dependencies by ensuring that non-key attributes depend on the whole primary key.</p>
+        <p><strong>Example:</strong></p>
+        <code>-- Before 2NF
+CREATE TABLE Orders (
+OrderID INT,
+ProductID INT,
+ProductName VARCHAR(100),
+Quantity INT
+);
+
+-- After 2NF (Splitting into separate tables)
+CREATE TABLE Orders (
+OrderID INT PRIMARY KEY
+);
+
+CREATE TABLE OrderDetails (
+OrderID INT,
+ProductID INT,
+Quantity INT
+);
+
+CREATE TABLE Products (
+ProductID INT PRIMARY KEY,
+ProductName VARCHAR(100)
+);</code>
+    </div>
+
+    <div class="syntax-box">
+        <h3>3rd Normal Form (3NF)</h3>
+        <p><strong>Purpose:</strong> Eliminates transitive dependencies by ensuring that non-key attributes depend only on the primary key.</p>
+        <p><strong>Example:</strong></p>
+        <code>-- Before 3NF
+CREATE TABLE Employees (
+EmployeeID INT,
+Name VARCHAR(100),
+DepartmentID INT,
+DepartmentName VARCHAR(100) -- Transitive dependency
+);
+
+-- After 3NF (Separate Departments table)
+CREATE TABLE Employees (
+EmployeeID INT PRIMARY KEY,
+Name VARCHAR(100),
+DepartmentID INT
+);
+
+CREATE TABLE Departments (
+DepartmentID INT PRIMARY KEY,
+DepartmentName VARCHAR(100)
+);</code>
+    </div>
+</div>
+
+<!-- Indexing & Performance Optimization -->
+<div class="tag-box">
+    <h2>6. Indexing & Performance Optimization</h2>
+    <p>Optimizing database performance is crucial for efficient data retrieval and system scalability.</p>
+    
+    <div class="syntax-box">
+        <h3>Indexes</h3>
+        <p><strong>Purpose:</strong> Speeds up searches by creating a structured way to access data quickly.</p>
+        <p><strong>Example:</strong></p>
+        <code>CREATE INDEX idx_users_name
+ON users (name);</code>
+    </div>
+
+    <div class="syntax-box">
+        <h3>Partitioning</h3>
+        <p><strong>Purpose:</strong> Splitting large tables into smaller, manageable partitions for improved performance.</p>
+        <p><strong>Example:</strong></p>
+        <code>CREATE TABLE orders (
+order_id INT,
+order_date DATE,
+amount DECIMAL(10,2)
+) PARTITION BY RANGE(order_date);
+</code>
+    </div>
+
+    <div class="syntax-box">
+        <h3>Sharding</h3>
+        <p><strong>Purpose:</strong> Distributing data across multiple servers to handle large-scale applications efficiently.</p>
+        <p><strong>Example:</strong> In MongoDB, sharding can be achieved using:</p>
+        <code>sh.enableSharding("myDatabase");
+sh.shardCollection("myDatabase.users", { "user_id": "hashed" });</code>
+    </div>
+
+    <div class="syntax-box">
+        <h3>Caching</h3>
+        <p><strong>Purpose:</strong> Using tools like Redis or Memcached to store frequently accessed data for faster retrieval.</p>
+        <p><strong>Example:</strong> Storing a query result in Redis:</p>
+        <code>SET user:1001 "{'id':1001, 'name':'John'}";</code>
+    </div>
+</div>
+</div>
+<div class="container">
+
+
+<!-- Transactions & ACID Compliance -->
+<div class="tag-box">
+    <h2>7. Transactions & ACID Compliance (SQL Databases)</h2>
+    <p>Transactions ensure that a series of operations are completed successfully and maintain database integrity. ACID properties define the reliability of database transactions.</p>
+
+    <!-- Atomicity -->
+    <div class="syntax-box">
+        <h3>Atomicity</h3>
+        <p><strong>Purpose:</strong> Ensures that all operations in a transaction are completed; otherwise, none of them are executed.</p>
+        <p><strong>Example:</strong></p>
+        <code>BEGIN TRANSACTION;
+UPDATE accounts SET balance = balance - 500 WHERE id = 1;
+UPDATE accounts SET balance = balance + 500 WHERE id = 2;
+COMMIT;</code>
+        <p>If one update fails, the entire transaction is rolled back, preventing partial updates.</p>
+    </div>
+
+    <!-- Consistency -->
+    <div class="syntax-box">
+        <h3>Consistency</h3>
+        <p><strong>Purpose:</strong> Ensures that transactions transition the database from one valid state to another.</p>
+        <p><strong>Example:</strong></p>
+        <code>BEGIN TRANSACTION;
+UPDATE orders SET status = 'Shipped' WHERE id = 10;
+COMMIT;</code>
+        <p>Ensures that only valid updates are applied to the database.</p>
+    </div>
+
+    <!-- Isolation -->
+    <div class="syntax-box">
+        <h3>Isolation</h3>
+        <p><strong>Purpose:</strong> Prevents transactions from interfering with each other, ensuring correct execution.</p>
+        <p><strong>Example:</strong></p>
+        <code>SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+BEGIN TRANSACTION;
+SELECT * FROM accounts WHERE id = 1;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+COMMIT;</code>
+        <p>Ensures that another transaction cannot access the same data until the first transaction is completed.</p>
+    </div>
+
+    <!-- Durability -->
+    <div class="syntax-box">
+        <h3>Durability</h3>
+        <p><strong>Purpose:</strong> Ensures that committed transactions are permanently stored, even in case of a system failure.</p>
+        <p><strong>Example:</strong></p>
+        <code>COMMIT;</code>
+        <p>Once committed, the transaction changes persist even if the database crashes.</p>
+    </div>
+</div>
+</div>
+<div class="container">
+
+
+<!-- Previous Sections Here -->
+
+<!-- Database Security & Backup -->
+<div class="tag-box">
+    <h2>8. Database Security & Backup</h2>
+    <p>Database security and backup strategies are essential to protect sensitive data and ensure data availability.</p>
+    
+    <div class="syntax-box">
+        <h3>Authentication & Authorization</h3>
+        <p><strong>Purpose:</strong> Controls user access to the database using Role-Based Access Control (RBAC).</p>
+        <p><strong>Example:</strong></p>
+        <code>CREATE ROLE read_only;
+GRANT SELECT ON users TO read_only;
+GRANT read_only TO user1;</code>
+        <p>This example creates a read-only role and grants it to 'user1'.</p>
+    </div>
+    
+    <div class="syntax-box">
+        <h3>Encryption</h3>
+        <p><strong>Purpose:</strong> Protects data both at rest and in transit.</p>
+        <p><strong>Example:</strong> Enabling Transparent Data Encryption (TDE) in SQL Server:</p>
+        <code>CREATE DATABASE ENCRYPTION KEY
+WITH ALGORITHM = AES_256
+ENCRYPTION BY SERVER CERTIFICATE MyCertificate;</code>
+        <p>This encrypts the database using AES-256 encryption.</p>
+    </div>
+    
+    <div class="syntax-box">
+        <h3>Backups</h3>
+        <p><strong>Purpose:</strong> Prevents data loss by creating regular backups.</p>
+        <p><strong>Example:</strong> Creating a full database backup in MySQL:</p>
+        <code>mysqldump -u root -p database_name > backup.sql</code>
+        <p>This command creates a backup of the specified database.</p>
+    </div>
+    
+    <div class="syntax-box">
+        <h3>Replication</h3>
+        <p><strong>Purpose:</strong> Maintains multiple copies of the database to ensure failover and high availability.</p>
+        <p><strong>Example:</strong> Setting up replication in MySQL:</p>
+        <code>CHANGE MASTER TO MASTER_HOST='master_host',
+MASTER_USER='replication_user',
+MASTER_PASSWORD='password',
+MASTER_LOG_FILE='mysql-bin.000001',
+MASTER_LOG_POS= 4;
+START SLAVE;</code>
+        <p>This configures replication on a slave server to sync with a master server.</p>
+    </div>
+</div>
+</div>
+<div class="container">
+<div class="tag-box">
+<h2>9. Database Scaling & High Availability</h2>
+<p>Database scaling and high availability techniques ensure efficient performance, fault tolerance, and reliability.</p>
+
+<div class="syntax-box">
+    <h3>Vertical Scaling</h3>
+    <p><strong>Purpose:</strong> Increases performance by adding more resources (CPU, RAM, Disk) to a single server.</p>
+    <p><strong>Advantages:</strong> Simpler to implement, does not require data distribution.</p>
+    <p><strong>Disadvantages:</strong> Hardware limitations, costly upgrades.</p>
+    <p><strong>Example:</strong> Upgrading a database server from 16GB RAM to 32GB RAM.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Horizontal Scaling</h3>
+    <p><strong>Purpose:</strong> Distributes database workload across multiple servers to handle higher loads.</p>
+    <p><strong>Techniques:</strong></p>
+    <ul>
+        <li><strong>Sharding:</strong> Splitting large tables into smaller chunks distributed across multiple servers.</li>
+        <li><strong>Replication:</strong> Creating copies of databases across multiple servers for redundancy.</li>
+    </ul>
+    <p><strong>Advantages:</strong> Better scalability, prevents a single point of failure.</p>
+    <p><strong>Disadvantages:</strong> Complex implementation, requires data consistency management.</p>
+    <p><strong>Example:</strong> A distributed database setup where different servers handle different portions of data.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Load Balancing</h3>
+    <p><strong>Purpose:</strong> Distributes database queries evenly across multiple nodes to optimize performance and prevent overload.</p>
+    <p><strong>Techniques:</strong></p>
+    <ul>
+        <li><strong>Round Robin:</strong> Directs queries to different servers in a circular order.</li>
+        <li><strong>Least Connections:</strong> Routes queries to the server with the least active connections.</li>
+        <li><strong>Geographic Load Balancing:</strong> Directs users to the nearest data center for faster response times.</li>
+    </ul>
+    <p><strong>Advantages:</strong> Improves response time, ensures even distribution of traffic.</p>
+    <p><strong>Example:</strong> Using a load balancer to route queries dynamically to available database replicas.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>High Availability Strategies</h3>
+    <p><strong>Purpose:</strong> Ensures continuous database availability and minimizes downtime.</p>
+    <p><strong>Techniques:</strong></p>
+    <ul>
+        <li><strong>Failover:</strong> Automatic switch to a backup database in case of failure.</li>
+        <li><strong>Replication:</strong> Maintaining synchronized copies of a database across multiple locations.</li>
+        <li><strong>Database Clustering:</strong> Grouping multiple database servers to work as a single system.</li>
+    </ul>
+    <p><strong>Example:</strong> A primary database failing over to a secondary database automatically during a system crash.</p>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="tag-box">
+<h2>10. Future & Advanced Database Concepts</h2>
+<p>Emerging technologies are reshaping how databases operate and integrate with modern applications.</p>
+
+<div class="syntax-box">
+    <h3>Edge Computing Databases</h3>
+    <p><strong>Purpose:</strong> Handles data processing closer to the user, reducing latency and bandwidth usage.</p>
+    <p><strong>Examples:</strong> AWS IoT Greengrass, Firebase Edge Functions.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>AI-Powered Databases</h3>
+    <p><strong>Purpose:</strong> Uses artificial intelligence for automated query optimization and predictive analytics.</p>
+    <p><strong>Examples:</strong> Oracle Autonomous Database, IBM Db2 AI.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Blockchain Databases</h3>
+    <p><strong>Purpose:</strong> Provides decentralized and immutable storage for secure transactions.</p>
+    <p><strong>Examples:</strong> BigchainDB, Hyperledger Fabric.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>GraphQL & Database Integration</h3>
+    <p><strong>Purpose:</strong> Enables efficient data fetching and real-time queries using GraphQL with traditional databases.</p>
+    <p><strong>Examples:</strong> Hasura (GraphQL on PostgreSQL), Prisma ORM.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Quantum Databases</h3>
+    <p><strong>Purpose:</strong> Leverages quantum computing principles to perform ultra-fast data processing and optimization.</p>
+    <p><strong>Potential Use Cases:</strong> Cryptographic security, big data analysis, and high-speed computations.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Serverless Databases</h3>
+    <p><strong>Purpose:</strong> Allows applications to use databases without managing infrastructure, with automatic scaling and pay-per-use pricing.</p>
+    <p><strong>Examples:</strong> AWS Aurora Serverless, Google Cloud Firestore.</p>
+</div>
+
+<div class="syntax-box">
+    <h3>Self-Healing Databases</h3>
+    <p><strong>Purpose:</strong> Automatically detects and resolves failures, optimizing performance without manual intervention.</p>
+    <p><strong>Examples:</strong> Oracle Autonomous Database, Microsoft Azure SQL Database.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
