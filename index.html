@@ -36,13 +36,13 @@
       z-index: 0;
     }
 
-    /* Header/Nav */
+    /* Header */
     header {
       width: 100%;
       padding: 15px 30px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* center elements inside header */
       position: fixed;
       top: 0;
       left: 0;
@@ -50,50 +50,6 @@
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
-    nav ul {
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li {
-      position: relative;
-    }
-    nav ul li a {
-      padding: 8px 12px;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: orange;
-    }
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 40px;
-      background: #222;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    nav ul li:hover > ul {
-      display: block;
-    }
-    nav ul li ul li a {
-      display: block;
-      padding: 10px 20px;
-      white-space: nowrap;
-      background: #222;
-    }
-    nav ul li ul li a:hover {
-      background: orange;
-      color: black;
-    }
-
-    /* Logo */
-    #imglogo {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-}
-
 
     /* Main Hero Section */
     main {
@@ -136,33 +92,21 @@
 
     /* Lottie */
     .lottie-container {
+      
       width: 300px;
       margin: 20px auto;
+    }
+
+    .lottie-container{
+      margin-top: -60px;
     }
   </style>
 </head>
 <body>
 
-
-
 <div id="vanta-bg"></div>
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="features.html">Features</a></li>
-      <li><a href="contact.html">Contact</a></li>
 
-    </ul>
-  </nav>
-  
-  <a class="navbar-brand" href="index.html">
-    <img id="imglogo" src="logo.jpg" alt="Logo">
-
-  </a>
-  
-</header>
 
 <main>
   <div class="lottie-container" id="lottie-animation"></div>
@@ -178,7 +122,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
-
   VANTA.WAVES({
     el: "#vanta-bg",
     mouseControls: true,
@@ -188,15 +131,13 @@
     minWidth: 200.00,
     scale: 1.00,
     scaleMobile: 1.00,
-    color: 0x3498db,          // Fresh blue for the wave color
+    color: 0x3498db,
     shininess: 50.00,
     waveHeight: 20.00,
     waveSpeed: 0.75,
     zoom: 0.85,
-    backgroundColor: 0x000000 // Keep the background black
+    backgroundColor: 0x000000
   });
-
-
 
   lottie.loadAnimation({
     container: document.getElementById('lottie-animation'),
